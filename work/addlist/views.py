@@ -4,7 +4,7 @@ from .forms import ArticlesForm
 
 
 def addlist(request):
-    news = Articles.objects.order_by('date')
+    news = Articles.objects.order_by('-date')
     return render(request, 'addlist/addlist.html', {'news': news})
 
 def createnews(request):
