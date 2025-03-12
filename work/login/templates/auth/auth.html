@@ -1,0 +1,15 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Авторизация{% endblock %}
+{% block addlist %}
+  <div>
+      <form method="POST">
+          {% csrf_token %}
+          {{AuthForm.username}}
+          {{AuthForm.password}}
+          {{info}}
+          <button type="submit">Авторизоваться</button>
+
+
+      </form>
+  </div>
+{% endblock %}

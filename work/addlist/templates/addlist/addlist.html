@@ -1,0 +1,11 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Все новости{% endblock %}
+{% block addlist %}
+  {% for el in news %}
+    <div class="allert allert-warning">
+      <h1>{{el.title}}</h1>
+      <h3>{{el.anons}}</h3>
+      <p>{{ el.full_text }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
