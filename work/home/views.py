@@ -8,7 +8,6 @@ def home(request):
     else:
         username = 'нет пользователя'
 
-
     data = {
         'username': username,
     }

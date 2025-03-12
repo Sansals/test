@@ -15,7 +15,11 @@
                 <li><a href="#"><i class="fa-solid fa-circle-dollar-to-slot"></i> Донат</a></li>
             </ul>
         </nav>
-        <a href="{% url 'auth' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Регистрация/вход </a>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'auth' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Регистрация/вход </a>
+        {% else %}
+            <a href="{% url 'logout' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Выйти </a>
+        {% endif %}
     </div>
 </header>
 {% endblock %}
