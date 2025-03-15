@@ -1,0 +1,20 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Подтверждение почты{% endblock %}
+{% block addlist %}
+
+<div class="all_screen">
+<div class="registration-container">
+        <h2>Подтверждение</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="ver_mail">Код из почты:</label>
+                {{form.ver_mail}}
+            </div>
+            <p>Уважаемый {{username}}, происходит проверка адреса {{email}}</p>
+            <p>{{error}}</p>
+            <button type="submit" class="submit-btn">Подтвердить</button>
+        </form>
+</div>
+</div>
+{% endblock %}

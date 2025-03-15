@@ -1,7 +1,16 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, Form
 from django import forms
+
+
+
+class VrMail(Form):
+    ver_mail = forms.CharField(widget=forms.TextInput(attrs={
+        'class':'input-field',
+        'placeholder': 'Введите код',
+        'id':'ver_mail'
+    }))
 
 
 class AuthForm(AuthenticationForm):
