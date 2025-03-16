@@ -15,8 +15,9 @@
                 <label for="password">Пароль:</label>
                 {{authform.password}}
             </div>
+            <p class="error">{{error}}</p>
             <button type="submit" class="submit-btn">Авторизоваться</button>
-            <a href="{%url 'reg'%}">Зарегистрироваться</a>
+            <a class="link" href="{%url 'reg'%}">Зарегистрироваться</a>
         </form>
 </div>
 </div>

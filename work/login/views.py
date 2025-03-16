@@ -3,12 +3,12 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import request
-from .models import Email_Verified
 
 from .forms import AuthForm, UserRegistrationForm, VrMail
 from random import randint
 from django.core.mail import send_mail
 
+from .models import Email_Verified
 
 
 def sendcode(request):
@@ -35,12 +35,15 @@ def email_verification(request):
             data = request.session.pop('sessiondata', {})
             code = data.get('code')
             if int(form.cleaned_data['ver_mail']) == int(code):
-                Email_Verified.objects.create(user=request.user.username, verified=True)
+                u = Email_Verified.objects.get(username = request.user.id)
+                u.Isverified = True
+                u.save()
                 return redirect ('home')
             else:
-                error= f'Коды не совпадают, код из формы:{form.cleaned_data['ver_mail']}, ожидался:{code}'
+                request.session['sessiondata'] = data
+                error = f'{request.user.username}, введите коректный код!'
         else:
-            error = 'Введите корректный код'
+            error = f'{request.user.username}, введите коректный код!'
 
     data={
         'form': form,
@@ -54,9 +57,10 @@ def email_verification(request):
 
 def auth(request):
 
-    info=''
+    error=''
 
     user = AuthForm(data=request.POST or None)
+
     if request.method == "POST":
         if user.is_valid():
             username = user.cleaned_data['username']
@@ -64,18 +68,26 @@ def auth(request):
             user = authenticate(username = username, password = password)
             if user:
                 login(request, user)
-                return redirect ('home')
-                info = 'Успешно!'
+                status = Email_Verified.objects.get(username=request.user.id).Isverified
+                if status == True:
+                    return redirect ('home')
+                else:
+                    data = {
+                        'code': sendcode(request)
+                    }
+                    request.session['sessiondata'] = data
+
+                    return redirect('vrmail')
             else:
-                info = 'Пользователя не существует'
+                error = 'Пользователя не существует'
         else:
-            info = 'Форма невалидна'
+            error = 'Пользователь не существует'
 
 
 
     data = {
         'authform': user,
-        'info': info
+        'error': error
     }
     return render(request, 'auth/auth.html', data)
 
@@ -91,10 +103,13 @@ def registration(request):
                 user.set_password(form.cleaned_data['password'])
                 user.save()
                 login(request, authenticate(username=user.username, password=form.cleaned_data['password']))
+                u = User.objects.get(username=request.user.username)
+                Email_Verified.objects.create(username=u)
                 data={
                     'code': sendcode(request)
                 }
                 request.session['sessiondata'] = data
+
                 return redirect('vrmail')
 
     else:

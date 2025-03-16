@@ -1,10 +1,14 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 
-# Create your models here.
 class Email_Verified(models.Model):
-    user = models.CharField(max_length=50)
-    verified = models.BooleanField(default=False)
+    user_id = models.AutoField (primary_key=True)
+    username = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE)
+    Isverified = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user
+        return f'{self.username}'
+        # Create your models here.
+

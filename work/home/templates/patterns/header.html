@@ -5,7 +5,15 @@
 {% block header %}
 <header>
     <div class="container">
-        <h1 class="logo">{{username}}</h1>
+        <h1 class="logo">
+            {% if user.is_authenticated %}
+                {{username}}
+                {% if status == True %}
+                    <i class="fa-solid fa-user-check" alt="Подтверждённый пользователь"></i>
+                {% endif %}
+            {% endif %}
+
+        </h1>
         <nav>
             <ul class="menu">
                 <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Главная</a></li>
