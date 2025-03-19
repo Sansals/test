@@ -1,3 +1,3 @@
 from django.contrib import admin
-from .models import Email_Verified
-admin.site.register(Email_Verified)
+from .models import User_Status
+admin.site.register(User_Status)

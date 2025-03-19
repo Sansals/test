@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.template.context_processors import request
-from login.models import Email_Verified
+from login.models import User_Status
 
 
 def home(request):
     if request.user.is_authenticated:
         username = request.user.username
-        status = Email_Verified.objects.get(username = request.user.id).Isverified
+        status = User_Status.objects.get(username = request.user.id).Isverified
     else:
         username = 'нет пользователя'
         status = ''

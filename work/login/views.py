@@ -8,7 +8,7 @@ from .forms import AuthForm, UserRegistrationForm, VrMail
 from random import randint
 from django.core.mail import send_mail
 
-from .models import Email_Verified
+from .models import User_Status
 
 
 def sendcode(request):
@@ -35,7 +35,7 @@ def email_verification(request):
             data = request.session.pop('sessiondata', {})
             code = data.get('code')
             if int(form.cleaned_data['ver_mail']) == int(code):
-                u = Email_Verified.objects.get(username = request.user.id)
+                u = User_Status.objects.get(username = request.user.id)
                 u.Isverified = True
                 u.save()
                 return redirect ('home')
@@ -68,7 +68,7 @@ def auth(request):
             user = authenticate(username = username, password = password)
             if user:
                 login(request, user)
-                status = Email_Verified.objects.get(username=request.user.id).Isverified
+                status = User_Status.objects.get(username=request.user.id).Isverified
                 if status == True:
                     return redirect ('home')
                 else:
@@ -104,7 +104,7 @@ def registration(request):
                 user.save()
                 login(request, authenticate(username=user.username, password=form.cleaned_data['password']))
                 u = User.objects.get(username=request.user.username)
-                Email_Verified.objects.create(username=u)
+                User_Status.objects.create(username=u)
                 data={
                     'code': sendcode(request)
                 }

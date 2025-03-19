@@ -7,6 +7,8 @@
       <p>{{ el.date }}</p>
       <h3>{{el.anons}}</h3>
       <p>{{ el.full_text }}</p>
+      <p>{{ el.username }}</p>
+      <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать новость</a>
     </div>
   {% endfor %}
 {% endblock %}
