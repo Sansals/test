@@ -1,0 +1,14 @@
+{% extends 'patterns/header.html' %}
+
+{% block title %}
+    Корзина
+{% endblock %}
+{% load static %}
+{% block home %}
+    {% for el in products %}
+        {% if el.user == user %}
+            <p>{{el.product}} в количестве {{el.value}} штук</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
