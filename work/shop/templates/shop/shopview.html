@@ -12,6 +12,7 @@
             <p>{{el.name}}</p>
             <p>Цена: {{el.price}}</p>
             <p>Мод: {{el.mode}}</p>
+            <a href="{% url 'basket_add' el.slug %}" class="btn btn-warning">Добавить товар</a>
         </div>
     {% endfor %}
 

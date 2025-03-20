@@ -21,6 +21,7 @@ class Products(models.Model):
         (TERMO, 'Termo')
     }
 
+    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name='URL')
     name = models.CharField('Название', max_length=50)
     price = models.IntegerField('Цена')
     type = models.CharField('Тип товара', max_length=2, choices=TYPES)
@@ -34,6 +35,16 @@ class Products(models.Model):
         verbose_name_plural = 'Товары'
 
 
+class BasketsQueryset(models.QuerySet):
+
+    def total_price(self):
+        return sum(cart.products_price() for cart in self)
+
+    def total_value(self):
+        if self:
+            return sum(cart.value for cart in self)
+        return 0
+
 class Baskets(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                                  on_delete=models.CASCADE,
@@ -45,10 +56,17 @@ class Baskets(models.Model):
                                 )
     value = models.IntegerField(default=1)
 
-    def __str__(self):
-        return f'{self.user}'
-
     class Meta:
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
+
+    objects = BasketsQueryset().as_manager()
+
+    def __str__(self):
+        return f'{self.user.username} | {self.product.name} | {self.value}'
+
+    def products_price(self):
+        return round(self.product.price * self.value , 2)
+
+
 # Create your models here.
