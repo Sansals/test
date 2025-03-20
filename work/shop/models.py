@@ -22,7 +22,7 @@ class Products(models.Model):
     }
 
     name = models.CharField('Название', max_length=50)
-    price = models.IntegerField('Цена', max_length=7)
+    price = models.IntegerField('Цена')
     type = models.CharField('Тип товара', max_length=2, choices=TYPES)
     mode = models.CharField('Мод', max_length=1, choices= MODES)
 
@@ -43,8 +43,7 @@ class Baskets(models.Model):
                                 on_delete=models.CASCADE,
                                 default=None
                                 )
-    value = models.IntegerField(max_length=6,
-                                default=1)
+    value = models.IntegerField(default=1)
 
     def __str__(self):
         return f'{self.user}'

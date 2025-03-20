@@ -5,15 +5,13 @@ from .forms import ArticlesForm
 from django.views.generic import DetailView
 from django.contrib.auth.models import User
 
+from login.models import User_Status
+
+
 class NewsDatailView(DetailView):
     model = Articles
     template_name = 'addlist/details_view.html'
     context_object_name = 'article'
-
-
-def addlist(request):
-    news = Articles.objects.order_by('-date')
-    return render(request, 'addlist/addlist.html', {'news': news})
 
 
 @ login_required

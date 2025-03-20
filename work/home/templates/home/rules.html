@@ -1,0 +1,12 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Все новости{% endblock %}
+{% load static %}
+{% block addlist %}
+  <link rel="stylesheet" href="{% static 'rules/rules.css' %}">
+  {% for el in rules %}
+      <div class="rule">
+        <p><span class="rule_id">{{el.rule_id}} </span>{{el.crime}}</p>
+        <p><span class="punishment">Наказание: </span>{{el.punishment}} </p><br>
+      </div>
+  {% endfor %}
+{% endblock %}
