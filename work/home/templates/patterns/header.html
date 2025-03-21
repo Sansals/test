@@ -20,13 +20,14 @@
                 <li><a href="{% url 'rules' %}"><i class="fa-solid fa-scale-balanced"></i> Правила </a></li>
                 <li><a href="{% url 'about' %}"><i class="fa-solid fa-address-card"></i> О нас</a></li>
                 <li><a href="{% url 'createnews' %}"><i class="fa-solid fa-server"></i>  Добавление новостей</a></li>
-                <li><a href="{% url 'shop' %}"><i class="fa-solid fa-circle-dollar-to-slot"></i> Донат</a></li>
+                <li><a href="{% url 'shop' %}"><i class="fa-solid fa-circle-dollar-to-slot"></i> Магазин</a></li>
             </ul>
         </nav>
         {% if not user.is_authenticated %}
             <a href="{% url 'auth' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Регистрация/вход </a>
         {% else %}
             <a href="{% url 'logout' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Выйти </a>
+            <a href="{% url 'basket' %}" class="register-button"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Корзина </a>
         {% endif %}
     </div>
 </header>

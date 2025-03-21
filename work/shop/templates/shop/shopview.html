@@ -6,14 +6,15 @@
 {% load static %}
 {% block home %}
     <link rel="stylesheet" href="{% static 'shop/style_shop.css' %}">
-    <a href="{% url 'basket' %}">Моя корзина</a>
-    {% for el in products %}
-        <div class="product">
-            <p>{{el.name}}</p>
-            <p>Цена: {{el.price}}</p>
-            <p>Мод: {{el.mode}}</p>
-            <a href="{% url 'basket_add' el.slug %}" class="btn btn-warning">Добавить товар</a>
-        </div>
-    {% endfor %}
+    <div class="features_block">
+        {% for el in products %}
+            <div class="product">
+                <span>{{el.name}}</span><br>
+                <span>Цена: {{el.price}}</span><br>
+                <span>Мод: {{el.mode}}</span><br>
+                <a href="{% url 'basket_add' el.slug %}" class="btn btn-warning">Добавить товар</a>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

@@ -50,6 +50,7 @@ nav {
 }
 
 .register-button {
+    margin-left: 15px;
     background-color: #e74c3c;
     color: white;
     padding: 10px 20px;

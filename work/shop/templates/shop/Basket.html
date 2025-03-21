@@ -5,10 +5,18 @@
 {% endblock %}
 {% load static %}
 {% block home %}
-    {% for el in products %}
-        {% if el.user == user %}
-            <p>{{el.product}} в количестве {{el.value}} штук</p>
-        {% endif %}
-    {% endfor %}
-
+    <link rel="stylesheet" href="{% static 'shop/style_shop.css' %}">
+    <div class="div features_block">
+        {% for el in basket %}
+            <div class="basket_item">
+                {% if el.user == user %}
+                    <p>{{el.product}} в количестве {{el.value}} штук. Стоимость: {{el.value}} * {{el.product.price}} = {{el.products_price}}
+                        <a href="{% url 'basket_remove' el.id %}"><i class="fa fa-trash-o" aria-hidden="true">Удалить</i></a>
+                    </p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <p>Всего товаров: {{basket.total_value}}</p>
+        <p>Общая сумма: {{basket.total_price}}</p>
+    </div>
 {% endblock %}
