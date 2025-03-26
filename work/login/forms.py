@@ -6,7 +6,7 @@ from django import forms
 
 
 class VrMail(Form):
-    ver_mail = forms.CharField(widget=forms.TextInput(attrs={
+    ver_mail = forms.IntegerField(widget=forms.TextInput(attrs={
         'class':'input-field',
         'placeholder': 'Введите код',
         'id':'ver_mail'
@@ -14,6 +14,7 @@ class VrMail(Form):
 
 
 class AuthForm(AuthenticationForm):
+    """Форма авторизации"""
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class':'input-field',
         'placeholder': 'Логин',

@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.template.context_processors import request
+
+from work.global_services import get_username, get_user_email, get_user, get_user_verify_is
+from .services import save_verify_code, email_verification_form, get_session_data, set_user_verify_true, \
+    registration_user_save
 
 from .forms import AuthForm, UserRegistrationForm, VrMail
 from random import randint
@@ -11,52 +13,37 @@ from django.core.mail import send_mail
 from .models import User_Status
 
 
-def sendcode(request):
-    username = request.user.username
-    email = request.user.email
-    code = randint(100000, 999999)
-
-    send_mail(
-        'Подтверждение учётной записи',
-        f'Уважаемый {username}, Ваш код для подтверждения учётной записи по адресу электронной почты: {code}',
-        'stereotip.228@gmail.com',
-        [email],
-        fail_silently=False
-    )
-    return code
-
-def email_verification(request):
-    error = ''
-
+def email_verification_view(request):
+    """Представление формы верификации адреса эл. почты"""
+    error=''
     form = VrMail
     if request.method == "POST":
         form = VrMail(request.POST)
         if form.is_valid():
-            data = request.session.pop('sessiondata', {})
-            code = data.get('code')
-            if int(form.cleaned_data['ver_mail']) == int(code):
-                u = User_Status.objects.get(username = request.user.id)
-                u.Isverified = True
-                u.save()
-                return redirect ('home')
+            code = get_session_data(request, name='code')
+            if int(form.cleaned_data['ver_mail']) == code:
+                set_user_verify_true(request)
+                return redirect('home')
             else:
-                request.session['sessiondata'] = data
-                error = f'{request.user.username}, введите коректный код!'
+                if code == 79797979:
+                    error = f'Для {get_username(request)} превышено кол-во запросов, авторизируйтесь позже'
+                else:
+                    request.session['sessiondata'] = code
+                    error = f'{get_username(request)}, введите коректный код!, ожидался {code}'
         else:
-            error = f'{request.user.username}, введите коректный код!'
-
+            error = f'{get_username(request)}, введите коректный код!'
     data={
         'form': form,
         'error': error,
-        'username': request.user.username,
-        'email': request.user.email
+        'username': get_username(request),
+        'email': get_user_email(request)
     }
     return render(request, 'auth/vermail.html', data)
 
 
 
-def auth(request):
-
+def auth_view(request):
+    """Представление формы авторизации пользователей"""
     error=''
 
     user = AuthForm(data=request.POST or None)
@@ -68,15 +55,10 @@ def auth(request):
             user = authenticate(username = username, password = password)
             if user:
                 login(request, user)
-                status = User_Status.objects.get(username=request.user.id).Isverified
-                if status == True:
-                    return redirect ('home')
+                if get_user_verify_is(request) == True:
+                    return redirect('home')
                 else:
-                    data = {
-                        'code': sendcode(request)
-                    }
-                    request.session['sessiondata'] = data
-
+                    save_verify_code(request)
                     return redirect('vrmail')
             else:
                 error = 'Пользователя не существует'
@@ -92,26 +74,16 @@ def auth(request):
     return render(request, 'auth/auth.html', data)
 
 
-def registration(request):
+def registration_view(request):
     if not request.user.is_authenticated:
         error=''
         form = UserRegistrationForm(data= request.POST or None)
         if request.method == "POST":
             form = UserRegistrationForm(request.POST)
             if form.is_valid():
-                user = form.save(commit=False)
-                user.set_password(form.cleaned_data['password'])
-                user.save()
-                login(request, authenticate(username=user.username, password=form.cleaned_data['password']))
-                u = User.objects.get(username=request.user.username)
-                User_Status.objects.create(username=u)
-                data={
-                    'code': sendcode(request)
-                }
-                request.session['sessiondata'] = data
-
+                registration_user_save(request, form)
+                save_verify_code(request)
                 return redirect('vrmail')
-
     else:
         return redirect('home')
 
@@ -120,8 +92,4 @@ def registration(request):
         'error': error
     }
     return render(request, 'auth/reg.html', data)
-
-def logout_view(request):
-    logout(request)
-    return redirect('home')
 # Create your views here.

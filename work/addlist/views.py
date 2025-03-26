@@ -1,38 +1,39 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .models import Articles
 from .forms import ArticlesForm
-from django.views.generic import DetailView
-from django.contrib.auth.models import User
+from work.global_services import get_user
 
-from login.models import User_Status
+from .services import *
+from work.global_services import get_username, get_user_verify_is
+from login.services import save_verify_code
 
 
-class NewsDatailView(DetailView):
-    model = Articles
-    template_name = 'addlist/details_view.html'
-    context_object_name = 'article'
+def news_detail_view(request):
+    """Выводит конкретную запись из Articles по её id"""
+    return NewsDatailView.as_view()
+
 
 
 @ login_required
-def createnews(request):
+def create_news_view(request):
     error = ''
     if request.method == "POST":
         form = ArticlesForm(request.POST)
-        #form.user_id = User.objects.get(username=request.user.username).id
-        #form.user_id = User.objects.get(username=request.user.username).id
         if form.is_valid():
-            response = form.save(commit=False)
-            response.username = request.user
-            response.save()
+            if get_user_verify_is(request):
+                response = form.save(commit=False)
+                response.username = get_user(request)
+                response.save()
+            else:
+                save_verify_code(request)
+                return redirect('vrmail')
         else:
             error = 'Не верно'
-
-
     form = ArticlesForm
-
     data ={
+        'username': get_username(request),
+        'status': get_user_verify_is(request),
         'form': form,
-        'error': error
+        'error': error,
     }
     return render(request, 'addlist/createnews.html', data)

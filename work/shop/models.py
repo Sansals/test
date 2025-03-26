@@ -23,7 +23,7 @@ class Products(models.Model):
 
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name='URL')
     name = models.CharField('Название', max_length=50)
-    price = models.IntegerField('Цена')
+    price = models.PositiveIntegerField('Цена')
     type = models.CharField('Тип товара', max_length=2, choices=TYPES)
     mode = models.CharField('Мод', max_length=1, choices= MODES)
 
