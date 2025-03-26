@@ -7,10 +7,6 @@ from .services import save_verify_code, email_verification_form, get_session_dat
     registration_user_save
 
 from .forms import AuthForm, UserRegistrationForm, VrMail
-from random import randint
-from django.core.mail import send_mail
-
-from .models import User_Status
 
 
 def email_verification_view(request):

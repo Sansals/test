@@ -9,6 +9,10 @@ from work.global_services import get_username, get_user_email, get_user_verify_i
 
 from .forms import VrMail
 from .models import User_Status
+import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 def email_verification_form(request):
     form = VrMail
@@ -34,28 +38,52 @@ def set_user_verify_true(request):
         u = User_Status.objects.get(username=request.user.id)
         u.Isverified = True
         u.save()
-        #logging
-    except:
-        pass #logging
+        logger.info(
+            f'{datetime.datetime.now()} |INFO| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'User set his verified status is True!')
+    except Exception:
+        logger.warning(
+            f'{datetime.datetime.now()} |Warning| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'Exception: User cant set his verified status is True!')
+        pass
 
 def get_session_data(request, name):
     data = request.session.pop('sessiondata', {})
     try:
         return data.get(name)
     except AttributeError:
+        logger.warning(
+            f'{datetime.datetime.now()} |Warning| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'AttributeError: exceeded the number of requests per session!')
         return 79797979
-        #logging ошибка получения сессионных данных, превышено кол-во запросов
     except Exception:
+        logger.warning(
+            f'{datetime.datetime.now()} |Warning| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'Exception: exceeded the number of requests per session!')
         return 79797979
-        # logging Не известная ошибка получения сессионных данных
 
 def registration_user_save(request, form):
     """Сохраняет и авторизирует нового пользователя, создаёт для него расширение модели User"""
-    user = form.save(commit=False)
-    user.set_password(form.cleaned_data['password'])
-    user.save()
-    login(request, authenticate(username=user.username, password=form.cleaned_data['password']))
-    _create_status_object_for_registration_user(request)
+    try:
+        user = form.save(commit=False)
+        user.set_password(form.cleaned_data['password'])
+        user.save()
+        login(request, authenticate(username=user.username, password=form.cleaned_data['password']))
+        _create_status_object_for_registration_user(request)
+    except Exception:
+        logger.error(
+            f'{datetime.datetime.now()} |ERROR| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'Exceptiion: Failed save new user and create new object in model login.User_Status')
 
 def save_verify_code(request):
     data = {
@@ -78,7 +106,16 @@ def _send_verify_code(request):
             [get_user_email(request)],
             fail_silently=False
         )
-        # logging
+        logger.info(
+            f'{datetime.datetime.now()} |INFO| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'Mail send to {get_user_email(request)} with code {code}')
     except:
-        pass #logging
+        logger.error(
+            f'{datetime.datetime.now()} |ERROR| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'Mail send to {get_user_email(request)} with code {code} is failed')
+        pass
     return code

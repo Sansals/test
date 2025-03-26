@@ -6,6 +6,10 @@ from work.global_services import get_user
 from .services import *
 from work.global_services import get_username, get_user_verify_is
 from login.services import save_verify_code
+import logging
+import datetime
+
+logger = logging.getLogger(__name__)
 
 
 def news_detail_view(request):
@@ -14,7 +18,7 @@ def news_detail_view(request):
 
 
 
-@ login_required
+@ login_required()
 def create_news_view(request):
     error = ''
     if request.method == "POST":
@@ -26,6 +30,7 @@ def create_news_view(request):
                 response.save()
             else:
                 save_verify_code(request)
+                logger.info(f'{datetime.datetime.now()} |INFO| Username: {get_user(request)} | Attempt aborted. User with not verify email attempt add field in addlist.Articles')
                 return redirect('vrmail')
         else:
             error = 'Не верно'

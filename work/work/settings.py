@@ -16,7 +16,42 @@ from django.conf.global_settings import STATICFILES_DIRS, EMAIL_BACKEND, EMAIL_H
     DEFAULT_FROM_EMAIL
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+DEFAULT_CHARSET = 'UTF-8'
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'work/loggers.txt'
+        },
+    },
+    'loggers':{
+        'addlist':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagete': True,
+        },
+        'home':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagete': True,
+        },
+        'login':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagete': True,
+        },
+        'shop':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagete': True,
+        },
+    },
+}
 
 
 # Quick-start development settings - unsuitable for production
