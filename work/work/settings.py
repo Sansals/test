@@ -24,7 +24,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'INFO',
+            'level': 'WARNING',
             'class': 'logging.FileHandler',
             'filename': 'work/loggers.txt'
         },
@@ -46,6 +46,11 @@ LOGGING = {
             'propagete': True,
         },
         'shop':{
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagete': True,
+        },
+        'profiles':{
             'handlers': ['file'],
             'level': 'INFO',
             'propagete': True,
@@ -80,6 +85,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'addlist',
+    'profiles',
 ]
 
 MIDDLEWARE = [

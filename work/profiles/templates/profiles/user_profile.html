@@ -1,0 +1,12 @@
+{% extends 'patterns/header.html' %}
+{% block title %} {{User.username}} {% endblock %}
+{% block addlist %}
+    <div class="allert allert-warning">
+        <p>{{user}}</p>
+        <p>Имя пользователя: {{user.username}} ID:{{user.id}}</p>
+        <p>Адрес электронной почты: {{ user.email }}</p>
+        <p>Баланс: {{balance}} </p>
+        <p>Дата регистрации: {{ user.date_joined  }}</p>
+        <p><a href="{% url 'logout' %}">Выйти</a></p>
+    </div>
+{% endblock %}

@@ -36,16 +36,20 @@ class Products(models.Model):
 
 
 class BasketsQueryset(models.QuerySet):
-
+    """Собственные методы обращения к Baskets"""
     def total_price(self):
+        """выводит сумму всех объектов выборки по методу  products_price*
+        *- products_price выводит стоимость внутри одной корзины (одного объекта Baskest)"""
         return sum(cart.products_price() for cart in self)
 
     def total_value(self):
+        """Выводит сумму всех объектов выборки по полю value"""
         if self:
             return sum(cart.value for cart in self)
         return 0
 
 class Baskets(models.Model):
+    """Структура Корзин. Хранит все объекты корзин всех пользователей"""
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                                  on_delete=models.CASCADE,
                                 default=None
@@ -55,6 +59,7 @@ class Baskets(models.Model):
                                 default=None
                                 )
     value = models.IntegerField(default=1)
+    is_purchased = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = 'Корзина'

@@ -7,6 +7,12 @@ def get_user_email(request):
         return None
         #logging
 
+def get_user_id(request):
+    if request.user.is_authenticated:
+        return request.user.id
+    else:
+        return None
+
 def get_user(request):
     if request.user.is_authenticated:
         return request.user

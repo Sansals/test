@@ -6,7 +6,7 @@ import datetime
 
 logger = logging.getLogger(__name__)
 
-class NewsDatailView(DetailView):
+class ArticlesDatailView(DetailView):
     try:
         model = Articles
         template_name = 'addlist/details_view.html'

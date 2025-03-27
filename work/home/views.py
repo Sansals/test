@@ -13,6 +13,7 @@ def rules_view(request):
 
 def home_view(request):
     data = {
+        'user_id': get_user_id(request),
         'username': get_username(request),
         'status': get_user_verify_is(request),
         'news': get_all_articles(request)

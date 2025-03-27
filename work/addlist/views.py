@@ -12,9 +12,9 @@ import datetime
 logger = logging.getLogger(__name__)
 
 
-def news_detail_view(request):
-    """Выводит конкретную запись из Articles по её id"""
-    return NewsDatailView.as_view()
+#def news_detail_view(request):
+    #"""Выводит конкретную запись из Articles по её id"""
+    #return NewsDatailView.as_view()
 
 
 
@@ -28,9 +28,11 @@ def create_news_view(request):
                 response = form.save(commit=False)
                 response.username = get_user(request)
                 response.save()
+                logger.info(
+                    f'{datetime.datetime.now()} |INFO| Username: {get_user(request)} | User create new object in addlist.Articles')
             else:
                 save_verify_code(request)
-                logger.info(f'{datetime.datetime.now()} |INFO| Username: {get_user(request)} | Attempt aborted. User with not verify email attempt add field in addlist.Articles')
+                logger.warning(f'{datetime.datetime.now()} |WARNING| Username: {get_user(request)} | Attempt aborted. User with not verify email attempt add field in addlist.Articles')
                 return redirect('vrmail')
         else:
             error = 'Не верно'
