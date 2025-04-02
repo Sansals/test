@@ -1,0 +1,42 @@
+div.user_date_register, div.user_email, div.user_balance, div.user_status, div.user_id, div.exit{
+    width: 241px;
+    margin-top:15px;
+}
+
+div.add_avatar_container{
+    margin-top:10px;
+}
+
+div.gap{
+    gap:10px;
+}
+
+div.flex{
+    display: flex;
+}
+
+div.profile_container{
+    margin: 80px auto;
+    width: 800px;
+}
+
+div.username_container{
+    font-size: 25px;
+    margin:0 auto;
+    text-align: center;
+}
+
+img.user_avatar{
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+}
+
+div.borderr{
+    border: 1.7px solid #483d8b;
+    border-radius: 12px;
+    background: #d3deed;
+    text-align: center;
+    box-shadow: -5px 5px 15.09px 2.91px rgba(0, 0, 0, 0.17);
+}
+

@@ -18,6 +18,7 @@ def user_profile_view(request, url_username):
         return redirect(f'/profiles/{get_username(request)}/')
     data = {
         'status': get_user_verify_is(request),
-        'balance': get_user_balance(request)
+        'balance': get_user_balance(request),
+        'user_object': get_object_from_user_status(request),
     }
     return render(request, 'profiles/user_profile.html', data)
