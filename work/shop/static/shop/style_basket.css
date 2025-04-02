@@ -1,0 +1,54 @@
+a.delete-basket{
+    width: 80px;
+    height: 30px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+h4.user-balance{
+    align:center;
+}
+
+.basket-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: -15px 15px 30.09px 7.91px rgba(0, 0, 0, 0.21);
+    padding: 20px;
+}
+
+.cart, .previous-purchases {
+    margin-bottom: 30px;
+}
+
+table.basket {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th.basket, td.basket {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th.basket {
+    background-color: #f2f2f2;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+ul.basket{
+    list-style-type: none;
+    padding: 0;
+}
+
+li.basket{
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}

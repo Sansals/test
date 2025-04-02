@@ -1,0 +1,10 @@
+{% extends 'patterns/header.html' %}
+{% block title %} {{user.username}} {% endblock %}
+{% load static %}
+{% block addlist %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" >Сохранить</button>
+</form>
+{% endblock %}

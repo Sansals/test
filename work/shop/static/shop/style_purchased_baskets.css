@@ -1,0 +1,21 @@
+div.product {
+    border-radius: 20px;
+    margin-left: 35px;
+    box-shadow: -15px 15px 30.09px 7.91px rgba(0, 0, 0, 0.21);
+    float: left; /*Задаем обтекание*/
+    font-size: 18px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 50px;
+    width: 180px;/* (не) Фиксируем ширину блока*/
+    height: 246px; /* (не) Фиксируем высоту блока*/
+    margin-right: 10px;
+    text-align: center;
+}
+
+img.product_image {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
