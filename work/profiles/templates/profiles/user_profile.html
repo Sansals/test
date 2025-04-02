@@ -26,7 +26,13 @@
         <span><strong><a href="">Пополнить</a></strong></span>
       </div>
       <div class="borderr user_status">
-        <span><strong>Статус пользователя: </strong>Активный</span>
+        <span><strong>Статус пользователя: </strong>
+          {% if user.is_staff %}
+            Администратор
+          {% else %}
+            Активный
+          {% endif %}
+        </span>
       </div>
     </div>
     <div class="flex gap id_and_exit_container">
@@ -38,7 +44,7 @@
       </div>
     </div>
     <div class="borderr add_avatar_container">
-      <span><strong><a href="">Обновить аватар</a></strong></span>
+      <span><strong><a href="{% url 'update_avatar' pk=user_object.pk %}">Обновить аватар</a></strong></span>
     </div>
   </div>
 </div>
