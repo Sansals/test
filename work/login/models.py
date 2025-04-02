@@ -6,6 +6,7 @@ class User_Status(models.Model):
     username = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE)
+    avatar = models.ImageField(upload_to='login/avatars/', default='login/avatars/stive.jpg')
     balance = models.IntegerField(default=0)
     Isverified = models.BooleanField(default=False)
 

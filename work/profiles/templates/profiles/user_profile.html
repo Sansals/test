@@ -1,12 +1,46 @@
 {% extends 'patterns/header.html' %}
-{% block title %} {{User.username}} {% endblock %}
+{% block title %} {{user.username}} {% endblock %}
+{% load static %}
 {% block addlist %}
-    <div class="allert allert-warning">
-        <p>{{user}}</p>
-        <p>Имя пользователя: {{user.username}} ID:{{user.id}}</p>
-        <p>Адрес электронной почты: {{ user.email }}</p>
-        <p>Баланс: {{balance}} </p>
-        <p>Дата регистрации: {{ user.date_joined  }}</p>
-        <p><a href="{% url 'logout' %}">Выйти</a></p>
+    <link rel="stylesheet" href="{% static 'profiles/user_profile.css' %}">
+<div class="profilebody">
+<div class="flex gap profile_container">
+  <div class="borderr avatar_container">
+    <img class="user_avatar" src="{{user_object.avatar.url}}" alt="">
+  </div>
+  <div class="gap content_container">
+    <div class="borderr username_container">
+      <span><strong>{{user.username}}</strong></span>
     </div>
+    <div class="flex gap date_and_email_container">
+      <div class="borderr user_date_register">
+        <span><strong>Дата регистрации: </strong>{{ user.date_joined  }}</span>
+      </div>
+      <div class="borderr user_email">
+        <span><strong>Адрес электронной почты: </strong>{{user.email}}</span>
+      </div>
+    </div>
+    <div class="flex gap balance_and_status_container">
+      <div class="borderr user_balance">
+        <span><strong>Баланс: </strong>{{balance}}</span><br>
+        <span><strong><a href="">Пополнить</a></strong></span>
+      </div>
+      <div class="borderr user_status">
+        <span><strong>Статус пользователя: </strong>Активный</span>
+      </div>
+    </div>
+    <div class="flex gap id_and_exit_container">
+      <div class="borderr user_id">
+        <span><strong>ID: </strong>{{user.id}}</span>
+      </div>
+      <div class="borderr exit">
+        <span><a href="{% url 'logout' %}"><strong>Выход</strong></a></span>
+      </div>
+    </div>
+    <div class="borderr add_avatar_container">
+      <span><strong><a href="">Обновить аватар</a></strong></span>
+    </div>
+  </div>
+</div>
+</div>
 {% endblock %}
