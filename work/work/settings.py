@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 from django.conf.global_settings import STATICFILES_DIRS, EMAIL_BACKEND, EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS, \
     DEFAULT_FROM_EMAIL
@@ -18,6 +19,9 @@ from django.conf.global_settings import STATICFILES_DIRS, EMAIL_BACKEND, EMAIL_H
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 DEFAULT_CHARSET = 'UTF-8'
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGGING = {
     'version': 1,

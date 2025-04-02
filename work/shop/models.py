@@ -12,8 +12,8 @@ class Products(models.Model):
         (BOOK, 'Книга')
     }
 
-    VANILA = 'V'
-    IC2 = 'I'
+    VANILA = 'VANILA'
+    IC2 = 'Industrial craft 2'
     TERMO = 'T'
     MODES = {
         (VANILA, 'Ванила'),
@@ -22,10 +22,11 @@ class Products(models.Model):
     }
 
     slug = models.SlugField(max_length=200, unique=True, blank=True, null=True, verbose_name='URL')
+    img = models.ImageField(upload_to='shop/products/', default=None)
     name = models.CharField('Название', max_length=50)
     price = models.PositiveIntegerField('Цена')
     type = models.CharField('Тип товара', max_length=2, choices=TYPES)
-    mode = models.CharField('Мод', max_length=1, choices= MODES)
+    mode = models.CharField('Мод', max_length=18, choices= MODES)
 
     def __str__(self):
         return self.name

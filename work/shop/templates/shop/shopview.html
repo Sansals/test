@@ -9,10 +9,11 @@
     <div class="features_block">
         {% for el in products %}
             <div class="product">
+                <img class="product_image" src="{{el.img.url}}" alt=""><br>
                 <span>{{el.name}}</span><br>
                 <span>Цена: {{el.price}}</span><br>
                 <span>Мод: {{el.mode}}</span><br>
-                <a href="{% url 'basket_add' el.slug %}" class="btn btn-warning">Добавить товар</a>
+                <a href="{% url 'basket_add' el.slug %}" class="add-product btn btn-warning">Добавить товар</a>
             </div>
         {% endfor %}
     </div>

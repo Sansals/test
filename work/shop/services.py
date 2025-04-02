@@ -31,7 +31,8 @@ def get_all_user_baskets(request):
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
             f' |shop.services| '
-            f'User get all objects from Baskets')
+            f'User get all objects from Baskets'
+        )
         return products
     except Exception:
         logger.error(
@@ -59,7 +60,7 @@ def get_user_balance(request):
 
 def get_all_products(request):
     try:
-        products = Products.objects.order_by('mode')
+        products = Products.objects.order_by('-mode')
         logger.info(
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
