@@ -7,40 +7,7 @@
 {% block home %}
     <link rel="stylesheet" href="{% static 'shop/style_basket.css' %}">
     <link rel="stylesheet" href="{% static 'shop/style_purchased_baskets.css' %}">
-    <div class="div features_block">
-        {% for el in basket %}
-            <div class="basket_item">
-                <p>{{el.product}} в количестве {{el.value}} штук. Стоимость: {{el.value}} * {{el.product.price}} = {{el.products_price}}
-                    <a href="{% url 'basket_remove' el.id %}"><i class="fa fa-trash-o" aria-hidden="true">Удалить</i></a>
-                </p>
-            </div>
-        {% endfor %}
-        <p>Всего товаров: {{basket.total_value}}</p>
-        <p>Общая сумма: {{basket.total_price}}</p>
-        <p>Ваш баланс: {{balance}}</p><br>
-        {% if error %}
-            <p>{{error}}</p>
-        {% endif %}
-        <p><a href="{% url 'payment_basket' %}">Купить!</a></p>
-        <p><strong>Купленные товары:</strong></p>
-        {% if purchased_baskets %}
-            {% for el in purchased_baskets %}
-                <div class="basket_item">
-                    <p>{{el.product}} в количестве {{el.value}} штук. Стоимость: {{el.value}} * {{el.product.price}} = {{el.products_price}}
-                        <a href="{% url 'basket_remove' el.id %}"><i class="fa fa-trash-o" aria-hidden="true">Удалить</i></a>
-                    </p>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>У вас ещё нет купленных товаров</p>
-        {% endif %}
-    </div>
-
-
-
-
-
- <div class="basket-container">
+<div class="basket-container">
         <div class="cart">
             <h2>Товары в корзине</h2>
             <table class="basket">
@@ -54,6 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if basket %}
                     {% for el in basket %}
                     <tr>
                         <td class="basket">{{el.product}}</td>
@@ -63,6 +31,11 @@
                         <td class="basket"> <a class="btn btn-danger delete-basket" href="{% url 'basket_remove' el.id %}">Удалить</a></td>
                     </tr>
                     {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td>Вы пока ничего не добавили в свою корзину...</td>
+                        </tr>
+                    {% endif %}
                 </tbody>
             </table>
             <div class="total">
@@ -74,8 +47,8 @@
 
         <div class="previous-purchases">
             <h2>Ранее купленные товары: </h2>
-            <div>
                 {% if purchased_baskets %}
+            <div class="products-view">
         {% for el in purchased_baskets %}
             <div class="product">
                 <img class="product_image" src="{{el.product.img.url}}" alt=""><br>
@@ -85,11 +58,11 @@
                 <a href="{% url 'basket_remove' el.id %}" class="add-product btn btn-warning">Удалить</a>
             </div>
         {% endfor %}
+                </div>
                 {% else %}
                     <p>У вас нет купленных товаров. Купим что-нибудь?)</p>
                 {% endif %}
-                </div>
         </div>
-    </div>
+ </div>
 
 {%endblock%}

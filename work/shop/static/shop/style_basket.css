@@ -9,9 +9,18 @@ h4.user-balance{
     align:center;
 }
 
+div.products-view {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 15px;
+}
+
 .basket-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: -15px 15px 30.09px 7.91px rgba(0, 0, 0, 0.21);
