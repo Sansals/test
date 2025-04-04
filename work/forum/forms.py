@@ -1,5 +1,17 @@
-from .models import Articles
+from .models import Articles, Public_Chat
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+
+class PublicMessageForm(ModelForm):
+    class Meta:
+        model = Public_Chat
+        fields = ['text']
+
+        widgets = {
+            'text': TextInput(attrs={
+                'class': 'message-input',
+                'placeholder': 'Введите сообщение'
+            })
+        }
 
 class ArticlesForm(ModelForm):
     class Meta:

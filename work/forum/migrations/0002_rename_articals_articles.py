@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('addlist', '0001_initial'),
+        ('forum', '0001_initial'),
     ]
 
     operations = [

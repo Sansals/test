@@ -84,11 +84,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django_rename_app",
     'login',
     'shop',
     'home',
     'about',
-    'addlist',
+    'forum',
     'profiles',
 ]
 

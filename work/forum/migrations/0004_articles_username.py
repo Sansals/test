@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('addlist', '0003_alter_articles_options_alter_articles_date'),
+        ('forum', '0003_alter_articles_options_alter_articles_date'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

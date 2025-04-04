@@ -2,6 +2,25 @@ from django.db import models
 from django.conf import settings
 
 
+class Public_Chat(models.Model):
+    username = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                 on_delete=models.SET_DEFAULT,
+                                 default=None, null=True, blank=True
+                                 )
+    text = models.CharField('Сообщение', max_length=300)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def user_avatar(self):
+        return self.username.avatar
+
+    class Meta:
+        verbose_name = 'Сообщение в общий чат'
+        verbose_name_plural = 'Сообщения в общем чате'
+
+    def __str__(self):
+        return f'{self.username.username} | {self.text} | {self.date}'
+
+
 class Articles(models.Model):
     """Модель новостей"""
     title = models.CharField('Название', max_length=50)

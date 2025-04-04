@@ -16,6 +16,7 @@ class User_Status(models.Model):
     avatar = models.ImageField(upload_to=user_avatar_directory, default='login/avatars/stive.jpg')
     balance = models.IntegerField(default=0)
     Isverified = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return reverse("profile", kwargs={'url_username': self.username})

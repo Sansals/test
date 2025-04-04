@@ -49,6 +49,7 @@ def payment_basket(request):
         request.session['sessiondata'] = data
         return redirect('basket')
 
+@ login_required()
 def basket_add(request, product_slug):
     add_product_by_slug_in_basket_by_user(request, product_slug)
     return redirect(request.META['HTTP_REFERER'])

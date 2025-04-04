@@ -1,5 +1,5 @@
 from .models import Rules
-from addlist.models import Articles
+from forum.models import Articles
 import logging
 import datetime
 

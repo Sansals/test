@@ -1,0 +1,112 @@
+{% extends 'patterns/header.html' %}
+{% load static %}
+{% block addlist %}
+<link rel="stylesheet" href="{% static 'forum/forum-style.css' %}">
+    <div class="forum-content">
+        <div class="left-panel">
+            <div class="chat">
+                <div class="chat-header">
+                    <h2>Чат</h2>
+                </div>
+                <div class="chat-content">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ message_input.text }}
+                        <button type="submit" class="send-message">Отправить</button>
+                    </form>
+                    {% if all_messages %}
+                    {% for el in all_messages %}
+                    <div class="message">
+                        <img src="{{el.username.avatar.url}}" alt="">
+                        {% if el.username.is_staff %}
+                            <span><strong style="color:red">{{el.username.username}}: </strong>{{el.text}}</span>
+                        {% else %}
+                            <span><strong>{{el.username.username}}: </strong>{{el.text}}</span>
+                        {% endif %}
+                        <div ><span>{{el.date}}</span></div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <span>Сообщений пока нет...</span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="techsupport">
+                <div class="techsupport-header">
+                    <h2 class="heading">Поддержка</h2>
+                </div>
+                <div class="techsupport-content">
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Проблемы с клиентом игры</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Проблемы с сайтом</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Проблемы с оплатой</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Получить ответ на вопрос</a></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="rules-questions">
+                <div class="rules-questions-header">
+                    <h2 class="heading">Вопросы по правилам проекта</h2>
+                </div>
+                <div class="rules-questions-content">
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Сообщить о нарушении правил</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Обжаловать наказание</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Сообщить о нарушении правил со стороны Администрации</a></h4>
+                    </div>
+                    <div class="subject-block">
+                        <h4 class="category-text"><a href="">Получить ответ на вопрос</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="users-balance-top">
+                <div class="users-balance-top-header">
+                    <span><strong>Cамые состоятельные игроки:</strong></span>
+                </div>
+                <div class="users-balance-list parent">
+                    {% for el in rich_users_top %}
+                    <div class="user-balance">
+                        {% if forloop.counter == 1 %}
+                            <div class="user-top-avatar"><img style="border-color:#D0C900" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                        {% elif forloop.counter == 2%}
+                            <div class="user-top-avatar"><img style="border-color:#D5D5D5" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                        {% elif forloop.counter == 3 %}
+                            <div class="user-top-avatar"><img style="border-color:#BFAC00" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                        {% endif %}
+                        <div class="user-top-info"> <span><strong>{{forloop.counter}}: </strong>{{el.username.username}}</span><br>
+                        <span>Состояние: {{el.balance}} монет</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="moderators-block">
+                <div class="moderators-block-header">
+                    <span><strong>Наша администрация:</strong></span>
+                </div>
+                <div class="moderators-list parent">
+                    {% for el in stuff_users %}
+                        <div class="user-balance">
+                            <div class="moderators user-top-avatar"><img style="border-color:red" class="user-top-img" src="{{el.avatar.url}}"></div>
+                            <div class="user-top-info admin-info"><span>{{el.username.username}}</span><br>
+                                <span>Администратор</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
