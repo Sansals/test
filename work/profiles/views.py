@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 from .services import *
 from work.global_services import *
-from shop.services import get_user_balance
+from shop.services import get_user_balance, basket_value
 
 logger = logging.getLogger(__name__)
 
@@ -20,5 +20,6 @@ def user_profile_view(request, url_username):
         'status': get_user_verify_is(request),
         'balance': get_user_balance(request),
         'user_object': get_object_from_user_status(request),
+        'basket_value': basket_value(request),
     }
     return render(request, 'profiles/user_profile.html', data)

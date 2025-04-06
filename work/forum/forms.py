@@ -8,7 +8,8 @@ class PublicMessageForm(ModelForm):
 
         widgets = {
             'text': TextInput(attrs={
-                'class': 'message-input',
+                'class': 'text-center w-full text-black text-xl border-2 rounded-lg border-indigo-900 '
+                         'hover:border-black ',
                 'placeholder': 'Введите сообщение'
             })
         }

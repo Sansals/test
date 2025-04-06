@@ -1,9 +1,10 @@
 from django.db import models
 from django.conf import settings
+from login.models import User_Status
 
 
 class Public_Chat(models.Model):
-    username = models.ForeignKey(settings.AUTH_USER_MODEL,
+    username = models.ForeignKey(User_Status,
                                  on_delete=models.SET_DEFAULT,
                                  default=None, null=True, blank=True
                                  )

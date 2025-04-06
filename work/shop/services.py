@@ -127,3 +127,7 @@ def _filter_baskets_by_user_and_product(request, product_slug):
 
 def _create_new_basket(request, product_slug):
     Baskets.objects.create(user=get_user(request), product=_get_product_by_slug(request, product_slug), value=1)
+
+def basket_value(request):
+    baskets = get_all_user_baskets(request)
+    return baskets.total_value

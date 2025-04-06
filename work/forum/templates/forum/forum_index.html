@@ -2,75 +2,93 @@
 {% load static %}
 {% block addlist %}
 <link rel="stylesheet" href="{% static 'forum/forum-style.css' %}">
-    <div class="forum-content">
-        <div class="left-panel">
-            <div class="chat">
-                <div class="chat-header">
-                    <h2>Чат</h2>
+    <div class="forum-content flex p-5 space-x-5">
+        <div class="w-1/12" ></div>
+        <div class="left-panel flex-col space-y-5 w-8/12 ">
+            <div class="public-chat ">
+                <div class="chat-header rounded-t-lg flex bg-indigo-950 h-10 items-center">
+                    <span class="text-gray-100 font-semibold text-2xl m-auto">Общий чат</span>
                 </div>
-                <div class="chat-content">
-                    <form method="POST">
+                <div class="chat-content overflow-y-auto h-80 flex-col justify-between bg-gray-300 py-2">
+                    <form class="flex-col justify-between px-2" method="POST">
                         {% csrf_token %}
                         {{ message_input.text }}
-                        <button type="submit" class="send-message">Отправить</button>
+                        <button type="submit" class="w-full my-2 border-2 rounded-lg border-gray-600 bg-gray-200 text-black
+                        hover:text-gray-200 hover:bg-indigo-950 hover:border-indigo-200">Отправить</button>
                     </form>
-                    {% if all_messages %}
-                    {% for el in all_messages %}
-                    <div class="message">
-                        <img src="{{el.username.avatar.url}}" alt="">
-                        {% if el.username.is_staff %}
-                            <span><strong style="color:red">{{el.username.username}}: </strong>{{el.text}}</span>
+                    <ul>
+                        {% if all_messages %}
+                        {% for el in all_messages %}
+                        <li class="px-1 py-2 border-y border-white hover:border-black">
+                            <a class="flex items-center text-gray-600" href="">
+                                <img class="inline-block w-8 h-8 mr-3 rounded-full" src="{{el.username.avatar.url}}" alt="">
+                                {% if el.username.username.is_superuser %}
+                                    <span class="font-bold text-red-600">{{el.username.username}}:  </span>{{el.text}}
+                                {% elif el.username.username.is_staff %}
+                                    <span class="font-bold text-green-700">{{el.username.username}}:  </span>{{el.text}}
+                                {% else %}
+                                    {{el.username.username}}: {{el.text}}
+                                {% endif %}
+                                <span class="text-gray-500 ml-auto">
+                                    {{el.date}}
+                                </span>
+                            </a>
+                        </li>
+                        {% endfor %}
                         {% else %}
-                            <span><strong>{{el.username.username}}: </strong>{{el.text}}</span>
+                            <h2 class="justify-center" >Сообщений пока нет...</h2>
                         {% endif %}
-                        <div ><span>{{el.date}}</span></div>
-                    </div>
-                    {% endfor %}
-                    {% else %}
-                    <span>Сообщений пока нет...</span>
-                    {% endif %}
+                    </ul>
                 </div>
             </div>
-            <div class="techsupport">
-                <div class="techsupport-header">
-                    <h2 class="heading">Поддержка</h2>
+            <div class="techsupport border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+                <div class="techsupport-header flex bg-indigo-950 h-10 items-center">
+                    <h2 class="text-gray-100 font-semibold text-2xl m-auto">Поддержка</h2>
                 </div>
-                <div class="techsupport-content">
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Проблемы с клиентом игры</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Проблемы с сайтом</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Проблемы с оплатой</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Получить ответ на вопрос</a></h4>
-                    </div>
+                <div class="techsupport-content flex-col">
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Проблемы с клиентом игры</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Проблемы с сайтом</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Проблемы с оплатой</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Получить ответ на вопрос</span>
+                    </a>
                 </div>
             </div>
-            <div class="rules-questions">
-                <div class="rules-questions-header">
-                    <h2 class="heading">Вопросы по правилам проекта</h2>
+            <div class="rules-questions border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+                <div class="rules-questions-header flex bg-indigo-950 h-10 items-center">
+                    <h2 class="text-gray-100 font-semibold text-2xl m-auto">Вопросы по правилам проекта</h2>
                 </div>
                 <div class="rules-questions-content">
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Сообщить о нарушении правил игроком</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Обжаловать наказание</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Сообщить о нарушении правил со стороны Администрации</a></h4>
-                    </div>
-                    <div class="subject-block">
-                        <h4 class="category-text"><a href="">Сообщить о нарушении правил кланом/группой игроков</a></h4>
-                    </div>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Сообщить о нарушении правил игроком</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Обжаловать наказание</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Сообщить о нарушении правил со стороны Администрации</span>
+                    </a>
+                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                                hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
+                        <span>Сообщить о нарушении правил кланом/группой игроков</span>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="right-panel">
+        <div class="right-panel flex-col w-3/12">
             <div class="users-balance-top">
                 <div class="users-balance-top-header">
                     <span><strong>Cамые состоятельные игроки:</strong></span>

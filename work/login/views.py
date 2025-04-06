@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 
 from work.global_services import get_username, get_user_email, get_user, get_user_verify_is
+from shop.services import basket_value
 from .services import save_verify_code, email_verification_form, get_session_data, set_user_verify_true, \
     registration_user_save
 
@@ -32,7 +33,8 @@ def email_verification_view(request):
         'form': form,
         'error': error,
         'username': get_username(request),
-        'email': get_user_email(request)
+        'email': get_user_email(request),
+        'basket_value': basket_value(request),
     }
     return render(request, 'auth/vermail.html', data)
 
@@ -65,7 +67,7 @@ def auth_view(request):
 
     data = {
         'authform': user,
-        'error': error
+        'error': error,
     }
     return render(request, 'auth/auth.html', data)
 

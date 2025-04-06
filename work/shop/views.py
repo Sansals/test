@@ -8,7 +8,7 @@ from .models import *
 from login.services import get_session_data
 from work.global_services import get_username, get_user_verify_is, get_user
 from .services import get_all_user_baskets, get_user_balance, get_all_products, add_product_by_slug_in_basket_by_user, \
-    get_purchased_baskets, comparison_total_price_with_balance_is, update_baskets_model, update_user_balance
+    get_purchased_baskets, comparison_total_price_with_balance_is, update_baskets_model, update_user_balance, basket_value
 
 import logging
 import datetime
@@ -25,6 +25,7 @@ def basket_view(request):
         'balance': get_user_balance(request),
         'purchased_baskets': get_purchased_baskets(request),
         'error': get_session_data(request, name='error'),
+        'basket_value': basket_value(request),
     }
     return render(request, 'shop/Basket.html', data)
 
@@ -33,6 +34,7 @@ def shop_view(request):
         'username':get_username(request),
         'status':get_user_verify_is(request),
         'products': get_all_products(request),
+        'basket_value': basket_value(request),
     }
     return render(request, 'shop/shopview.html', data)
 

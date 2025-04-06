@@ -1,4 +1,5 @@
 from .models import Articles, Public_Chat
+from login.models import User_Status
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView
 from django.contrib.auth.decorators import login_required
@@ -23,8 +24,9 @@ def save_message(request):
         form = PublicMessageForm(request.POST)
         if form.is_valid():
             response = form.save(commit=False)
-            response.username = get_user(request)
+            response.username = User_Status.objects.get(username=request.user.id)
             response.save()
+            form = PublicMessageForm()
     return form
 
 def get_rich_users():

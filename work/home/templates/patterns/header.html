@@ -3,11 +3,12 @@
 
 
 {% block header %}
-<header class="flex items-center justify-between sticky top-5 mb-5 h-17 mx-10 rounded-t-md rounded-b-lg border-gray-300 bg-indigo-950">
-  <a class="uppercase font-bold text-lg text-purple-400 mx-10" href="">GrinCraft</a>
+<header class="flex items-center justify-between sticky top-0 px-10 mb-5 h-17 mx-5 rounded-t-md rounded-b-lg border-gray-300 bg-indigo-950">
+  <a class="uppercase font-bold text-lg text-purple-400 " href="">GrinCraft</a>
   <nav class="flex items-center">
     <ul class="text-lg text-gray-300 font-semibold inline-flex items-center mr-30">
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'home' %}">Главная</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'home' %}">Новости</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'rules' %}">Правила</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'about' %}">О нас</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'forum' %}">Форум</a></li>
@@ -26,7 +27,17 @@
           <a href="{% url 'profile' user.username %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800"> Профиль </a>
         </li>
         <li>
-          <a href="{% url 'basket' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800"> Корзина </a>
+          <button class="block mx-2 h-10 py-1 px-3 border-2 rounded-full overflow-visible relative
+          border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800">
+            <a href="{% url 'basket' %}">
+            Корзина
+              {% if basket_value %}
+                <a href="" class="block absolute h-6 w-6 bg-orange-400 -top-2 -right-2 rounded-full text-white">
+                  {{basket_value}}
+                </a>
+              {% endif %}
+            </a>
+          </button>
         </li>
       {% endif %}
     </ul>

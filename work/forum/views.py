@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import ArticlesForm
 from work.global_services import get_user
 
+from shop.services import basket_value
 from .services import *
 from work.global_services import get_username, get_user_verify_is
 from login.services import save_verify_code
@@ -20,5 +21,6 @@ def forum_view(request):
         'message_input': save_message(request),
         'all_messages': get_public_messages,
         'stuff_users': get_stuff_users,
+        'basket_value': basket_value(request)
     }
     return render(request, 'forum/forum_index.html', data)
