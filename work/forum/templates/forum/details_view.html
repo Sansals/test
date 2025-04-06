@@ -1,7 +1,9 @@
 {% extends 'patterns/header.html' %}
 {% block title %} {{article.title}} {% endblock %}
 {% block addlist %}
-
+     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <div class="allert allert-warning">
         <h1>{{ article.title }}</h1>
         <h4>{{ article.date }}</h4>

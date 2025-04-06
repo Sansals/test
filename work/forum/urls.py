@@ -4,6 +4,6 @@ from django.urls import path
 from .import views
 
 urlpatterns = [
-    path('create/', views.forum_view, name="createnews"),
+    path('create/', views.forum_view, name="forum"),
     path('<int:pk>/', views.ArticlesDatailView.as_view(), name='news-detail')
 ]

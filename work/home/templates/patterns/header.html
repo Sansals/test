@@ -3,32 +3,33 @@
 
 
 {% block header %}
-<header>
-    <div class="container">
-        <h1 class="logo">
-            {% if user.is_authenticated %}
-                {{user.username}}
-                {% if status == True %}
-                    <i class="fa-solid fa-user-check" alt="Подтверждённый пользователь"></i>
-                {% endif %}
-            {% endif %}
-
-        </h1>
-        <nav>
-            <ul class="menu">
-                <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Главная</a></li>
-                <li><a href="{% url 'rules' %}"><i class="fa-solid fa-scale-balanced"></i> Правила </a></li>
-                <li><a href="{% url 'about' %}"><i class="fa-solid fa-address-card"></i> О нас</a></li>
-                <li class="dropbtn"><a href="{% url 'createnews' %}"><i class="fa-solid fa-server"></i>  Форум</a></li>
-                <li><a href="{% url 'shop' %}"><i class="fa-solid fa-circle-dollar-to-slot"></i> Магазин</a></li>
-            </ul>
-        </nav>
-        {% if not user.is_authenticated %}
-            <a href="{% url 'auth' %}" class="register-button"><i class="fa-solid fa-id-card"></i> Регистрация/вход </a>
-        {% else %}
-            <a href="{% url 'profile' user.username %}" class="register-button"><i class="fa-solid fa-id-card"></i> Профиль </a>
-            <a href="{% url 'basket' %}" class="register-button"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Корзина </a>
-        {% endif %}
-    </div>
+<header class="flex items-center justify-between sticky top-5 mb-5 h-17 mx-10 rounded-t-md rounded-b-lg border-gray-300 bg-indigo-950">
+  <a class="uppercase font-bold text-lg text-purple-400 mx-10" href="">GrinCraft</a>
+  <nav class="flex items-center">
+    <ul class="text-lg text-gray-300 font-semibold inline-flex items-center mr-30">
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'home' %}">Главная</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'rules' %}">Правила</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'about' %}">О нас</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'forum' %}">Форум</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'shop' %}">Магазин</a></li>
+    </ul>
+    <ul class="mx-1 inline-flex items-center">
+      {% if not user.is_authenticated %}
+        <li>
+          <a href="{% url 'auth' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800">Авторизоваться</a>
+        </li>
+      <li>
+        <a href="{% url 'reg' %}" class="block h-10 mx-2 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800">Зарегистрироваться</a>
+      </li>
+      {% else %}
+        <li>
+          <a href="{% url 'profile' user.username %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800"> Профиль </a>
+        </li>
+        <li>
+          <a href="{% url 'basket' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-indigo-600 text-indigo-600 hover:text-white hover:bg-purple-800"> Корзина </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
 </header>
 {% endblock %}

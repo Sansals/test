@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.utils import timezone
 
 from django.conf.global_settings import STATICFILES_DIRS, EMAIL_BACKEND, EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS, \
     DEFAULT_FROM_EMAIL
