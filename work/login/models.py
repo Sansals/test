@@ -17,6 +17,7 @@ class User_Status(models.Model):
     balance = models.IntegerField(default=0)
     Isverified = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+    is_moderator = models.BooleanField(default=False)
 
     def get_absolute_url(self):
         return reverse("profile", kwargs={'url_username': self.username})

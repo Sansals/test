@@ -7,6 +7,18 @@ from django.views.generic.edit import UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from login.models import User_Status
 from work.global_services import *
+from login.services import save_verify_code
+
+def verification_email():
+    save_verify_code(request)
+    redirect('vrmail')
+
+def get_user_profile_object(username):
+    return User.objects.get(username=username)
+
+def get_user_status_profile_object(username):
+    user = User.objects.get(username=username)
+    return User_Status.objects.get(username=user)
 
 def get_object_from_user_status(request):
     user_object = User_Status.objects.get(username = get_user(request))

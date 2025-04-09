@@ -13,13 +13,16 @@ def all_profiles_view(request):
 @login_required()
 def user_profile_view(request, url_username):
     if get_username(request) == url_username:
-        pass
+        data = {
+            'user_status_object': get_object_from_user_status(request),
+            'user_object':get_user(request),
+            'basket_value': basket_value(request),
+        }
     else:
-        return redirect(f'/profiles/{get_username(request)}/')
-    data = {
-        'status': get_user_verify_is(request),
-        'balance': get_user_balance(request),
-        'user_object': get_object_from_user_status(request),
-        'basket_value': basket_value(request),
-    }
+        data = {
+            'user_status_object': get_user_status_profile_object(url_username),
+            'user_object':get_user_profile_object(url_username),
+            'basket_value': basket_value(request),
+        }
+
     return render(request, 'profiles/user_profile.html', data)

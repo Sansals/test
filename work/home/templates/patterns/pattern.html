@@ -16,12 +16,13 @@
     <script src="https://kit.fontawesome.com/757aeefd3e.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>{% block title %}        {% endblock %}</title>
-    {% block header %}      {% endblock %}
-    {% block addlist %}     {% endblock %}
 </head>
-<body>
-    {% block home %}
-
-    {% endblock %}
+<body class="">
+<div class="bg-gradient-to-br min-h-181 bg-auto from-green-950 via-black to-green-900">
+    {% block header %}      {% endblock %}
+    {% block techsupport_header %}      {%endblock%}
+    {% block addlist %}     {% endblock %}
+    {% block home %}    {% endblock %}
+</div>
 </body>
 </html>

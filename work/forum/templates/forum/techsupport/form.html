@@ -1,0 +1,11 @@
+{% extends 'forum/techsupport/techsupport_header.html' %}
+
+{% block form %}
+<div class="mx-5 bg-neutral-600 border-3 p-10 border-indigo-950">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" >Отправить! </button>
+    </form>
+</div>
+{% endblock %}

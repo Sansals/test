@@ -6,28 +6,37 @@
 <div class="profilebody">
 <div class="flex gap profile_container">
   <div class="borderr avatar_container">
-    <img class="user_avatar" src="{{user_object.avatar.url}}" alt="">
+    <img class="user_avatar" src="{{user_status_object.avatar.url}}" alt="">
   </div>
   <div class="gap content_container">
     <div class="borderr username_container">
-      <span><strong>{{user.username}}</strong></span>
+      <span><strong>{{user_object.username}}</strong></span>
     </div>
     <div class="flex gap date_and_email_container">
       <div class="borderr user_date_register">
-        <span><strong>Дата регистрации: </strong>{{ user.date_joined  }}</span>
+        <span><strong>Дата регистрации: </strong>{{ user_object.date_joined  }}</span>
       </div>
-      <div class="borderr user_email">
-        <span><strong>Адрес электронной почты: </strong>{{user.email}}</span>
+      <div class="borderr user_email flex-col">
+      {% if user.username == user_object.username %}
+        {% if user_status_object.Isverified == True %}
+          <span><strong>Адрес электронной почты: </strong>{{user_object.email}}</span>
+        {% else %}
+          <span class="text-rose-600"><strong>Адрес электронной почты: </strong> {{user_object.email}}</span>
+          <a href="{% url 'verification_email' %}">Подтвердить</a>
+        {% endif %}
+      {% else %}
+        <span><strong>Адрес электронной почты: </strong> Скрыт </span>
+      {% endif %}
       </div>
     </div>
     <div class="flex gap balance_and_status_container">
       <div class="borderr user_balance">
-        <span><strong>Баланс: </strong>{{balance}}</span><br>
+        <span><strong>Баланс: </strong>{{user_status_object.balance}}</span><br>
         <span><strong><a href="">Пополнить</a></strong></span>
       </div>
       <div class="borderr user_status">
         <span><strong>Статус пользователя: </strong>
-          {% if user.is_staff %}
+          {% if user_object.is_staff %}
             Администратор
           {% else %}
             Активный
@@ -37,14 +46,14 @@
     </div>
     <div class="flex gap id_and_exit_container">
       <div class="borderr user_id">
-        <span><strong>ID: </strong>{{user.id}}</span>
+        <span><strong>ID: </strong>{{user_object.id}}</span>
       </div>
       <div class="borderr exit">
         <span><a href="{% url 'logout' %}"><strong>Выход</strong></a></span>
       </div>
     </div>
     <div class="borderr add_avatar_container">
-      <span><strong><a href="{% url 'update_avatar' pk=user_object.pk %}">Обновить аватар</a></strong></span>
+      <span><strong><a href="{% url 'update_avatar' pk=user_status_object.pk %}">Обновить аватар</a></strong></span>
     </div>
   </div>
 </div>

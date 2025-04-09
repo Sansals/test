@@ -1,7 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from .forms import ArticlesForm
+from .forms import ArticlesForm, ForumTechSupportForm
 from work.global_services import get_user
+
+from .models import Public_Chat
 
 from shop.services import basket_value
 from .services import *
@@ -11,6 +13,16 @@ import logging
 import datetime
 
 logger = logging.getLogger(__name__)
+
+@login_required()
+def techsupport_form_view(request):
+    form = ForumTechSupportForm(request.POST)
+    if form.is_valid():
+        response = form.save(commit=False)
+        response.user = request.user
+        response.save()
+        form = ForumTechSupportForm()
+    return render(request, 'forum/techsupport/form.html', {'form':form })
 
 @login_required()
 def forum_view(request):

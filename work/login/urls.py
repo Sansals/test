@@ -6,5 +6,6 @@ urlpatterns = [
     path('login/', views.auth_view, name="auth"),
     path('registration/', views.registration_view, name='reg'),
     path('logout/', services.logout_user ,name='logout' ),
-    path('registration/vrmail', views.email_verification_view, name='vrmail')
+    path('registration/vrmail', views.email_verification_view, name='vrmail'),
+    path('registration/vrmail1', services.verification_email, name='verification_email')
 ]

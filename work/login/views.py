@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from work.global_services import get_username, get_user_email, get_user, get_user_verify_is
 from shop.services import basket_value
-from .services import save_verify_code, email_verification_form, get_session_data, set_user_verify_true, \
+from .services import save_verify_code, verification_email, email_verification_form, get_session_data, set_user_verify_true, \
     registration_user_save
 
 from .forms import AuthForm, UserRegistrationForm, VrMail
@@ -56,8 +56,7 @@ def auth_view(request):
                 if get_user_verify_is(request) == True:
                     return redirect('home')
                 else:
-                    save_verify_code(request)
-                    return redirect('vrmail')
+                    return redirect('verification_email')
             else:
                 error = 'Пользователя не существует'
         else:

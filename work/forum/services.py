@@ -12,7 +12,9 @@ from django.contrib.auth.models import User
 from work.global_services import get_user
 
 def get_stuff_users():
-    return User_Status.objects.filter(is_staff=True)
+    admins = User_Status.objects.filter(is_staff=True)
+    moderators = User_Status.objects.filter(is_moderator=True)
+    return {'admins':admins, 'moderators':moderators }
 
 def get_public_messages():
     return Public_Chat.objects.order_by('-date')

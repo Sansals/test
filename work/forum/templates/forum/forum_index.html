@@ -5,11 +5,11 @@
     <div class="forum-content flex p-5 space-x-5">
         <div class="w-1/12" ></div>
         <div class="left-panel flex-col space-y-5 w-8/12 ">
-            <div class="public-chat ">
-                <div class="chat-header rounded-t-lg flex bg-indigo-950 h-10 items-center">
+            <div class="public-chat">
+                <div class="chat-header top-0 left-0 right-0 bg-indigo-950 rounded-t-lg h-10 text-center">
                     <span class="text-gray-100 font-semibold text-2xl m-auto">Общий чат</span>
                 </div>
-                <div class="chat-content overflow-y-auto h-80 flex-col justify-between bg-gray-300 py-2">
+                <div class="chat-content z-0 relative overflow-y-auto h-80 bg-gray-300 py-2">
                     <form class="flex-col justify-between px-2" method="POST">
                         {% csrf_token %}
                         {{ message_input.text }}
@@ -20,7 +20,7 @@
                         {% if all_messages %}
                         {% for el in all_messages %}
                         <li class="px-1 py-2 border-y border-white hover:border-black">
-                            <a class="flex items-center text-gray-600" href="">
+                            <a class="flex items-center text-gray-600" href="{% url 'profile' el.username %}">
                                 <img class="inline-block w-8 h-8 mr-3 rounded-full" src="{{el.username.avatar.url}}" alt="">
                                 {% if el.username.username.is_superuser %}
                                     <span class="font-bold text-red-600">{{el.username.username}}:  </span>{{el.text}}
@@ -46,7 +46,7 @@
                     <h2 class="text-gray-100 font-semibold text-2xl m-auto">Поддержка</h2>
                 </div>
                 <div class="techsupport-content flex-col">
-                    <a href="#" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
+                    <a href="{% url 'techsupport_form' %}" class="subject-block border-y-1 border-gray-300 px-2 flex items-center h-15 bg-gray-100 text-xl
                                 hover:bg-gray-200 hover:border-gray-500 hover:border-y-2">
                         <span>Проблемы с клиентом игры</span>
                     </a>
@@ -88,38 +88,46 @@
                 </div>
             </div>
         </div>
-        <div class="right-panel flex-col w-3/12">
-            <div class="users-balance-top">
-                <div class="users-balance-top-header">
-                    <span><strong>Cамые состоятельные игроки:</strong></span>
+        <div class="right-panel flex-col space-y-5 w-3/12">
+            <div class="border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+                <div class="flex bg-indigo-950 h-10 items-center">
+                    <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Cамые состоятельные игроки: </span>
                 </div>
-                <div class="users-balance-list parent">
+                <div class="bg-gray-300 divide-y-1 divide-gray-600">
                     {% for el in rich_users_top %}
-                    <div class="user-balance">
+                    <div class="flex flex-row items-center px-3 py-1">
                         {% if forloop.counter == 1 %}
-                            <div class="user-top-avatar"><img style="border-color:#D0C900" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                            <div class=""><img class="inline-block w-11 h-11 mr-3 rounded-full border-3 border-yellow-300" src="{{el.avatar.url}}" alt=""></div>
                         {% elif forloop.counter == 2%}
-                            <div class="user-top-avatar"><img style="border-color:#D5D5D5" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                            <div class=""><img class="inline-block w-11 h-11 mr-3 rounded-full border-3 border-zinc-400" src="{{el.avatar.url}}" alt=""></div>
                         {% elif forloop.counter == 3 %}
-                            <div class="user-top-avatar"><img style="border-color:#BFAC00" class="user-top-img" src="{{el.avatar.url}}" alt=""></div>
+                            <div class=""><img class="inline-block w-11 h-11 mr-3 rounded-full border-3 border-amber-600" src="{{el.avatar.url}}" alt=""></div>
                         {% endif %}
-                        <div class="user-top-info"> <span><strong>{{forloop.counter}}: </strong>{{el.username.username}}</span><br>
-                        <span>Состояние: {{el.balance}} монет</span>
+                        <div class=""> <span><span class="italic text-black font-semibold">{{forloop.counter}}</span> :{{el.username.username}}</span><br>
+                            <span>Состояние: <span class="italic font-medium text-amber-600">{{el.balance}}</span> монет</span>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="moderators-block">
-                <div class="moderators-block-header">
-                    <span><strong>Наша администрация:</strong></span>
+            <div class="border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+                <div class="flex bg-indigo-950 h-10 items-center">
+                    <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Наша администрация:</span>
                 </div>
-                <div class="moderators-list parent">
-                    {% for el in stuff_users %}
-                        <div class="user-balance">
-                            <div class="moderators user-top-avatar"><img style="border-color:red" class="user-top-img" src="{{el.avatar.url}}"></div>
-                            <div class="user-top-info admin-info"><span>{{el.username.username}}</span><br>
-                                <span>Администратор</span>
+                <div class="bg-gray-300 divide-y-1 divide-gray-600">
+                    {% for el in stuff_users.admins %}
+                        <div class="flex flex-row items-center px-3 py-1">
+                            <img class="inline-block w-11 h-11 mr-3 rounded-full border-2 border-red-700" src="{{el.avatar.url}}">
+                            <div class="user-top-info admin-info"><span class="text-red-700 font-bold">{{el.username.username}}</span><br>
+                                <span class="italic font-medium">Администратор</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% for el in stuff_users.moderators %}
+                        <div class="flex flex-row items-center px-3 py-1">
+                            <img class="inline-block w-11 h-11 mr-3 rounded-full border-2 border-green-700" src="{{el.avatar.url}}">
+                            <div class="user-top-info admin-info"><span class="text-green-700 font-bold">{{el.username.username}}</span><br>
+                                <span class="italic font-medium">Модератор</span>
                             </div>
                         </div>
                     {% endfor %}

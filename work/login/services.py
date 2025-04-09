@@ -91,6 +91,10 @@ def save_verify_code(request):
     }
     request.session['sessiondata'] = data
 
+def verification_email(request):
+    save_verify_code(request)
+    return redirect('vrmail')
+
 def _create_status_object_for_registration_user(request):
     u = User.objects.get(username=request.user.username)
     User_Status.objects.create(username=u)

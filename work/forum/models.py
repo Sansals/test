@@ -5,7 +5,7 @@ from login.models import User_Status
 
 class Public_Chat(models.Model):
     username = models.ForeignKey(User_Status,
-                                 on_delete=models.SET_DEFAULT,
+                                 on_delete=models.CASCADE,
                                  default=None, null=True, blank=True
                                  )
     text = models.CharField('Сообщение', max_length=300)
@@ -41,21 +41,46 @@ class Articles(models.Model):
         verbose_name_plural = 'Новости'
 
 
-class ForumQuestions(models.Model):
+class ForumTechQuestions(models.Model):
     PROBLEMS_WITH_GAME_CLIENT = 'Проблемы с клиентом игры'
     PROBLEMS_WITH_SITE = 'Проблемы с сайтом'
     PROBLEMS_WITH_PAYMENT = 'Проблемы с оплатой'
     GET_ANSWER_THE_QUESTION = 'Получить ответ на вопрос'
-    COMPLAINT_ABOUT_THE_USER = 'Сообщить о нарушении правил игроком'
-    APPEAL_THE_PUNISHMENT = 'Обжаловать наказание'
-    COMPLAINT_ABOUT_THE_ADMIN = 'Сообщить о нарушении правил со стороны Администрации'
-    COMPLAINT_ABOUT_THE_CLAN = 'Сообщить о нарушении правил кланом/группой игроков'
 
     SUBJECT = {
         (PROBLEMS_WITH_GAME_CLIENT, 'Проблемы с клиентом игры'),
         (PROBLEMS_WITH_SITE, 'Проблемы с сайтом'),
         (PROBLEMS_WITH_PAYMENT, 'Проблемы с оплатой'),
         (GET_ANSWER_THE_QUESTION, 'Получить ответ на вопрос'),
+    }
+    subject = models.CharField('Раздел форума', max_length=52, choices= SUBJECT)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                                 on_delete=models.CASCADE,
+                                default=None,
+                                related_name='questioner',
+                                verbose_name = 'Создатель тикета'
+                                 )
+    question = models.TextField('Вопрос', max_length= 600 )
+    proofs = models.CharField('Скриншот проблемы', max_length= 600, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+    is_resolved = models.BooleanField(default=False)
+
+
+    class Meta:
+        verbose_name = 'Вопрос на форумe'
+        verbose_name_plural = 'Вопросы с форума'
+
+    def __str__(self):
+        return f'{self.subject} | {self.user.username} | {self.question}'
+
+
+class ForumComplaints(models.Model):
+    COMPLAINT_ABOUT_THE_USER = 'Сообщить о нарушении правил игроком'
+    APPEAL_THE_PUNISHMENT = 'Обжаловать наказание'
+    COMPLAINT_ABOUT_THE_ADMIN = 'Сообщить о нарушении правил со стороны Администрации'
+    COMPLAINT_ABOUT_THE_CLAN = 'Сообщить о нарушении правил кланом/группой игроков'
+
+    SUBJECT = {
         (COMPLAINT_ABOUT_THE_USER, 'Сообщить о нарушении правил игроком'),
         (APPEAL_THE_PUNISHMENT, 'Обжаловать наказание'),
         (COMPLAINT_ABOUT_THE_ADMIN, 'Сообщить о нарушении правил со стороны Администрации'),
@@ -70,35 +95,49 @@ class ForumQuestions(models.Model):
                                 verbose_name = 'Заявитель'
                                  )
     defendant = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                 on_delete=models.CASCADE,
-                                default=None,
-                                related_name = 'defendant',
-                                verbose_name = 'Ответчик'
-                                 )
+                                  on_delete=models.CASCADE,
+                                  default=None,
+                                  related_name='defendant',
+                                  verbose_name='Нарушитель'
+                                  )
     question = models.TextField('Заявление', max_length= 600 )
     proofs = models.CharField('Доказательства', max_length= 600)
     date = models.DateTimeField(auto_now_add=True)
-    is_anonymous = models.BooleanField(default=False)
     is_resolved = models.BooleanField(default=False)
+    is_anonymous = models.BooleanField(default=False)
 
 
     class Meta:
-        verbose_name = 'Вопрос на форумe'
-        verbose_name_plural = 'Вопросы с форума'
+        verbose_name = 'Жалобу на форумe'
+        verbose_name_plural = 'Жалобы с форума'
 
     def __str__(self):
         return f'{self.subject} | {self.user.username} | {self.defendant.username} | {self.question}'
 
 
-class ForumAnswer(models.Model):
+class ForumTechAnswer(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE,
                              default=None,
-                             related_name='user',
+                             related_name='responsible_tech_user',
                              verbose_name='Отвечающий'
                              )
-    question = models.ForeignKey(ForumQuestions,
-                                verbose_name = 'Обращение',
+    question = models.ForeignKey(ForumTechQuestions,
+                                verbose_name = 'Вопрос',
+                               on_delete=models.CASCADE,
+                                 )
+    answer = models.TextField('Ответ', max_length= 600 )
+    is_anonymous = models.BooleanField(default=False)
+
+class ForumComplaintAnswer(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE,
+                             default=None,
+                             related_name='responsible_complaint_user',
+                             verbose_name='Отвечающий'
+                             )
+    question = models.ForeignKey(ForumComplaints,
+                                verbose_name = 'Жалоба',
                                on_delete=models.CASCADE,
                                  )
     answer = models.TextField('Ответ', max_length= 600 )

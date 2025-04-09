@@ -1,5 +1,13 @@
-from .models import Articles, Public_Chat
+from .models import Articles, Public_Chat, ForumTechQuestions
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
+
+class ForumTechSupportForm(ModelForm):
+    class Meta:
+        model = ForumTechQuestions
+        fields = ['subject', 'question', 'proofs', 'is_resolved']
+
+
+
 
 class PublicMessageForm(ModelForm):
     class Meta:

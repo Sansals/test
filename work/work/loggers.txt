@@ -1,0 +1,6 @@
+2025-04-08 06:16:48.308493 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
+2025-04-08 06:16:49.368667 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
+2025-04-08 06:16:50.058355 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
+2025-04-08 06:16:50.595735 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
+2025-04-08 06:16:51.186800 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
+2025-04-08 06:16:52.273787 |Warning| Username: grinwich1211 | |shop.services| comparison_total_price_with_balance False
