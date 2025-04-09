@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from login.models import User_Status
-
+from datetime import date
 
 class Public_Chat(models.Model):
     username = models.ForeignKey(User_Status,
@@ -126,8 +126,16 @@ class ForumTechAnswer(models.Model):
                                 verbose_name = 'Вопрос',
                                on_delete=models.CASCADE,
                                  )
-    answer = models.TextField('Ответ', max_length= 600 )
+    date = models.DateTimeField(auto_now_add=True)
+    answer = models.CharField('Ответ', max_length= 600 )
     is_anonymous = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Ответ на технический вопрос'
+        verbose_name_plural = 'Ответы на технические вопросы'
+
+    def __str__(self):
+        return f'{self.user.username} | {self.question.user.username} | {self.answer}'
 
 class ForumComplaintAnswer(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,

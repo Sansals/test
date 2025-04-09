@@ -36,8 +36,10 @@
       </div>
       <div class="borderr user_status">
         <span><strong>Статус пользователя: </strong>
-          {% if user_object.is_staff %}
-            Администратор
+          {% if user_status_object.is_moderator %}
+            <a href="http://127.0.0.1:8000/admin">Модератор</a>
+          {% elif user_status_object.is_staff %}
+            <a href="http://127.0.0.1:8000/admin">Администратор</a>
           {% else %}
             Активный
           {% endif %}

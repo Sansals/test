@@ -19,10 +19,14 @@ def user_profile_view(request, url_username):
             'basket_value': basket_value(request),
         }
     else:
-        data = {
-            'user_status_object': get_user_status_profile_object(url_username),
-            'user_object':get_user_profile_object(url_username),
-            'basket_value': basket_value(request),
-        }
+        try:
+            User.objects.get(username=url_username)
+            data = {
+                'user_status_object': get_user_status_profile_object(url_username),
+                'user_object': get_user_profile_object(url_username),
+                'basket_value': basket_value(request),
+            }
+        except User.DoesNotExist:
+            return redirect(f'/profiles/{get_username(request)}/')
 
     return render(request, 'profiles/user_profile.html', data)

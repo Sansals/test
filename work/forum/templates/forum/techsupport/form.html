@@ -1,11 +1,26 @@
 {% extends 'forum/techsupport/techsupport_header.html' %}
 
 {% block form %}
-<div class="mx-5 bg-neutral-600 border-3 p-10 border-indigo-950">
-    <form method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit" >Отправить! </button>
-    </form>
+<div class="m-5 bg-neutral-600 border-3 px-10 pt-5 pb-15 border-indigo-950 rounded-lg">
+    <div class="text-center text-gray-300 text-4xl font-medium mb-5">Создать тикет:</div>
+    <div class="w-[85%] m-auto p-10 border-1 border-gray-1 bg-neutral-900 rounded-xl ">
+            <form class="flex flex-col " method="POST">
+                {% csrf_token %}
+                <div class="text-center text-gray-300 text-lg font-normal ">Выберите тему обращения: </div>
+                {{ form.subject }}
+                <div class="text-center text-gray-300 text-lg font-normal ">Коментарии:  </div>
+                {{ form.question }}
+                <div class="px-2 mb-2 text-left text-gray-100 text-sm font-normal ">*Поле обязательно, подробно опишите проблему с которой столкнулись, дайте пояснения, укажите время возникновения технической неисправности</div>
+                <div class="text-center text-gray-300 text-lg font-normal ">Ссылка на скриншот: </div>
+                {{ form.proofs }}
+                <div class="px-2 mb-2 text-left text-gray-100 text-sm font-normal ">*Поле необязательно. Перечислите ссылки через запятую</div>
+                <div class="flex mt-5 flex-row justify-center ">
+                    <button class="text-gray-100 bg-green-600 h-10 text-lg rounded-lg px-4 py-2
+                                   hover:bg-green-800 mr-15" type="submit" >Отправить тикет </button>
+                    <a class="text-gray-100 bg-red-600 h-10 text-lg rounded-lg px-4 py-2
+                                   hover:bg-red-800 ml-15" href="">Правила подачи тикета</a>
+                </div>
+            </form>
+    </div>
 </div>
 {% endblock %}

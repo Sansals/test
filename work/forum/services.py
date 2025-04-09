@@ -1,4 +1,4 @@
-from .models import Articles, Public_Chat
+from .models import Articles, Public_Chat, ForumTechQuestions, ForumTechAnswer
 from login.models import User_Status
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView
@@ -11,6 +11,32 @@ from django.contrib.auth.models import User
 
 from work.global_services import get_user
 
+def get_answers(pk):
+    question = ForumTechQuestions.objects.get(pk=pk)
+    return ForumTechAnswer.objects.filter(question=question).order_by('-date')
+
+def get_user_status_object(request):
+    return User_Status.objects.get(username=request.user)
+
+def get_waiting_tickets():
+    all_waiting_tickets = ForumTechQuestions.objects.order_by('-date').filter(is_resolved=False)
+    return all_waiting_tickets
+
+def get_closed_tickets():
+    all_closed_tickets = ForumTechQuestions.objects.order_by('-date').filter(is_resolved=True)
+    return all_closed_tickets
+
+def get_user_tickets(request):
+    all_user_tickets = ForumTechQuestions.objects.filter(user=request.user).order_by('is_resolved')
+    return all_user_tickets
+
+def get_record_for_pk(pk):
+    return ForumTechQuestions.objects.get(pk = pk)
+
+def get_user_status_object_for_pk(pk):
+    user = ForumTechQuestions.objects.get(pk=pk).user
+    return User_Status.objects.get(username=user)
+
 def get_stuff_users():
     admins = User_Status.objects.filter(is_staff=True)
     moderators = User_Status.objects.filter(is_moderator=True)
@@ -22,8 +48,7 @@ def get_public_messages():
 
 def save_message(request):
     form= PublicMessageForm()
-    if request.user.is_authenticated:
-        form = PublicMessageForm(request.POST)
+    if request.method == "POST":
         if form.is_valid():
             response = form.save(commit=False)
             response.username = User_Status.objects.get(username=request.user.id)
