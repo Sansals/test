@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'forum/complaints/techsupport_header.html' %}
 
-</body>
-</html>
+{% block records %}
+    <div class="m-5 bg-neutral-600 border-3 px-10 pt-5 pb-15 border-indigo-950 rounded-lg">
+        <div class="text-center text-gray-300 text-4xl font-medium mb-5">{{title_text}} :</div>
+        <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
+         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
+            {% if all_tickets %}
+                {% for el in all_tickets %}
+                    {% if el.is_resolved == False %}
+                        <a href="{% url 'complaints_record' el.pk %}" class="grid grid-cols-3 justify-items-center h-15 items-center
+                                                      hover:bg-neutral-800 hover:rounded-lg">
+                            {% if el.is_anonymous %}
+                                {% if el.user.id == user.id %}
+                                    <div>Моё анонимное обращение</div>
+                                {% else %}
+                                    <div>*Имя скрыто*</div>
+                                {% endif %}
+                            {% else %}
+                                <div>{{el.user.username}}</div>
+                            {% endif %}
+                            <div>{{el.subject}}</div>
+                            <div>{{el.date}}</div>
+                        </a>
+                    {% else %}
+                        <a href="{% url 'complaints_record' el.pk %}" class="grid grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
+                                                      hover:bg-rose-900 hover:rounded-lg">
+                            <div>{{el.user.username}}</div>
+                            <div>{{el.subject}}</div>
+                            <div>{{el.date}}</div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <div class="col-span-3 text-center text-xl font-semibold my-20 text-gray-300">Нет подходящих тикетов...</div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

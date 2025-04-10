@@ -1,4 +1,4 @@
-from .models import Articles, Public_Chat, ForumTechQuestions, ForumTechAnswer
+from .models import Articles, Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumComplaints, ForumComplaintAnswer
 from login.models import User_Status
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView
@@ -15,6 +15,10 @@ def get_answers(pk):
     question = ForumTechQuestions.objects.get(pk=pk)
     return ForumTechAnswer.objects.filter(question=question).order_by('-date')
 
+def get_answers_for_pk_in_complaints(pk):
+    question = ForumComplaints.objects.get(pk=pk)
+    return ForumComplaintAnswer.objects.filter(question=question).order_by('-date')
+
 def get_user_status_object(request):
     return User_Status.objects.get(username=request.user)
 
@@ -22,19 +26,38 @@ def get_waiting_tickets():
     all_waiting_tickets = ForumTechQuestions.objects.order_by('-date').filter(is_resolved=False)
     return all_waiting_tickets
 
+def get_waiting_complates():
+    all_waiting_complates = ForumComplaints.objects.order_by('-date').filter(is_resolved=False)
+    return all_waiting_complates
+
 def get_closed_tickets():
     all_closed_tickets = ForumTechQuestions.objects.order_by('-date').filter(is_resolved=True)
     return all_closed_tickets
+
+def get_closed_complaints():
+    all_closed_complaints = ForumComplaints.objects.order_by('-date').filter(is_resolved=True)
+    return all_closed_complaints
 
 def get_user_tickets(request):
     all_user_tickets = ForumTechQuestions.objects.filter(user=request.user).order_by('is_resolved')
     return all_user_tickets
 
+def get_user_complaints(request):
+    all_user_complaints = ForumComplaints.objects.filter(user=request.user).order_by('is_resolved')
+    return all_user_complaints
+
 def get_record_for_pk(pk):
     return ForumTechQuestions.objects.get(pk = pk)
 
+def get_complaint_for_pk(pk):
+    return ForumComplaints.objects.get(pk=pk)
+
 def get_user_status_object_for_pk(pk):
     user = ForumTechQuestions.objects.get(pk=pk).user
+    return User_Status.objects.get(username=user)
+
+def get_user_status_object_for_pk_in_complaints(pk):
+    user = ForumComplaints.objects.get(pk=pk).user
     return User_Status.objects.get(username=user)
 
 def get_stuff_users():

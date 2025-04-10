@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'patterns/header.html' %}
 
-</body>
-</html>
+{% block techsupport_header %}
+    <nav class="flex flex-wrap items-center bg-neutral-600 border-3 h-15 px-10 border-indigo-950 rounded-lg mx-5">
+        <ul class="flex items-center w-auto text-gray-300 font-medium leading-normal text-xl divide-x-1 divide-gray-300">
+          <li><a class="m-5 hover:text-white" href="{% url 'complaints_form' %}">Создать жалобу</a></li>
+          <li><a class="m-5 hover:text-white" href="{% url 'complaints_waiting' %}">Ожидающие жалобы</a></li>
+          <li><a class="m-5 hover:text-white" href="{% url 'complaints_closed' %}">Закрытые жалобы</a></li>
+          <li><a class="m-5 hover:text-white" href="{% url 'complaints_user_tickets' %}">Мои обращения</a></li>
+        </ul>
+    </nav>
+
+    {% block records %}   {% endblock %}
+
+    {% block form %}    {% endblock %}
+{% endblock %}

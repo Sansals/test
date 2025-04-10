@@ -148,6 +148,7 @@ class ForumComplaintAnswer(models.Model):
                                 verbose_name = 'Жалоба',
                                on_delete=models.CASCADE,
                                  )
+    date = models.DateTimeField(auto_now_add=True, blank=True)
     answer = models.TextField('Ответ', max_length= 600 )
     is_anonymous = models.BooleanField(default=False)
 

@@ -1,10 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'forum/complaints/techsupport_header.html' %}
 
-</body>
-</html>
+{% block records %}
+    <div class="m-5 bg-neutral-600 border-3 px-10 pt-5 pb-15 border-indigo-950 rounded-lg">
+        <div class="p-2 divide-y-2 divide-gray-600 w-[85%] m-auto border-1
+         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
+            <div class="grid grid-cols-6 justify-items-center items-start gap-5 pb-5">
+                <div class="flex flex-col">
+                    {% if record.is_anonymous %}
+                        {% if record.user.id == user.id %}
+                            <div class="text-center text-xl text-gray-300 mb-2 font-medium">{{record.user.username}}</div>
+                            <img class="rounded-lg" src="{{user_status_object.avatar.url}}" alt="">
+                        {% else %}
+                            <div class="text-center text-xl text-gray-300 mb-2 font-medium">*Имя скрыто*</div>
+                        {% endif %}
+                    {% else %}
+                        <div class="text-center text-xl text-gray-300 mb-2 font-medium">{{record.user.username}}</div>
+                        <img class="rounded-lg" src="{{user_status_object.avatar.url}}" alt="">
+                    {% endif %}
+                    <div class="text-center text-base text-gray-300 mb-2 font-normal">{{record.date}}</div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="text-xl text-gray-300 mb-5 font-medium">Тема обращения: </div>
+                    <div class="text-lg text-gray-300 font-medium">{{record.subject}}</div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="text-xl text-gray-300 mb-5 font-medium">Скриншоты: </div>
+                    <div class="text-lg text-gray-300 font-medium">{{record.proofs}}</div>
+                </div>
+                <div class="flex flex-col col-span-3">
+                    <div class="text-xl text-gray-300 mb-5 font-medium">Сообщение: </div>
+                    <div class="text-lg text-gray-300 font-medium">{{record.question}}</div>
+                </div>
+            </div>
+            {% if record.is_resolved == False %}
+            <div class="grid grid-cols-6 mt-2 items-start gap-5 pb-2">
+                <div>
+                    <img class="rounded-lg" src="{{user_request_status_object.avatar.url}}" alt="">
+                </div>
+                <div class="col-span-5">
+                    <form class="flex flex-col" method="POST">
+                        {% csrf_token %}
+                        {{form_answer.answer}}
+                        <div class="flex flex-row mt-10 items-center">
+                            <button class="text-gray-100 bg-green-600 h-10 text-lg rounded-lg px-4 py-2
+                                   hover:bg-green-800 mr-15" type="submit">Отправить</button>
+                            <div>
+                                {{form_answer.is_anonymous}}
+                                <span class="px-2 mb-2 text-left text-gray-100 text-sm font-normal"> Отправить анонимно</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+                <div class="grid grid-cols-6 mt-2 items-start gap-5">
+                    {% for el in answers %}
+                    {% if el.is_anonymous %}
+                        <div>
+                            <img class="rounded-lg" src="{{el.user.avatar.url}}" alt="">
+                        </div>
+                        <div class="flex flex-col col-span-4">
+                            <div>Имя скрыто</div>
+                            <div>{{el.answer}}</div>
+                        </div>
+                    {% else %}
+                        <div class="">
+                            <img class="rounded-lg" src="{{el.user.avatar.url}}" alt="">
+                        </div>
+                        <div class="flex flex-col col-span-4">
+                            {% if el.user.is_superuser %}
+                                <div class="text-red-600 font-semibold">{{el.user.username}}</div>
+                            {% elif el.user.is_staff %}
+                                <div class="text-green-700 font-semibold">{{el.user.username}}</div>
+                            {% else %}
+                                <div>{{el.user.username}}</div>
+                            {% endif %}
+                            <div>{{el.answer}}</div>
+                        </div>
+                    {% endif %}
+                        <div class="">{{el.date}}</div>
+                    {% endfor %}
+                </div>
+        </div>
+    </div>
+{% endblock %}
