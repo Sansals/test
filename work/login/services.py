@@ -35,7 +35,14 @@ def logout_user(request):
 
 def set_user_verify_true(request):
     try:
-        u = User_Status.objects.get(username=request.user.id)
+        data = request.session.pop('user_id', {})
+        user_id = data.get('user_id')
+        logger.info(
+            f'{datetime.datetime.now()} |INFO| '
+            f'Username: {get_username(request)} |'
+            f' |login.services| '
+            f'get_session_data_username = {user_id}!')
+        u = User_Status.objects.get(username=user_id)
         u.Isverified = True
         u.save()
         logger.info(
@@ -89,7 +96,17 @@ def save_verify_code(request):
     data = {
         'code': _send_verify_code(request)
     }
+    _set_user_is_active_false(request)
     request.session['sessiondata'] = data
+
+def _set_user_is_active_false(request):
+    user = User.objects.get(username = request.user.username)
+    data = {
+        'user_id' : User.objects.get(username = request.user.username).id,
+    }
+    request.session['user_id'] = data
+    user.is_active = False
+    user.save()
 
 def verification_email(request):
     save_verify_code(request)

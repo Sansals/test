@@ -70,13 +70,12 @@ def get_public_messages():
 
 
 def save_message(request):
-    form= PublicMessageForm()
-    if request.method == "POST":
-        if form.is_valid():
-            response = form.save(commit=False)
-            response.username = User_Status.objects.get(username=request.user.id)
-            response.save()
-            form = PublicMessageForm()
+    form= PublicMessageForm(request.POST)
+    if form.is_valid():
+        response = form.save(commit=False)
+        response.username = User_Status.objects.get(username=request.user.id)
+        response.save()
+        form = PublicMessageForm()
     return form
 
 def get_rich_users():

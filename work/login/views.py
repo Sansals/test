@@ -73,7 +73,7 @@ def auth_view(request):
 
 def registration_view(request):
     if not request.user.is_authenticated:
-        error=''
+        error_tag=''
         form = UserRegistrationForm(data= request.POST or None)
         if request.method == "POST":
             form = UserRegistrationForm(request.POST)
@@ -86,7 +86,6 @@ def registration_view(request):
 
     data = {
         'form':form,
-        'error': error
     }
     return render(request, 'auth/reg.html', data)
 # Create your views here.

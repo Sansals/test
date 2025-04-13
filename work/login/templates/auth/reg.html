@@ -10,20 +10,54 @@
             <div class="form-group">
                 <label for="username">Логин:</label>
                 {{form.username}}
+                {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                <ul class="text-sm text-rose-600">
+                    <li>{{error}}</li>
+                </ul>
+                {% endfor %}
+                {% endif  %}
             </div>
             <div class="form-group">
                 <label for="email">Адрес почты:</label>
                 {{form.email}}
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <ul class="text-sm text-rose-600">
+                    <li>{{error}}</li>
+                </ul>
+                {% endfor %}
+                {% endif  %}
+
             </div>
             <div class="form-group">
                 <label for="password">Пароль:</label>
                 {{form.password}}
+                {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                <ul class="text-sm text-rose-600">
+                    <li>{{error}}</li>
+                </ul>
+                {% endfor %}
+                {% endif  %}
             </div>
             <div class="form-group">
                 <label for="confirm-password">Повторите пароль:</label>
                 {{form.password_confirm}}
+                {% if form.password_confirm.errors %}
+                {% for error in form.password_confirm.errors %}
+                <ul class="text-sm text-rose-600">
+                    <li>{{error}}</li>
+                </ul>
+                {% endfor %}
+                {% endif  %}
+            </div>
+            <div class="flex flex-row items-center py-2">
+                {{form.tag}}
+                <label for="tag" class="text-sm ml-2">Я принимаю условия <a class="font-semibold" href="{% url 'rules' %}">Пользовательского соглашения и политики конфиденциальности проекта</a></label>
             </div>
             <button type="submit" class="submit-btn">Зарегистрироваться</button>
+
         </form>
 </div>
 </div>

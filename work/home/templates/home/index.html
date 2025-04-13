@@ -1,6 +1,23 @@
 {% extends 'patterns/header.html' %}
 {% block title %}Главная страница{% endblock %}
 {% block addlist %}
+
+    <div class="relative mx-5 h-100 overflow-hidden rounded-b-xl rounded-t-lg">
+        <div class="absolute z-10 w-full h-full bg-gradient-to-b to-black" ></div>
+        <img class="-translate-y-20 z-0" src="../static/img/index_img.png" alt="">
+    </div>
+
+    <div class="flex flex-col">
+        <div class="text-center text-3xl font-semibold text-gray-300 mb-10">Последние новости:</div>
+        <div class="grid grid-rows-10 mx-auto gap-10">
+            <div class="row-start-2 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
+            <div class="row-start-1 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
+            <div class="row-start-2 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
+        </div>
+    </div>
+
+
+
   {% for el in news %}
     <div class="allert allert-warning">
       <h1>{{el.title}}</h1>
