@@ -5,10 +5,14 @@ from shop.services import basket_value
 from work.global_services import *
 
 
+def news_view(request):
+    data={
+        'basket_value': basket_value(request),
+    }
+    return render(request, 'home/news.html', data)
+
 def rules_view(request):
     data = {
-        'username': get_username(request),
-        'status': get_user_verify_is(request),
         'rules': get_rules_all(request),
         'basket_value': basket_value(request),
     }

@@ -21,7 +21,11 @@ def complaints_form_view(request):
         response.user = request.user
         response.save()
         return redirect('complaints_waiting')
-    return render(request, 'forum/complaints/form.html', {'form':form })
+    data= {
+        'form':form,
+        'basket_value': basket_value(request),
+    }
+    return render(request, 'forum/complaints/form.html', data)
 
 @login_required()
 def techsupport_form_view(request):
@@ -31,19 +35,25 @@ def techsupport_form_view(request):
         response.user = request.user
         response.save()
         return redirect('techsupport_waiting')
-    return render(request, 'forum/techsupport/form.html', {'form':form })
+    data = {
+        'form': form,
+        'basket_value': basket_value(request),
+    }
+    return render(request, 'forum/techsupport/form.html', data)
 
 def techsupport_closed_view(request):
     data = {
         'title_text': 'Закрытые обращения',
-        'all_tickets': get_closed_tickets()
+        'all_tickets': get_closed_tickets(),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/techsupport/records.html', data)
 
 def complaints_closed_view(request):
     data = {
         'title_text': 'Закрытые жалобы',
-        'all_tickets': get_closed_complaints()
+        'all_tickets': get_closed_complaints(),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/complaints/records.html', data)
 
@@ -63,6 +73,7 @@ def techsupport_record_view(request, pk):
         'form_answer': form,
         'user_request_status_object': get_user_status_object(request),
         'answers':get_answers(pk),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/techsupport/record_view.html', data)
 
@@ -82,20 +93,23 @@ def complaints_record_view(request, pk):
         'form_answer': form,
         'user_request_status_object': get_user_status_object(request),
         'answers': get_answers_for_pk_in_complaints(pk),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/complaints/record_view.html', data)
 
 def techsupport_waiting_view(request):
     data= {
         'title_text':'Ожидающие обращения',
-        'all_tickets': get_waiting_tickets()
+        'all_tickets': get_waiting_tickets(),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/techsupport/records.html', data)
 
 def complaints_waiting_view(request):
     data = {
         'title_text': 'Жалобы ожидающие рассмотрения',
-        'all_tickets': get_waiting_complates()
+        'all_tickets': get_waiting_complates(),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/complaints/records.html', data)
 
@@ -103,6 +117,7 @@ def techsupport_user_tickets_view(request):
     data = {
         'title_text': 'Мои обращения',
         'all_tickets': get_user_tickets(request),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/techsupport/records.html', data)
 
@@ -110,6 +125,7 @@ def complaints_user_tickets_view(request):
     data = {
         'title_text': 'Мои обращения',
         'all_tickets': get_user_complaints(request),
+        'basket_value': basket_value(request),
     }
     return render(request, 'forum/complaints/records.html', data)
 

@@ -5,13 +5,13 @@
 {% block header %}
 <header class="flex z-50 items-center justify-between sticky top-0 px-10 mb-5 h-17 mx-5 rounded-t-md rounded-b-lg border-gray-300 bg-indigo-950">
   <div class="flex flex-row items-center">
-      <img class="object-fit" src="../static/favicon/header_img.png" alt="">
+      <img class="object-fit" src="/static/favicon/header_img.png" alt="">
       <a class="uppercase font-bold text-lg text-gray-300 " href="{% url 'home' %}">GrinCraft</a>
   </div>
   <nav class="flex items-center">
     <ul class="text-lg text-gray-300 font-semibold inline-flex items-center mr-30">
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'home' %}">Главная</a></li>
-      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'home' %}">Новости</a></li>
+      <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'news' %}">Новости</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'rules' %}">Правила</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'about' %}">О нас</a></li>
       <li><a class="ml-5 inline-block py-3 hover:underline hover:text-gray-100 decoration-4 decoration-purple-800 underline-offset-24" href="{% url 'forum' %}">Форум</a></li>

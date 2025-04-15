@@ -77,40 +77,33 @@
   {% if user_object.username == user.username %}
   <div class="user_articles_and_answers flex flex-col bg-gray-400 border-2 border-gray-300 rounded-xl">
     <div class="buttons_div m-auto bg-gray-600 rounded-b-full ">
-      <a href="{% url 'profile' user.username %}" class="inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-bl-full">Мои статьи</a>
-      <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
+      <a href="{% url 'profile' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-bl-full">Мои статьи</a>
+      <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black bg-gray-700 py-2 px-4">Мои ответы</a>
       <a href="" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
     </div>
     <div class="articles_div flex flex-col">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
          border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
-            {% if all_open_user_articles or all_closed_user_articles %}
-                {% for el in all_open_user_articles %}
-                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}" class="grid grid-cols-3 justify-items-center h-15 items-center
+            {% if all_user_answers %}
+                {% for el in all_user_answers %}
+                        {% if el.question.is_resolved %}
+                            <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}" class="grid grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
+                                                       hover:bg-rose-900 hover:rounded-lg">
+                                <div>{{el.question.user.username}}</div>
+                                <div>{{ el.question.subject }}</div>
+                                <div>{{ el.date }}</div>
+                            </a>
+                        {% else %}
+                            <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}" class="grid grid-cols-3 rounded-lg justify-items-center h-15 items-center
                                                       hover:bg-neutral-800 hover:rounded-lg">
-                            {% if el.is_anonymous %}
-                                {% if el.user.id == user.id %}
-                                    <div>Моё анонимное обращение</div>
-                                {% else %}
-                                    <div>*Имя скрыто*</div>
-                                {% endif %}
-                            {% else %}
-                                <div>{{el.user.username}}</div>
-                            {% endif %}
-                            <div>{{el.subject}}</div>
-                            <div>{{el.date}}</div>
-                        </a>
-                {% endfor %}
-                {% for el in all_closed_user_articles %}
-                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}" class="grid grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
-                                                      hover:bg-rose-900 hover:rounded-lg">
-                            <div>{{el.user.username}}</div>
-                            <div>{{el.subject}}</div>
-                            <div>{{el.date}}</div>
-                        </a>
+                                <div>{{el.question.user.username}}</div>
+                                <div>{{ el.question.subject }}</div>
+                                <div>{{ el.date }}</div>
+                            </a>
+                        {% endif %}
                 {% endfor %}
             {% else %}
-                <div class="col-span-3 text-center text-xl font-semibold my-20 text-gray-300">У Вас нет статей...</div>
+                <div class="col-span-3 text-center text-xl font-semibold my-20 text-gray-300">У Вас нет ответов на форуме...</div>
             {% endif %}
         </div>
     </div>
