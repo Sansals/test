@@ -1,0 +1,52 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Все новости{% endblock %}
+{% block addlist %}
+<div class="mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+  <div class="grid grid-cols-2 space-x-5">
+    <div class="left_block h-fit relative rounded-lg overflow-hidden ">
+      <div class="absolute z-10 bg-gradient-to-br bg-auto to-fuchsia-900 inset-x-0 inset-y-0 opacity-50"></div>
+      <img class="z-0" src="{{new.img.url}}" alt="">
+    </div>
+    <div class="right_block flex flex-col">
+      <div class="user_date_div flex flex-row justify-between">
+        <div class="user_info_div flex flex-row items-center justify-center space-x-2">
+          <img class="w-16 h-16 rounded-full" src="{{new.user.avatar.url}}" alt="">
+          <a class="text-black text-xl italic font-medium" href="{% url 'profile' new.user.username.id %}">{{new.user.username.username}}</a>
+        </div>
+        <div class="date_div flex items-center">
+          <div class="text-center text-black text-base italic">{{new.date}}</div>
+        </div>
+      </div>
+      <div class="title_div text-black text-2xl text-center font-semibold">
+        {{new.title}}
+      </div>
+      <div class="article_div text-black text-lg font-medium indent-8 italic">
+        {{new.article}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="my-5 mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+  {% if user.is_authenticated %}
+    <div class="global_comments_div grid grid-cols-9 space-x-2">
+      <div class="avatar_img col-span-1">
+        <img src="{{user_status_object.avatar.url}}" class="rounded-lg">
+      </div>
+      <div class="input_button_date_div col-span-8">
+        <form method="POST" class="grid grid-cols-8 space-y-2">
+          {% csrf_token %}
+          {{comment_input.comment}}
+          <button type="submit" class="col-span-1 px-2 py-1 text-lg italic bg-green-600 rounded-lg border-1 border-gray-500
+                                        hover:border-black hover:bg-green-700">Отправить!</button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+  {% if new_comments %}
+
+  {% else %}
+    <div class="text-center text-xl italic">Нет комментариев</div>
+  {% endif %}
+</div>
+{% endblock %}

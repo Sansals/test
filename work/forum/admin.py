@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Articles, Public_Chat, ForumTechQuestions, ForumComplaints, ForumComplaintAnswer, ForumTechAnswer
+from .models import Public_Chat, ForumTechQuestions, ForumComplaints, ForumComplaintAnswer, ForumTechAnswer
 
-admin.site.register(Articles)
 admin.site.register(Public_Chat)
 admin.site.register(ForumTechQuestions)
 admin.site.register(ForumComplaints)

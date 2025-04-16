@@ -1,4 +1,4 @@
-from .models import Articles, Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumComplaints, ForumComplaintAnswer
+from .models import Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumComplaints, ForumComplaintAnswer
 from login.models import User_Status
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView

@@ -1,12 +1,36 @@
-from .models import Rules
-from forum.models import Articles
+from .models import Rules, News, News_Comments
+from .forms import CommentsForm
 import logging
 import datetime
+from django.shortcuts import redirect
 
 from work.global_services import get_username
 
 logger = logging.getLogger(__name__)
 
+def get_news_len():
+    return len(get_all_news())
+
+def get_all_news():
+    return News.objects.all().order_by('-date')
+
+def get_new_for_id(id):
+    new = News.objects.get(pk=id)
+    return new
+
+def get_new_comments_for_id(id):
+    new = News.objects.get(pk=id)
+    comments = News_Comments.objects.filter(new = new)
+    return comments
+
+def comment_save(request):
+    form = CommentsForm(request.POST)
+    if form.is_valid():
+        response = form.save(commit=False)
+        response.username = User_Status.objects.get(username=request.user.id)
+        response.save()
+        form = CommentsForm()
+    return form
 
 def get_rules_all(request):
     """Берёт все объекты таблицы Rules, сортирует их по ID записи"""
@@ -26,29 +50,3 @@ def get_rules_all(request):
             f' |home.services|'
             f'Exception in get all objects from home.Rules')
     return all_rules
-
-def get_all_articles(request):
-    """Берёт все объекты таблицы Articles, сортирует их по дате"""
-    try:
-        logger.info(
-            f'{datetime.datetime.now()} |INFO| '
-            f'Username: {get_username(request)} |'
-            f' |home.services|'
-            f'User get all objects from addlist.Articles')
-
-        return Articles.objects.order_by('-date')
-
-    except ValueError:
-        logger.warning(
-            f'{datetime.datetime.now()} |Warning| '
-            f'Username: {get_username(request)} |'
-            f' |home.services|'
-            f'ValueError: User cant get all objects from addlist.Articles')
-        pass
-    except Exception:
-        logger.warning(
-            f'{datetime.datetime.now()} |Warning| '
-            f'Username: {get_username(request)} |'
-            f' |home.services|'
-            f'Exception: User cant get all objects from addlist.Articles')
-        pass

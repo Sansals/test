@@ -1,0 +1,28 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Все новости{% endblock %}
+{% block addlist %}
+<div class="mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+    <div class="text-black text-center font-bold text-2xl">Все новости проекта:</div>
+    <div class="grid grid-cols-3 gap-5">
+        {% if all_news %}
+        {% for el in all_news %}
+            <a href="{% url 'new_view' el.id %}" class="relative border-3 border-gray-600 rounded-xl overflow-hidden max-h-100">
+                <div class="absolute z-10 w-full h-full bg-gradient-to-b to-gray-800 hover:to-gray-700"></div>
+                <img class="z-0" src="{{ el.img.url }}" alt="">
+                <div class="info_div max-h-40 absolute grid grid-cols-2 z-20 items-center bottom-1 inset-x-0 px-2 py-1 ">
+                    <div class="title_div text-gray-100 font-semibold text-xl">{{el.title}}</div>
+                    <div class="user_div flex flex-row items-center">
+                        <img class="justify-self-end rounded-full h-15 w-15" src="{{el.user.avatar.url}}" alt="">
+                        <div class="text-gray-100 italic font-medium ml-2">{{el.user.username.username}}</div>
+                    </div>
+                    <div class="article_div line-clamp-3 text-gray-100 text-lg">{{el.article}}</div>
+                    <div class="date_div text-gray-100 text-base">{{el.date}}</div>
+                </div>
+            </a>
+        {% endfor %}
+        {% else %}
+            <div class="text-xl col-span-3 italic text-black font-medium">Пока тут нет новостей =( Заходите позже</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

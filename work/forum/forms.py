@@ -1,4 +1,4 @@
-from .models import Articles, Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumComplaints, ForumComplaintAnswer
+from .models import Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumComplaints, ForumComplaintAnswer
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 from django import forms
 
@@ -70,25 +70,4 @@ class PublicMessageForm(ModelForm):
                          'hover:border-black ',
                 'placeholder': 'Введите сообщение'
             })
-        }
-
-class ArticlesForm(ModelForm):
-    class Meta:
-        model = Articles
-        fields = ['title', 'anons', 'full_text']
-
-        widgets = {
-            'title': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Название статьи'
-            }),
-            'anons': TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Анонс статьи'
-            }),
-            'full_text': Textarea(attrs={
-                'class': 'form-control',
-                'placeholder': 'Текст статьи'
-            }),
-
         }

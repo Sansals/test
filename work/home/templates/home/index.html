@@ -1,8 +1,8 @@
 {% extends 'patterns/header.html' %}
-{% block title %}Главная страница{% endblock %}
+{% block title %}Grin-craft{% endblock %}
 {% block addlist %}
 
-    <div class="relative mx-5 h-100 overflow-hidden rounded-b-xl rounded-t-lg">
+    <div class="relative mx-5 h-100 overflow-hidden rounded-t-lg">
         <div class="absolute z-10 w-full h-full bg-gradient-to-b to-black" ></div>
         <div class="relative z-30 bg-gray-300 text-center text-gray-700 p-2 text-2xl font-bold"> Добро пожаловать! </div>
         <div class="absolute z-30 top-15 inset-x-15 p-2 text-center text-gray-700 bg-gray-300 opacity-70 hover:opacity-100" > Хочешь увлекательной игры с друзьями?
@@ -13,29 +13,25 @@
         <img class="-translate-y-20 z-0" src="../static/img/index_img.png" alt="">
     </div>
 
-    <div class="flex flex-col mt-10 mx-5 bg-gradient-to-br bg-auto from-red-950 via-black to-red-900 rounded-xl">
-        <div class="text-center mt-10 text-3xl font-semibold text-gray-300 mb-10">Последние новости:</div>
-        <div class="grid grid-rows-10 mx-auto gap-10">
-            <div class="row-start-2 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
-            <div class="row-start-1 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
-            <div class="row-start-2 row-span-5 bg-gray-600 h-150 w-100 border-4 border-gray-800 rounded-2xl"></div>
+    <div class="flex flex-col p-10 mx-5 bg-gradient-to-b bg-auto from-black via-gray-950 to-gray-800 rounded-b-xl">
+        <div class="text-center text-3xl font-semibold text-gray-300 mb-10">Последние новости:</div>
+        <div class="grid grid-cols-3 {% if news_len == 2 %}grid-cols-4{% endif %} mx-auto gap-5">
+            {% for el in news %}
+                    <a href="{% url 'new_view' el.id %}" class="relative {% if news_len == 1%}col-start-2{% elif news_len == 2%}col-span-2{% endif %} border-3 border-gray-600 rounded-xl overflow-hidden max-h-100">
+                        <div class="absolute z-10 w-full h-full bg-gradient-to-b to-gray-800 hover:to-gray-700"></div>
+                        <img class="z-0 aspect-square" src="{{ el.img.url }}" alt="">
+                        <div class="info_div max-h-40 absolute grid grid-cols-2 z-20 items-center bottom-1 inset-x-0 px-2 py-1 ">
+                            <div class="title_div text-gray-100 font-semibold text-xl">{{el.title}}</div>
+                            <div class="user_div flex flex-row items-center justify-center">
+                                <img class="justify-self-end rounded-full h-15 w-15" src="{{el.user.avatar.url}}" alt="">
+                                <div class="text-gray-100 italic font-medium ml-2">{{el.user.username.username}}</div>
+                            </div>
+                            <div class="article_div line-clamp-3 text-gray-100 text-lg">{{el.article}}</div>
+                            <div class="date_div text-center text-gray-100 text-base">{{el.date}}</div>
+                        </div>
+                    </a>
+            {% endfor %}
         </div>
+        <div class="text-center mt-15"><a class="bg-indigo-700 px-4 py-2 text-2xl font-medium rounded-lg hover:bg-indigo-600" href="{% url 'news' %}">Все новости</a></div>
     </div>
-
-
-
-  {% for el in news %}
-    <div class="allert allert-warning">
-      <h1>{{el.title}}</h1>
-      <p>{{ el.date }}</p>
-      <h3>{{el.anons}}</h3>
-      <p>{{ el.full_text }}</p>
-      {% if el.username %}
-        <p>{{el.username}}</p>
-      {% else %}
-          <p>Пользователь удалён</p>
-      {% endif %}
-      <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать новость</a>
-    </div>
-  {% endfor %}
 {% endblock %}
