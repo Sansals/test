@@ -8,9 +8,9 @@
     <div class="w-full text-center text-3xl leading-normal text-gray-300 font-semibold mb-20 mt-10">Все продукты: </div>
     <div class="grid grid-cols-5 gap-8 mx-25">
         {% for el in products %}
-            <div class="flex-col space-y-3 overflow-visible bg-indigo-950 min-h-75 border-2 border-gray-300 rounded-tl-xl rounded-br-xl
+            <div class="flex-col bg-indigo-950 min-h-70 space-y-2 p-2 border-2 border-gray-300 rounded-tl-xl rounded-br-xl
                             hover:border-gray-600 hover:border-3 hover:bg-violet-950">
-                <img class="mt-3 mx-auto w-35 h-35 overflow-hidden" src="{{el.img.url}}" alt=""><br>
+                <img class="mt-3 mx-auto w-35 h-35 aspect-square overflow-hidden" src="{{el.img.url}}" alt=""><br>
                 <div class=" text-gray-100 text-2xl/6 w-full text-2xl text-center">
                     {{el.name}}
                 </div>
