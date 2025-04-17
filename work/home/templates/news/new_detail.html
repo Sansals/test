@@ -27,9 +27,9 @@
   </div>
 </div>
 
-<div class="my-5 mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+<div class="my-5 mx-40 bg-gray-100 p-5 space-y-5 divide-y-1 divide-gray-600 rounded-lg">
   {% if user.is_authenticated %}
-    <div class="global_comments_div grid grid-cols-9 space-x-2">
+    <div class="global_comments_div pb-5 grid grid-cols-9 space-x-2">
       <div class="avatar_img col-span-1">
         <img src="{{user_status_object.avatar.url}}" class="rounded-lg">
       </div>
@@ -44,7 +44,24 @@
     </div>
   {% endif %}
   {% if new_comments %}
-
+  {% for el in new_comments %}
+    <div class="users_comments_div grid grid-cols-9 pb-5 space-x-2">
+      <div class="avatar_img col-span-1">
+        <img src="{{el.user.avatar.url}}" class="rounded-lg">
+      </div>
+      <div class="input_button_date_div col-span-8">
+        <div class="flex justify-between">
+          <div class="username_message flex flex-col">
+            <span>{{el.user.username.username}}</span>
+            <span>{{el.comment}}</span>
+          </div>
+          <div class="date">
+            <span>{{el.date}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
   {% else %}
     <div class="text-center text-xl italic">Нет комментариев</div>
   {% endif %}

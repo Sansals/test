@@ -69,7 +69,15 @@
             {% endif %}
           </span>
         </div>
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество комментариев:</span><span> *В разработке* </span></div>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество комментариев:</span>
+            <span>
+                {% if value_user_comments %}
+                    {{value_user_comments}}
+                {% else %}
+                    Комментариев нет
+                {% endif %}
+            </span>
+        </div>
         <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Активность:</span><span> *В разработке* </span></div>
       </div>
     </div>
@@ -79,7 +87,7 @@
     <div class="buttons_div m-auto bg-gray-600 rounded-b-full ">
       <a href="{% url 'profile' user.username %}" class="inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-bl-full">Мои статьи</a>
       <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
-      <a href="" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
+      <a href="{% url 'profile_view_comments' user.username%}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
     </div>
     <div class="articles_div flex flex-col">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1

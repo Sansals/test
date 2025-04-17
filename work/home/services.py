@@ -1,4 +1,5 @@
 from .models import Rules, News, News_Comments
+from login.models import User_Status
 from .forms import CommentsForm
 import logging
 import datetime
@@ -23,11 +24,12 @@ def get_new_comments_for_id(id):
     comments = News_Comments.objects.filter(new = new)
     return comments
 
-def comment_save(request):
+def comment_save(request, id):
     form = CommentsForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
-        response.username = User_Status.objects.get(username=request.user.id)
+        response.user = User_Status.objects.get(username=request.user.id)
+        response.new = get_new_for_id(id)
         response.save()
         form = CommentsForm()
     return form

@@ -14,16 +14,25 @@ def news_view(request):
     return render(request, 'news/news.html', data)
 
 def new_article_view(request, id):
-    try:
-        data ={
-            'basket_value': basket_value(request),
-            'new': get_new_for_id(id),
-            'new_comments': get_new_comments_for_id(id),
-            'comment_input' : comment_save(request),
-            'user_status_object': get_user_status_object(request),
-        }
-    except Exception:
-        return redirect('new_not_founded')
+    if request.user.is_authenticated:
+        try:
+            data ={
+                'basket_value': basket_value(request),
+                'new': get_new_for_id(id),
+                'new_comments': get_new_comments_for_id(id),
+                'comment_input' : comment_save(request, id),
+                'user_status_object': get_user_status_object(request),
+            }
+        except Exception:
+            return redirect('new_not_founded')
+    else:
+        try:
+            data ={
+                'new': get_new_for_id(id),
+                'new_comments': get_new_comments_for_id(id),
+            }
+        except Exception:
+            return redirect('new_not_founded')
     return render(request, 'news/new_detail.html', data)
 
 def new_article_not_founded(request):

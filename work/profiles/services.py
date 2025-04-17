@@ -4,6 +4,7 @@ import logging
 import datetime
 from itertools import chain
 from .forms import AvatarUpdateForm
+from home.models import News_Comments
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from login.models import User_Status
@@ -32,6 +33,11 @@ def get_all_closed_user_articles(url_username):
     all_closed_user_articles = list(chain(user_forum_closed_complaints, user_tech_closed_questions))
     return all_closed_user_articles
 
+def get_all_user_comments(url_username):
+    user = User.objects.get(username=url_username).id
+    user_status = User_Status.objects.get(username=user)
+    return News_Comments.objects.filter(user = user_status).order_by('-date')
+
 def get_value_user_articles(url_username):
     user = User.objects.get(username = url_username)
     user_tech_questions = ForumTechQuestions.objects.filter(user = user)
@@ -45,6 +51,12 @@ def get_value_user_answer(url_username):
     user_forum_complaints_answers = ForumComplaintAnswer.objects.filter(user=user)
     value_of_all_user_answers = len(user_tech_answers) + len(user_forum_complaints_answers)
     return value_of_all_user_answers
+
+def get_value_user_comments(url_username):
+    user = User.objects.get(username=url_username).id
+    user_status = User_Status.objects.get(username = user)
+    value_user_comments = len(News_Comments.objects.filter(user=user_status))
+    return value_user_comments
 
 def verification_email():
     save_verify_code(request)
