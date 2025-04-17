@@ -52,15 +52,18 @@
       </div>
       <div>
         {% if user_object.username == user.username %}
-          <a class="inline-block py-2 px-4 rounded-lg border-1 border-black items-center bg-rose-600 hover:bg-rose-800" href="{% url 'users:logout' %}">Выйти</a>
+          <div>
+              <a class="inline-block py-2 px-4 rounded-lg border-1 border-black items-center bg-rose-600 hover:bg-rose-700" href="{% url 'users:logout' %}">Выйти</a>
+              <a class="inline-block py-2 px-4 rounded-lg border-1 border-black items-center bg-sky-600 hover:bg-sky-700" href="{% url 'update_avatar' user_status_object.pk %}">Сменить аватар</a>
+          </div>
         {% endif %}
       </div>
     </div>
     </div>
     <div class="user_active_div w-2/5 flex flex-col">
       <div class="flex flex-col space-y-2 w-[80%] mx-auto">
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество записей:</span><span>{{value_user_articles}}</span></div>
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество ответов:</span>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество записей:</span><span>{{value_user_articles}}</span></div>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество ответов:</span>
           <span>
             {% if value_user_answer is None %}
               Ответов нет
@@ -69,7 +72,7 @@
             {% endif %}
           </span>
         </div>
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество комментариев:</span>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество комментариев:</span>
             <span>
                 {% if value_user_comments %}
                     {{value_user_comments}}
@@ -78,7 +81,7 @@
                 {% endif %}
             </span>
         </div>
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Активность:</span><span> *В разработке* </span></div>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Активность:</span><span> *В разработке* </span></div>
       </div>
     </div>
   </div>
