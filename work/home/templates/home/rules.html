@@ -4,13 +4,31 @@
 {% block addlist %}
   <link rel="stylesheet" href="{% static 'rules/rules.css' %}">
 <div class="mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+    <div class="text-black text-center font-bold text-2xl">Терминология:</div>
+    <div class="mx-20">
+        <p><span class="text-2xl font-bold italic text-black">Администрация- </span>
+                <span class="text-lg font-semibold text-black" >человек или группа лиц, наделённая исключительными правами в управлении проектом, решении спорных моментов и влиянии на весь игровой процесс.</span><br>
+        </p>
+        <p><span class="text-2xl font-bold italic text-black">Модерация-  </span>
+                <span class="text-lg font-semibold text-black" >человек или группа лиц, являющихся пользователями проекта и наделёных группой прав, необходимых для урегулирования игрового процесаа в рамках данного свода правил.</span><br>
+        </p>
+        <p><span class="text-2xl font-bold italic text-black">Пользователь-  </span>
+                <span class="text-lg font-semibold text-black" >дееспособное лицо, достигшее возраста в 14 полных лет, использующее услуги сервиса в развлекательных и игровых целях, а так же в целях куммуникации и обзения с игровымм сообществом в рамках данного свода правил. Обязанность за соблюдение возрастных ограничений полностью лежит на пользователе или, в случае не достижение таковым возраста в 18 лет, на родителях и/или других законных представителях</span><br>
+        </p>
+        <p><span class="text-2xl font-bold italic text-black">Донат-  </span>
+                <span class="text-lg font-semibold text-black" >операция по приобретению внутриигровых ресурсов и/или валюты за реальные платёжные средства, являющиеся законными платёжными средствами на территории Российской Федерации, с использованием инструментов и/или платёжных форм, расположенных на портале данного проекта. Данная операция не подлежит возврату и является добровольным пожертвованием в фонд развития проекта*</span><br>
+                <span>*-за исключением ситуаций, описанных в пунктах 1.6;1.7 настоящего свода правил.</span>
+        </p>
+    </div>
     <div class="text-black text-center font-bold text-2xl">1.Основные положения/пользовательское соглашение:</div>
     <div class="mx-20">
     {% for el in rules %}
         {% if el.rule_id < 2  %}
             <p><span class="text-2xl font-bold italic text-black">{{el.rule_id}}: </span>
                 <span class="text-lg font-semibold text-black" >{{el.crime}}</span><br>
-                <span class="text-xl font-bold text-black">Наказание: </span><span class="text-lg font-semibold text-rose-600 italic">{{el.punishment}}</span>
+                {% if el.punishment %}
+                    <span class="text-xl font-bold text-black">Наказание: </span><span class="text-lg font-semibold text-rose-600 italic">{{el.punishment}}</span>
+                {% endif %}
             </p>
         {% endif %}
     {% endfor %}

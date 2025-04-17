@@ -52,7 +52,7 @@
       </div>
       <div>
         {% if user_object.username == user.username %}
-          <a class="inline-block py-2 px-4 rounded-lg border-1 border-black items-center bg-rose-600 hover:bg-rose-800" href="{% url 'logout' %}">Выйти</a>
+          <a class="inline-block py-2 px-4 rounded-lg border-1 border-black items-center bg-rose-600 hover:bg-rose-800" href="{% url 'users:logout' %}">Выйти</a>
         {% endif %}
       </div>
     </div>
@@ -69,7 +69,15 @@
             {% endif %}
           </span>
         </div>
-        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество комментариев:</span><span> *В разработке* </span></div>
+        <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Количество комментариев:</span>
+            <span>
+                {% if value_user_comments %}
+                    {{value_user_comments}}
+                {% else %}
+                    Комментариев нет
+                {% endif %}
+            </span>
+        </div>
         <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-sky-600 border-2 border-gray-300"><span>Активность:</span><span> *В разработке* </span></div>
       </div>
     </div>

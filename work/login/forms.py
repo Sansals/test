@@ -2,7 +2,23 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, Form
 from django import forms
+from django.contrib.auth.forms import PasswordResetForm,SetPasswordForm
+import re
 
+class MySetPasswordForm(SetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(MySetPasswordForm, self).__init__(*args, **kwargs)
+        for visible in self.visible_fields():
+            visible.field.widget.attrs['class'] = 'border-2 rounded-xl text-black text-lg px-2 py-1'
+
+class MyPasswordResetForm(PasswordResetForm):
+    email = forms.EmailField(
+        max_length=254,
+        widget=forms.EmailInput(attrs={"autocomplete": "email",
+                                       'class': 'border-2 rounded-xl text-black text-lg px-2 py-1',
+                                       'placeholder': 'Введите Email'
+                                       }),
+    )
 
 
 class VrMail(Form):
@@ -28,14 +44,13 @@ class AuthForm(AuthenticationForm):
 
 
 class UserRegistrationForm(forms.ModelForm):
-    error_css_class = "error"
-    required_css_class = "required"
 
     error_messages = {
         'email_is_busy': 'Данный адрес электронной почты уже зарегистрирован',
         'passwords_dont_match': 'Пароли не совпадают',
         'email_short': 'Длинна данного поля не менее 8 символов',
         'password_short': 'Длинна данного поля не менее 8 символов',
+        'username_uncorrected': 'Имя пользователя может содержать только символы A-Z, a-z, 0-9 !',
 
     }
 
@@ -70,6 +85,18 @@ class UserRegistrationForm(forms.ModelForm):
             })
 
         }
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        email = self.cleaned_data.get('email')
+        if username:
+            regex = "^[a-zA-Z0-9]+$"
+            pattern = re.compile(regex)
+            if pattern.search(username):
+                pass
+            else:
+                raise forms.ValidationError(self.error_messages['username_uncorrected'], code='username_uncorrected')
+        return username
 
     def clean_email(self):
         email = self.cleaned_data.get('email')

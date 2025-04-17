@@ -189,7 +189,7 @@ EMAIL_HOST_USER = "stereotip.228@gmail.com"
 EMAIL_HOST_PASSWORD = "rigc ownz nqli iumm"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "GrinCraft stereotip.228@gmail.com"
+DEFAULT_FROM_EMAIL = "Ares yilativ <stereotip.228@gmail.com>"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

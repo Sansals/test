@@ -47,7 +47,7 @@ class News_Comments(models.Model):
 class Rules(models.Model):
     """ Модель правил"""
     rule_id = models.FloatField('Номер правила')
-    crime = models.TextField('Нарушение', max_length=350)
+    crime = models.TextField('Нарушение', max_length=550)
     punishment = models.TextField('Наказание', max_length=200, blank=True)
 
     def __str__(self):

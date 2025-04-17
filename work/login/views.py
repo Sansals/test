@@ -56,7 +56,7 @@ def auth_view(request):
                 if get_user_verify_is(request) == True:
                     return redirect('home')
                 else:
-                    return redirect('verification_email')
+                    return redirect('users:verification_email')
             else:
                 error = 'Пользователя не существует'
         else:

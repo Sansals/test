@@ -20,10 +20,10 @@
     <ul class="mx-1 inline-flex items-center">
       {% if not user.is_authenticated %}
         <li>
-          <a href="{% url 'auth' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-gray-300 text-gray-300 hover:text-white hover:bg-purple-800">Авторизоваться</a>
+          <a href="{% url 'users:login' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-gray-300 text-gray-300 hover:text-white hover:bg-purple-800">Авторизоваться</a>
         </li>
       <li>
-        <a href="{% url 'reg' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-gray-300 text-gray-300 hover:text-white hover:bg-purple-800">Зарегистрироваться</a>
+        <a href="{% url 'users:reg' %}" class="block mx-2 h-10 py-1 px-3 border-2 rounded-full border-gray-300 text-gray-300 hover:text-white hover:bg-purple-800">Зарегистрироваться</a>
       </li>
       {% else %}
         <li>

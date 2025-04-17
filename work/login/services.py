@@ -110,7 +110,7 @@ def _set_user_is_active_false(request):
 
 def verification_email(request):
     save_verify_code(request)
-    return redirect('vrmail')
+    return redirect('users:vrmail')
 
 def _create_status_object_for_registration_user(request):
     u = User.objects.get(username=request.user.username)

@@ -3,7 +3,7 @@
 {% block addlist %}
 
 <div class="all_screen">
-<div class="registration-container">
+<div class="registration-container flex flex-col">
         <h2>Авторизация</h2>
         <form method="POST">
             {% csrf_token %}
@@ -17,7 +17,8 @@
             </div>
             <p class="error">{{error}}</p>
             <button type="submit" class="submit-btn">Авторизоваться</button>
-            <a class="link" href="{%url 'reg'%}">Зарегистрироваться</a>
+            <a class="block text-center text-sky-600" href="{%url 'users:reg'%}">Зарегистрироваться</a>
+            <a class="block text-center text-sky-600" href="{% url 'users:password_reset' %}">Забыли пароль?</a>
         </form>
 </div>
 </div>
