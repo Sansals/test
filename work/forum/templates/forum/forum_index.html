@@ -2,9 +2,9 @@
 {% load static %}
 {% block addlist %}
 <link rel="stylesheet" href="{% static 'forum/forum-style.css' %}">
-    <div class="forum-content flex p-5 space-x-5">
-        <div class="w-1/12" ></div>
-        <div class="left-panel flex-col space-y-5 w-8/12 ">
+    <div class="forum-content grid grid-cols-1 gap-2 md:grid-cols-12 p-5 md:space-x-5">
+        <div class="hidden md:flex col-span-1" ></div>
+        <div class="left-panel flex-col space-y-5 md:col-span-8 ">
             <div class="public-chat">
                 <div class="chat-header top-0 left-0 right-0 bg-indigo-950 rounded-t-lg h-10 text-center">
                     <span class="text-gray-100 font-semibold text-2xl m-auto">Общий чат</span>
@@ -88,10 +88,10 @@
                 </div>
             </div>
         </div>
-        <div class="right-panel flex-col space-y-5 w-3/12">
-            <div class="border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+        <div class="right-panel grid grid-cols-2 gap-2 md:flex md:flex-col md:col-span-3">
+            <div class="h-fit border-indigo-950 border-2 rounded-t-lg overflow-hidden">
                 <div class="flex bg-indigo-950 h-10 items-center">
-                    <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Cамые состоятельные игроки: </span>
+                    <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Топ по балансу: </span>
                 </div>
                 <div class="bg-gray-300 divide-y-1 divide-gray-600">
                     {% for el in rich_users_top %}
@@ -110,7 +110,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="border-indigo-950 border-2 rounded-t-lg overflow-hidden">
+            <div class="h-fit border-indigo-950 border-2 rounded-t-lg overflow-hidden">
                 <div class="flex bg-indigo-950 h-10 items-center">
                     <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Наша администрация:</span>
                 </div>

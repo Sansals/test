@@ -1,8 +1,8 @@
 {% extends 'patterns/header.html' %}
 {% block title %}Все новости{% endblock %}
 {% block addlist %}
-<div class="mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
-  <div class="grid grid-cols-2 space-x-5">
+<div class="m-5 md:mx-40 bg-gray-100 p-2 md:p-5 space-y-2 rounded-lg">
+  <div class="grid grid-cols-2 space-x-6">
     <div class="left_block h-fit relative rounded-lg overflow-hidden ">
       <div class="absolute z-10 bg-gradient-to-br bg-auto to-fuchsia-900 inset-x-0 inset-y-0 opacity-50"></div>
       <img class="z-0" src="{{new.img.url}}" alt="">
@@ -13,7 +13,7 @@
           <img class="w-16 h-16 rounded-full" src="{{new.user.avatar.url}}" alt="">
           <a class="text-black text-xl italic font-medium" href="{% url 'profile' new.user.username.id %}">{{new.user.username.username}}</a>
         </div>
-        <div class="date_div flex items-center">
+        <div class="date_div pl-5 flex items-center">
           <div class="text-center text-black text-base italic">{{new.date}}</div>
         </div>
       </div>
@@ -27,7 +27,7 @@
   </div>
 </div>
 
-<div class="my-5 mx-40 bg-gray-100 p-5 space-y-5 divide-y-1 divide-gray-600 rounded-lg">
+<div class="m-5 md:my-5 md:mx-40 bg-gray-100 p-5 space-y-5 divide-y-1 divide-gray-600 rounded-lg">
   {% if user.is_authenticated %}
     <div class="global_comments_div pb-5 grid grid-cols-9 space-x-2">
       <div class="avatar_img col-span-1">
@@ -37,7 +37,7 @@
         <form method="POST" class="grid grid-cols-8 space-y-2">
           {% csrf_token %}
           {{comment_input.comment}}
-          <button type="submit" class="col-span-1 px-2 py-1 text-lg italic bg-green-600 rounded-lg border-1 border-gray-500
+          <button type="submit" class="col-span-3 md:col-span-1 px-2 py-1 text-lg italic bg-green-600 rounded-lg border-1 border-gray-500
                                         hover:border-black hover:bg-green-700">Отправить!</button>
         </form>
       </div>

@@ -21,7 +21,7 @@ def get_new_for_id(id):
 
 def get_new_comments_for_id(id):
     new = News.objects.get(pk=id)
-    comments = News_Comments.objects.filter(new = new)
+    comments = News_Comments.objects.filter(new = new).order_by('-date')
     return comments
 
 def comment_save(request, id):

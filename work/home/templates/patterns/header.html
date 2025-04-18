@@ -85,7 +85,14 @@
         <a href="{% url 'profile' user.username %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Профиль</a>
       </li>
       <li>
-        <a href="{% url 'basket' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Корзина</a>
+        <a href="{% url 'basket' %}" class="inline-block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+          Корзина
+          {% if basket_value %}
+          <a href="" class="bg-orange-400 text-center py-1 px-2 rounded-full text-white">
+                  {{basket_value}}
+                </a>
+          {% endif %}
+        </a>
       </li>
       {% endif %}
     </ul>
