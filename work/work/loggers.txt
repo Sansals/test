@@ -1,0 +1,781 @@
+2025-04-17 17:16:24.864696 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:16:33.722914 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:17:33.258345 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:15.887741 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:45.050151 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:47.818208 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:48.813130 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:49.591088 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:50.576113 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:51.450152 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:52.462934 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:53.001635 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:53.557816 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:18:54.082524 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:20:30.972131 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:03.346528 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:05.346538 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:32.088562 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:32.970103 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:33.764567 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:34.506032 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:58.338802 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:59.181636 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:27:59.901738 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:01.247552 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:02.320631 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:03.152636 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:07.889742 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:08.989890 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 17:28:09.748544 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:00:41.850482 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:10:09.657905 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:12:13.263988 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:13:17.909376 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:13:20.339245 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:13:40.387170 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:14:13.386921 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:14:19.565865 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:14:21.199939 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:15:17.598279 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:15:20.121157 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:15:26.273380 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:15:27.487046 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:15:51.374336 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:02.400408 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:04.403822 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:09.012262 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:12.841141 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:13.940698 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:19.275700 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:20.589086 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:30.528095 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:31.728137 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:16:48.105090 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:17:06.935386 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:17:16.792846 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:17:18.419007 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:17:23.035289 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:19:09.896308 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:19:13.115042 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:19:33.332900 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:19:35.054972 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:20:57.702999 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:21:12.370019 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:22:04.058206 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:22:24.344584 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:22:26.752757 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:22:27.319440 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:03.690636 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:05.971724 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:22.046273 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:22.902576 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:23.620054 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:24.300877 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:47.616489 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:50.131814 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:51.053147 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:51.715285 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:52.119982 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:23:52.905145 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:25:11.554529 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:18.125619 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:28.050944 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:29.655453 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:30.446150 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:37.556663 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:38.721031 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:26:39.759200 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:27:27.878148 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:28:49.607611 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:28:50.746866 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:45.758800 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:47.545151 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:48.211556 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:48.522695 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:49.015321 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:29:49.868582 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:30:26.718686 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:31:47.540668 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:31:49.940669 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:32:12.217323 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:32:13.190199 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:32:19.068111 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:32:20.680816 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:32:21.203384 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:33:36.549806 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:33:56.229729 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:34:19.886435 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:34:41.532029 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:24.307672 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:26.936949 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:28.238925 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:35.709861 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:36.712041 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:35:55.516852 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:11.567874 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:12.320828 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:13.076018 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:29.801841 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:30.746204 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:36:36.138479 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:37:37.835896 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:38:06.254874 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:38:42.785424 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:39:01.205854 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:39:37.381829 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:40:19.846205 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:40:22.122519 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:26.989550 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:29.096991 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:43.585812 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:44.558526 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:45.394146 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:41:52.679601 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:03.353018 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:38.417322 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:40.818403 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:41.628762 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:42.299269 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:42.787120 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:52.769021 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:43:53.607587 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:44:11.607007 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:44:12.905946 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 20:44:34.014476 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:48:15.169499 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:48:29.174662 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:48:36.018082 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:49:23.247446 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:49:25.479145 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:49:40.152275 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:49:41.190760 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:49:41.888873 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:50:17.909889 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:50:20.013174 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:54:37.693704 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:55:58.288216 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:56:26.310222 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:56:27.282046 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 21:56:28.018306 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:03:07.268483 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:04:10.704273 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:06:09.001126 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:06:50.112846 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:08:47.703139 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:11:34.953204 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:11:59.999002 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:13:38.779939 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:15:07.932634 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:15:10.237294 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:16:58.947986 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:17:00.981826 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:17:58.720226 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:18:13.278112 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-17 22:18:13.281272 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:18:33.295946 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:18:36.094385 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:20:28.951467 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:22:24.641534 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:23:07.851522 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:24:20.483381 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:24:39.933030 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:24:40.529250 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-17 22:24:40.531963 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:24:44.024271 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:28:26.022087 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:30:10.665368 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:35:08.882312 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:38:51.410984 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:38:53.738744 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:03.933537 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:09.187421 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:12.206622 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:12.889563 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-17 22:39:12.892294 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:13.609585 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:14.096091 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-17 22:39:14.098906 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:14.377880 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:15.105701 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-17 22:39:15.107894 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:17.671647 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:39:22.313865 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:40:44.215968 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:41:37.733047 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:41:54.074718 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:41:55.240291 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:41:56.229540 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:41:57.187430 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-17 22:42:24.419769 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:44:43.550586 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:44:59.540687 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:46:03.707530 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:47:28.088185 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:47:58.098895 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:48:10.202813 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:49:56.453063 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:50:06.543182 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:50:13.494034 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:50:49.636414 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:53:35.930515 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:53:37.355220 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:54:09.569720 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:54:35.686061 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:00.379172 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:03.021404 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:23.015076 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:24.347028 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:34.710086 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:44.387093 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:46.578736 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:56:47.759571 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:58:08.971342 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:58:21.687498 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:58:26.895202 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:58:51.808599 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 10:59:52.422128 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:01:02.450593 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:01:28.135539 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:01:30.095588 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:01:31.095686 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:02:22.698465 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:02:41.324008 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:08.645258 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:18.221757 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:20.180258 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:25.023963 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:39.012273 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:43.399514 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:03:46.132793 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:04:55.750372 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:04:58.148017 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:04:59.244975 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:10.387099 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:19.909032 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:42.146854 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:46.288844 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:48.636560 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:05:59.503511 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:07:02.893092 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:07:37.952785 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:08:21.214028 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:08:58.818714 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:09:05.395905 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:09:30.506579 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:09:40.033516 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:09:48.410145 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:10:30.055287 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:10:39.991924 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:11:11.329921 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:11:54.751081 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:12:34.424262 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:12:46.476453 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:14:01.981283 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:14:38.232467 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:14:38.235592 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:14:57.869577 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:14:57.872761 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:15:21.149694 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:15:21.152607 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:15:22.234877 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:15:22.237400 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:15:23.146294 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:15:23.149048 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:01.697396 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:16:01.700502 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:02.575477 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:03.647499 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:16:03.649659 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:04.074693 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:05.141049 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:16:05.143291 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:06.369533 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:09.381942 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 11:16:09.384545 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:16:33.119246 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:16.271814 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:18.884789 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:19.974456 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:23.329569 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:24.373248 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:25.202313 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:17:26.022744 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:03.862267 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:32.290074 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:33.590310 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:34.605615 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:45.782255 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:46.871217 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:18:47.874365 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:19:00.913834 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:23.506189 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:27.125641 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:28.170917 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:31.544596 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:34.031912 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:20:56.226185 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:22:07.758301 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:23:09.276693 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:23:27.793463 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:23:29.981032 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:23:35.585839 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:24:15.035489 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:24:36.705824 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:24:37.838976 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:24:50.391249 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:25:52.330455 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:26:38.014755 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:27:29.792542 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:27:38.499334 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:01.892044 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:02.941955 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:03.756072 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:04.489677 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:12.680810 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:13.847559 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:50.947170 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:28:53.267887 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:29:01.924380 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:29:20.682882 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:29:55.575271 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:30:04.081579 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:30:37.863867 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:30:40.285420 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:35:27.314970 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:42:24.537706 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:44:26.616176 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:46:52.135114 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:46:54.683922 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:48:06.532625 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:49:04.379329 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:49:12.841380 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:49:13.984906 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:49:52.028690 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:50:08.378322 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:52:28.739386 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:54:44.647022 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:54:44.647411 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:55:37.316820 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:55:37.317109 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:56:06.164616 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:56:06.165249 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:56:56.439464 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:56:56.439787 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:57:14.688364 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:57:14.688809 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 11:59:41.945709 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 11:59:41.946065 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:01:26.901161 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:01:26.901512 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:01:29.002114 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:01:29.002429 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:01:29.843701 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:01:29.844408 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:01:30.732021 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:01:30.732664 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:02:54.808687 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:02:54.809386 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:02:55.651277 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:02:55.651675 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:05:04.102266 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:05:04.102747 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:05:24.637972 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:05:24.638443 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:05:51.001426 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:05:51.001872 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:06:02.162528 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-18 12:06:02.164518 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-18 12:06:02.186200 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:06:02.186536 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:07:43.323027 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:07:43.323788 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:08:07.708089 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:08:07.708435 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:08:22.813052 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:08:22.813484 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:08:28.238684 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:08:28.239191 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:08:28.994198 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:08:28.994892 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:08:49.388723 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:08:49.389028 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:09:02.823816 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:09:02.824098 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:09:16.815611 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:09:16.815950 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:09:31.285124 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:09:31.285530 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:10:21.491310 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:10:21.491602 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:11:30.100404 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:11:30.100855 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:12:32.613956 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:12:32.614378 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:12:48.746001 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:12:48.746567 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:12:53.318109 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:12:53.318900 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:12:55.246985 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:12:55.247422 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:12:55.247781 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:13:01.348100 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:13:01.348391 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:43.723122 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:43.724014 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:14:43.724899 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:44.939079 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:44.939597 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:14:44.940001 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:49.095167 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:14:49.095432 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:50.136745 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-18 12:14:50.138028 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-18 12:14:50.149407 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:14:50.149652 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:53.381215 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:14:53.381996 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:14:53.382382 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:10.641966 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:10.642423 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:15:10.642768 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:13.282042 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:13.282483 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:15:13.282861 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:15.843981 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:15:15.844258 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:15:23.067831 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:16:03.156280 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:16:16.037868 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:16:30.554869 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:16:39.385361 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:16:51.368899 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:17:57.258073 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:17:58.425531 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:18:10.181961 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:18:37.840300 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:18:52.958992 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:19:21.153040 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:19:29.292947 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:19:43.714470 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:20:07.797277 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:20:20.861484 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:20:22.868753 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:21:44.640748 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:21:45.585352 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:15.546373 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:24.962300 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:35.369853 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:36.626966 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:47.863572 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:22:49.426004 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:23:44.136664 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:24:57.897137 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:25:06.111377 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:25:07.238716 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:25:57.948642 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:25:59.261722 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:26:03.425398 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:26:04.380459 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:26:05.182162 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:27:07.279275 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:27:08.421086 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:28:20.367236 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:28:25.134707 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:28:45.674763 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:31:38.586597 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:31:44.067905 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:33:12.646509 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:36:37.370791 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:37:28.635586 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:37:33.173271 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:37:49.856958 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:38:25.594295 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:38:35.305605 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:39:20.328574 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:39:31.137112 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:39:32.668502 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:39:33.786217 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:39:35.031270 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:41:47.947589 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:43:19.499612 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-18 12:43:19.502805 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:43:22.212429 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:43:22.212877 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:44:12.588442 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:44:12.589232 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-18 12:44:12.589635 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-18 12:44:15.618364 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-18 12:44:15.618815 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:27:14.287008 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:27:19.522569 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:27:22.319651 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:27:23.148765 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:27:24.864286 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:28:12.202021 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:28:25.342560 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:32:20.484351 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:33:12.740435 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:33:15.195969 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:33:16.055283 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:34:10.523305 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:34:43.010727 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:34:45.382797 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:36:03.103946 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:43:10.938547 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:44:12.354850 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:44:13.383081 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:45:36.425126 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:46:28.325774 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:47:19.649571 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:48:14.710308 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:49:02.897232 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:49:07.835004 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:49:20.126503 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:49:21.302232 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:50:29.739194 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:50:50.835456 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:51:13.323411 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:51:19.200144 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:51:38.100075 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:51:38.908766 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:52:44.080157 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:53:20.219810 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:53:21.163436 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:53:23.557290 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:53:52.381838 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:57:10.275154 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:58:26.504166 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:58:29.337321 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:59:24.979855 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 02:59:26.420396 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:10.056493 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:11.573271 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:12.505702 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:13.192656 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:18.685353 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:19.881121 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:43.662837 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:00:44.638661 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:01:11.783898 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:03:31.290148 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:03:55.128390 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:06:37.133221 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:08:09.530041 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:08:10.491574 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:08:13.269011 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:08:14.524191 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:10:36.423698 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:10:37.979253 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:15:13.424457 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:15:14.661746 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:15:16.873108 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:16:15.180325 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:18:00.806556 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:18:30.759500 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:08.955369 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:11.840069 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:15.406088 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:24.471066 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:32.902589 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:33.668225 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:37.193000 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:19:54.775067 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:02.046806 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:14.724258 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:15.738503 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:20.213268 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:36.887300 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:20:40.053539 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:21:44.199464 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:09.691459 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:10.414729 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:12.874820 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:20.009083 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:45.895850 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:56.274595 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:22:57.963976 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:23:13.299398 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:23:14.036296 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:23:17.371661 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:26:27.434967 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:26:42.157720 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:26:50.450132 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:30:04.438851 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:30:22.809058 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:30:38.741818 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:30:42.151169 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:32:41.620963 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:33:03.924717 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:35:39.197761 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:36:41.609144 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:37:15.240234 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:37:31.375018 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:37:32.166958 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:37:41.480532 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:37:56.413815 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:38:07.724824 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:38:08.603849 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:38:11.013588 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:38:47.485870 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:38:57.263738 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:39:36.299626 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:40:03.975950 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:40:30.883370 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:41:00.921948 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:41:02.965196 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:41:15.911934 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:42:18.145933 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:42:21.707034 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:42:35.155629 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:42:55.428028 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:43:03.814205 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:44:41.012322 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:45:24.162721 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:46:35.810490 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:46:36.818904 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:46:42.811905 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:47:20.853297 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:47:36.432273 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:49:15.211150 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:49:36.490128 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:49:56.156762 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:16.800021 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:17.747749 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:21.744505 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:56.245422 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:57.249415 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:50:59.857800 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:51:31.163726 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:51:34.411595 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:52:32.056073 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:53:06.456286 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:53:09.311942 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:53:53.779332 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:53:56.699088 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:56:56.262039 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:03.402705 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:05.064376 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:07.488379 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:10.615365 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:16.956958 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:28.544844 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:30.922200 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:33.190830 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:56.711805 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:58.471943 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:57:59.677304 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:58:12.052112 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:58:22.248324 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:58:48.990989 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:59:26.111993 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:59:40.382966 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 03:59:52.347229 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:20:41.630694 |INFO| Username: Нет пользователя | User get all objects from home.Rules
+2025-04-19 04:20:41.631173 |INFO| Username: Нет пользователя | |shop.services| User get all objects from Baskets
+2025-04-19 04:22:47.793474 |INFO| Username: Нет пользователя | |shop.services| User get all objects from Baskets
+2025-04-19 04:22:58.483356 |INFO| Username: Нет пользователя | |shop.services| User get all objects from Baskets
+2025-04-19 04:23:00.252735 |INFO| Username: Нет пользователя | |shop.services| User get all objects from Baskets
+2025-04-19 04:32:43.614025 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:32:44.578392 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:32:45.633439 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:33:08.521672 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:36:33.501210 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:36:39.973440 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:37:19.984332 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:38:53.126949 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:38:55.924931 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:10.871039 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:13.133985 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:34.517771 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:44.185237 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:54.879261 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:39:57.029970 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:27.242197 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:46.710974 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:47.589118 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:52.345507 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:54.022307 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:40:54.853911 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:41:16.399440 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:18.999086 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:29.811130 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:32.328377 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:40.611449 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:41.667336 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:42:59.946184 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:01.591785 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-19 04:43:01.594546 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:03.002173 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:03.974873 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-19 04:43:03.977135 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:04.798603 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:07.042823 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:12.654979 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:14.864148 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:18.610376 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:20.104524 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:43:46.613708 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:45:49.448864 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:45:51.319199 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:46:02.510199 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:46:13.723829 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:46:18.968077 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:46:18.968399 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:46:21.761320 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:46:21.761754 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-19 04:46:21.762100 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:48:44.101863 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:48:44.103758 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-19 04:48:44.104355 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:48:57.230388 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:48:57.230883 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-19 04:48:57.231221 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:08.955574 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:49:08.956085 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:09.921530 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:09.923223 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:09.935809 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:49:09.936267 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:11.041678 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:11.043104 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:11.057709 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:49:11.057950 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:12.238322 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:12.239522 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:12.254218 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:49:12.254651 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:13.046982 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:13.048474 |INFO| Username: Sansals | |shop.services| Product get by Product.slug
+2025-04-19 04:49:13.066587 |INFO| Username: Sansals | |shop.services| User get all product!
+2025-04-19 04:49:13.067773 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:15.159907 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:49:15.160436 |INFO| Username: Sansals | |shop.services| User get his balance
+2025-04-19 04:49:15.160944 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:50:26.226943 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-19 04:50:26.230367 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:50:29.116279 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:50:42.259469 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:50:47.781982 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:51:39.733675 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:51:46.446008 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:52:32.695632 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:53:19.301092 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:53:20.580456 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:53:23.158112 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:54:25.482512 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:54:34.632081 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:54:35.834211 |INFO| Username: Sansals | User get all objects from home.Rules
+2025-04-19 04:54:35.836810 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:54:36.514888 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:54:37.000653 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:55:23.512189 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:55:33.017522 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:55:55.140548 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:56:25.021059 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:56:47.041315 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:56:48.291282 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:57:00.313113 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:57:02.712470 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:58:01.559845 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets
+2025-04-19 04:58:14.620952 |INFO| Username: Sansals | |shop.services| User get all objects from Baskets

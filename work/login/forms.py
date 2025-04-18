@@ -23,7 +23,7 @@ class MyPasswordResetForm(PasswordResetForm):
 
 class VrMail(Form):
     ver_mail = forms.IntegerField(widget=forms.TextInput(attrs={
-        'class':'input-field',
+        'class':'w-full rounded-md border-1 border-black p-2',
         'placeholder': 'Введите код',
         'id':'ver_mail'
     }))
@@ -32,12 +32,12 @@ class VrMail(Form):
 class AuthForm(AuthenticationForm):
     """Форма авторизации"""
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'class':'input-field',
+        'class':'w-full rounded-md border-1 border-black p-2',
         'placeholder': 'Логин',
         'id': 'username'
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
-        'class':'input-field',
+        'class':'w-full rounded-md border-1 border-black p-2',
         'placeholder': 'Пароль',
         'id': 'password'
     }))

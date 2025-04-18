@@ -3,11 +3,17 @@
 {% load static %}
 {% block addlist %}
 <div class="profile_block px-5">
-  <div class="profile_info_block flex space-x-5 divide-x-1 divide-gray-300 py-15">
-    <div class="avatar_div w-1/5 mr-5 space-y-2 rounded-xl overflow-hidden">
+  <div class="profile_info_block flex py-10 md:py-15">
+    <div class="avatar_div h-fit md:w-1/5 w-4/10 space-y-2 rounded-xl overflow-hidden">
       <img class="user_avatar " src="{{user_status_object.avatar.url}}" alt="">
+      {% if user_object.username == user.username %}
+          <div class="md:hidden">
+              <a class="text-center block py-2 px-4 rounded-lg border-1 border-black items-center bg-sky-600 hover:bg-sky-700" href="{% url 'update_avatar' user_status_object.pk %}">Сменить аватар</a>
+              <a class="text-center block py-2 px-4 rounded-lg border-1 border-black items-center bg-rose-600 hover:bg-rose-700" href="{% url 'users:logout' %}">Выйти</a>
+          </div>
+      {% endif %}
     </div>
-    <div class="user_info_div w-2/5 flex flex-col">
+    <div class="user_info_div hidden md:w-2/5  md:flex md:flex-col">
     <div class="flex flex-col space-y-2 w-[80%] mx-auto">
       <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Имя пользователя:</span><span>{{user_object.username}}</span></div>
       <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Статус пользователя:</span>
@@ -60,7 +66,60 @@
       </div>
     </div>
     </div>
-    <div class="user_active_div w-2/5 flex flex-col">
+
+      <!-- For mobile style version  -->
+
+  <div class="user_info_div md:hidden  w-6/10 flex flex-col">
+    <div class="flex flex-col pl-2 space-y-2">
+      <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Имя пользователя:</span><span>{{user_object.username}}</span></div>
+      <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Статус пользователя:</span>
+        <span>
+          {% if user_object.username == user.username %}
+            {% if user_status_object.is_moderator %}
+              <a class="text-green-700 font-semibold" href="http://127.0.0.1:8000/admin">Модератор</a>
+            {% elif user_status_object.is_staff %}
+              <a class="text-red-600 font-bold bg-black p-1" href="http://127.0.0.1:8000/admin">Администратор</a>
+            {% else %}
+              Активный
+            {% endif %}
+          {% else %}
+            {% if user_status_object.is_moderator %}
+              <span class="text-green-700 font-semibold">Модератор</span>
+            {% elif user_status_object.is_staff %}
+              <span class="text-red-600 font-bold bg-black p-1">Администратор</span>
+            {% else %}
+              Активный
+            {% endif %}
+          {% endif %}
+        </span>
+      </div>
+      <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Адрес электронной почты:</span>
+        <span>
+          {% if user_object.username == user.username %}
+            {{user_object.email}}
+          {% else %}
+            *Скрыт*
+          {% endif %}
+        </span>
+      </div>
+      <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Дата регистрации: </span><span>{{ user_object.date_joined  }}</span></div>
+      <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span class="font-medium">Баланс: </span>
+        <span>
+          {% if user_object.username == user.username %}
+            <span class="italic text-xl font-bold text-amber-600">{{user_status_object.balance}} </span> монет <a class="flex text-center text-lg px-2 rounded-lg border-1 border-blue-200 bg-green-600 hover:bg-green-700" href="">Пополнить</a>
+          {% else %}
+            *Скрыт*
+          {% endif %}
+        </span>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+
+      <!-- End mobile style version  -->
+
+    <div class="user_active_div hidden md:w-2/5 md:flex md:flex-col">
       <div class="flex flex-col space-y-2 w-[80%] mx-auto">
         <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество записей:</span><span>{{value_user_articles}}</span></div>
         <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество ответов:</span>
@@ -84,7 +143,38 @@
         <div class="flex flex-row p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Активность:</span><span> *В разработке* </span></div>
       </div>
     </div>
+
   </div>
+    <!-- For mobile style version -->
+    <div class="md:hidden text-xl mb-2 text-white text-center">{% if user_object.username == user.username %}Моя активность:{% else %} Активность пользователя: {% endif %}</div>
+    <div class="user_active_div md:hidden flex mb-2">
+      <div class="flex flex-col w-[80%] mx-auto space-y-2">
+        <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество записей:</span><span class="text-xl font-semibold">{{value_user_articles}}</span></div>
+        <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество ответов:</span>
+          <span class="text-xl font-semibold">
+            {% if value_user_answer is None %}
+              Ответов нет
+            {% else %}
+              {{value_user_answer}}
+            {% endif %}
+          </span>
+        </div>
+        <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Количество комментариев:</span>
+            <span class="text-xl font-semibold">
+                {% if value_user_comments %}
+                    {{value_user_comments}}
+                {% else %}
+                    Комментариев нет
+                {% endif %}
+            </span>
+        </div>
+        <div class="flex flex-col p-2 items-center space-x-2 rounded-lg bg-gray-400 border-2 border-gray-300"><span>Активность:</span><span class="text-xl font-semibold"> *В разработке* </span></div>
+      </div>
+    </div>
+
+    <!-- End mobile style version -->
+
+    <!-- Forum links block -->
   {% if user_object.username == user.username %}
   <div class="user_articles_and_answers flex flex-col bg-gray-400 border-2 border-gray-300 rounded-xl">
     <div class="buttons_div m-auto bg-gray-600 rounded-b-full ">
@@ -92,30 +182,40 @@
       <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
       <a href="{% url 'profile_view_comments' user.username%}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
     </div>
-    <div class="articles_div flex flex-col">
+    <div class="articles_div flex flex-col mt-2">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
          border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
             {% if all_open_user_articles or all_closed_user_articles %}
                 {% for el in all_open_user_articles %}
-                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}" class="grid grid-cols-3 justify-items-center h-15 items-center
+                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}"
+                           class="grid grid-cols-2 md:grid-cols-3 justify-items-center space-x-2 h-15 items-center
                                                       hover:bg-neutral-800 hover:rounded-lg">
                             {% if el.is_anonymous %}
                                 {% if el.user.id == user.id %}
-                                    <div>Моё анонимное обращение</div>
+                                    <div class="hidden md:flex">Моё анонимное обращение</div>
                                 {% else %}
-                                    <div>*Имя скрыто*</div>
+                                    <div class="hidden md:flex">*Имя скрыто*</div>
                                 {% endif %}
                             {% else %}
-                                <div>{{el.user.username}}</div>
+                                <div class="hidden md:flex">{{el.user.username}}</div>
                             {% endif %}
                             <div>{{el.subject}}</div>
                             <div>{{el.date}}</div>
                         </a>
                 {% endfor %}
                 {% for el in all_closed_user_articles %}
-                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}" class="grid grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
+                        <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}"
+                           class="grid grid-cols-2 md:grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
                                                       hover:bg-rose-900 hover:rounded-lg">
-                            <div>{{el.user.username}}</div>
+                            {% if el.is_anonymous %}
+                                {% if el.user.id == user.id %}
+                                    <div class="hidden md:flex">Моё анонимное обращение</div>
+                                {% else %}
+                                    <div class="hidden md:flex">*Имя скрыто*</div>
+                                {% endif %}
+                            {% else %}
+                                <div class="hidden md:flex">{{el.user.username}}</div>
+                            {% endif %}
                             <div>{{el.subject}}</div>
                             <div>{{el.date}}</div>
                         </a>

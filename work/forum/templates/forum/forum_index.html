@@ -111,13 +111,13 @@
                 </div>
             </div>
             <div class="h-fit border-indigo-950 border-2 rounded-t-lg overflow-hidden">
-                <div class="flex bg-indigo-950 h-10 items-center">
-                    <span class="text-xl text-gray-100 m-auto medium leading-normal font-medium">Наша администрация:</span>
+                <div class="flex bg-indigo-950 md:h-10 items-center">
+                    <span class="text-xl text-gray-100 text-center m-auto medium leading-normal font-medium">Наша Администрация:</span>
                 </div>
                 <div class="bg-gray-300 divide-y-1 divide-gray-600">
                     {% for el in stuff_users.admins %}
                         <div class="flex flex-row items-center px-3 py-1">
-                            <img class="inline-block w-11 h-11 mr-3 rounded-full border-2 border-red-700" src="{{el.avatar.url}}">
+                            <img class="inline-block w-11 h-11 mr-1 rounded-full border-2 border-red-700" src="{{el.avatar.url}}">
                             <div class="user-top-info admin-info"><span class="text-red-700 font-bold">{{el.username.username}}</span><br>
                                 <span class="italic font-medium">Администратор</span>
                             </div>
@@ -125,7 +125,7 @@
                     {% endfor %}
                     {% for el in stuff_users.moderators %}
                         <div class="flex flex-row items-center px-3 py-1">
-                            <img class="inline-block w-11 h-11 mr-3 rounded-full border-2 border-green-700" src="{{el.avatar.url}}">
+                            <img class="inline-block w-11 h-11 mr-1 rounded-full border-2 border-green-700" src="{{el.avatar.url}}">
                             <div class="user-top-info admin-info"><span class="text-green-700 font-bold">{{el.username.username}}</span><br>
                                 <span class="italic font-medium">Модератор</span>
                             </div>
