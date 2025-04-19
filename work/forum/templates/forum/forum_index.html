@@ -30,7 +30,7 @@
                                     {{el.username.username}}: {{el.text}}
                                 {% endif %}
                                 <span class="text-gray-500 ml-auto">
-                                    {{el.date}}
+                                    {{el.date|date:"dM,h:m"}}
                                 </span>
                             </a>
                         </li>

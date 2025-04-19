@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="{% static 'shop/style_basket.css' %}">
     <link rel="stylesheet" href="{% static 'shop/style_purchased_baskets.css' %}">
 
-<div class="mx-5 md:mx-auto md:w-[80%] bg-gray-100 p-5 space-y-2 rounded-lg">
+<div class="mx-5 md:mx-auto md:w-[80%] bg-gray-300 md:bg-gray-200 p-5 space-y-2 rounded-lg">
     <div class="text-2xl font-semibold italic text-center text-black">Корзина</div>
-    <div class="basket_div grid grid-cols-8 divide-y-1 divide-gray-600 rounded-xl border-2 border-gray-600">
-        <div class="col-span-8 grid grid-cols-8 rounded-t-xl px-1 bg-gray-200" >
+
+    <div class="basket_div hidden md:grid grid-cols-8 divide-y-1 overflow-hidden divide-gray-600 rounded-xl border-2 border-gray-600">
+        <div class="col-span-8 grid grid-cols-8 rounded-t-xl px-1 bg-gray-400" >
             <div class="col-span-2 text-black italic font-bold text-xl">Товар</div>
             <div class=" text-black italic font-bold text-xl">Цена</div>
             <div class="col-span-2 text-black italic font-bold text-xl">Количество</div>
             <div class="col-span-2 text-black italic font-bold text-xl">Стоимость</div>
-            <div class=" text-black italic font-bold text-xl">Удаление</div>
+            <div class="text-black italic font-bold text-xl">Удаление</div>
         </div>
         {% if basket %}
         {% for el in basket %}
-        <div class="col-span-8 grid grid-cols-8 p-2 px-1" >
+        <div class="col-span-8 grid grid-cols-8 p-2 bg-gray-300 px-1" >
             <div class="col-span-2 text-black italic text-xl">{{el.product}}</div>
             <div class=" text-black italic text-xl">{{el.product.price}}</div>
             <div class="col-span-2 text-black italic text-xl">{{el.value}}</div>
             <div class="col-span-2 text-black italic text-xl">{{el.products_price}}</div>
-            <div class=" text-black italic text-xl">
+            <div class="text-black text-xl">
                 <a class="inline-block bg-rose-600 px-2 rounded-full hover:bg-rose-700 " href="{% url 'basket_remove' el.id %}">Удалить</a>
             </div>
         </div>
@@ -38,13 +39,81 @@
             </div>
         {% endif %}
     </div>
+
+    <!-- For mobile style version -->
+
+    <div class="md:hidden flex flex-col bg-gray-100 px-2 border-2 border-gray-600 divide-y-1 divide-gray-600 rounded-lg" >
+        {% if basket %}
+            {% for el in basket %}
+        <div class="pb-4">
+            <div class="grid grid-cols-6 mb-1">
+                <div class="col-span-2 items-center">
+                    <span class="text-xl font-medium">{{el.product}}</span>
+                </div>
+                <div class="flex flex-col col-span-4 items-center">
+                    <span><span class="italic font-semibold text-amber-600 text-xl">{{el.products_price}}</span> Монет</span>
+                    <span class="text-base italic"><span class="text-base italic font-semibold text-amber-600">{{el.product.price}}</span> монет/шт</span>
+                </div>
+            </div>
+            <div class="grid flex grid-cols-6">
+                <div class="col-span-2 items-center">
+                    <a class="inline-block bg-rose-600 px-2 rounded-full hover:bg-rose-700 " href="{% url 'basket_remove' el.id %}">Удалить</a>
+                </div>
+                <div class="flex col-span-4 items-center justify-end">
+                    <span class="text-base text-gray-600">{{el.value}} шт</span>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+        {% else %}
+        <div>Корзина пуста. <a class="text-sky-600 italic" href="{% url 'shop' %}">Добавим</a> что-нибудь? =)</div>
+        {% endif %}
+    </div>
+
+    <!-- End mobile style version -->
+
     <div class="text-black text-xl font-bold">Итого: <span class="italic text-amber-600 text-2xl">{{basket.total_price}}</span> монет</div>
     <div class="text-black text-xl font-bold">Ваш баланс: <span class="italic text-amber-600 text-2xl">{{balance}}</span> монет</div>
     <div class="">
         <a href="{% url 'payment_basket' %}" class="text-gray-100  bg-green-400 px-2 py-1 border-2 border-gray-950 text-2xl rounded-xl hover:bg-green-500">Купить!</a>
     </div>
-    <div class="purchased_div">
-        <div class=" text-center text-xl text-black italic font-medium ">
+
+    <!-- For mobile style version -->
+    <div class="md:hidden text-2xl font-semibold italic text-center text-black">
+            Ранее купленные товары:
+        </div>
+    <div class="purchased_div md:hidden flex flex-col bg-gray-100 px-2 border-2 border-gray-600 divide-y-1 divide-gray-600 rounded-lg" >
+        {% if purchased_baskets %}
+            {% for el in purchased_baskets %}
+        <div class="pb-4">
+            <div class="grid grid-cols-6 mb-1">
+                <div class="col-span-2 items-center">
+                    <span class="text-xl font-medium">{{el.product}}</span>
+                </div>
+                <div class="flex flex-col col-span-4 items-center">
+                    <span><span class="italic font-semibold text-amber-600 text-xl">{{el.products_price}}</span> Монет</span>
+                    <span class="text-base italic"><span class="text-base italic font-semibold text-amber-600">{{el.product.price}}</span> монет/шт</span>
+                </div>
+            </div>
+            <div class="grid flex grid-cols-6">
+                <div class="col-span-2 items-center">
+                    <a class="inline-block bg-rose-600 px-2 rounded-full hover:bg-rose-700 " href="{% url 'basket_remove' el.id %}">Удалить</a>
+                </div>
+                <div class="flex col-span-4 items-center justify-end">
+                    <span class="text-base text-gray-600">{{el.value}} шт</span>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+        {% else %}
+        <div>Вы ещё ничего не купили.</div>
+        {% endif %}
+    </div>
+
+    <!-- End mobile style version -->
+
+    <div class="purchased_div hidden md:block">
+        <div class="mb-5 text-2xl font-semibold italic text-center text-black">
             Ранее купленные товары:
         </div>
         <div class="grid grid-cols-5 gap-5" >
@@ -67,5 +136,8 @@
             {% endif %}
         </div>
     </div>
+
+
+
 </div>
 {% endblock %}

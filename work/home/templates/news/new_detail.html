@@ -50,13 +50,13 @@
         <img src="{{el.user.avatar.url}}" class="rounded-lg">
       </div>
       <div class="input_button_date_div col-span-8">
-        <div class="flex justify-between">
-          <div class="username_message flex flex-col">
+        <div class="flex justify-between grid grid-cols-9">
+          <div class="username_message col-span-7">
             <span>{{el.user.username.username}}</span>
-            <span>{{el.comment}}</span>
+            <p>{{el.comment}}</p>
           </div>
-          <div class="date">
-            <span>{{el.date}}</span>
+          <div class="date col-span-2 place-self-center">
+            <span class="items-center">{{el.date}}</span>
           </div>
         </div>
       </div>

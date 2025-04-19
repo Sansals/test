@@ -178,9 +178,14 @@
   {% if user_object.username == user.username %}
   <div class="user_articles_and_answers flex flex-col bg-gray-400 border-2 border-gray-300 rounded-xl">
     <div class="buttons_div m-auto bg-gray-600 rounded-b-full ">
-      <a href="{% url 'profile' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-bl-full">Мои статьи</a>
-      <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
-      <a href="{% url 'profile_view_comments' user.username%}" class="inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-br-full">Мои комментарии</a>
+        <a href="{% url 'profile' user.username %}" class="hidden md:inline-block text-center text-black hover:bg-gray-700 py-2 px-4 rounded-bl-full">Мои статьи</a>
+        <a href="{% url 'profile_view_answers' user.username %}" class="hidden md:inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
+        <a href="{% url 'profile_view_comments' user.username%}" class="hidden md:inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-br-full">Мои комментарии</a>
+        <!-- For mobile style version -->
+            <a href="{% url 'profile' user.username %}" class="md:hidden inline-block text-center text-black hover:bg-gray-700 py-2 px-4 rounded-bl-full">Cтатьи</a>
+            <a href="{% url 'profile_view_answers' user.username %}" class="md:hidden inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Ответы</a>
+            <a href="{% url 'profile_view_comments' user.username%}" class="md:hidden inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-br-full">Комментарии</a>
+        <!-- End mobile style version -->
     </div>
     <div class="articles_div flex flex-col">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
@@ -191,7 +196,12 @@
                        class="grid grid-cols-2 md:grid-cols-3 rounded-lg justify-items-center h-15 items-center
                                                       hover:bg-neutral-800 hover:rounded-lg">
                         <div class="hidden md:flex">{{el.new.title|truncatechars:30}}</div>
-                        <div>{{ el.comment|truncatechars:9 }}</div>
+                        <!-- For mobile style version -->
+
+                        <div class="md:hidden">{{ el.comment|truncatechars:9 }}</div>
+
+                        <!-- End mobile style version -->
+                        <div class="hidden md:block">{{ el.comment|truncatechars:35 }}</div>
                         <div>{{ el.date }}</div>
                     </a>
                 {% endfor %}

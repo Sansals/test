@@ -8,15 +8,19 @@
     <div class="w-full text-center text-3xl leading-normal text-gray-300 font-semibold mb-5 md:mb-20 mt-10">Все продукты: </div>
     <div class="grid grid-cols-3 mx-5 gap-2 md:grid-cols-5 md:gap-8 md:mx-25">
         {% for el in products %}
-            <div class="flex-col bg-indigo-950 min-h-60 space-y-1 md:space-y-2 p-2 border-2 border-gray-300 rounded-tl-xl rounded-br-xl
+            <div class="flex-col bg-indigo-950 min-h-50 space-y-1 md:space-y-2 p-1 md:p-2 border-2 border-gray-300 rounded-tl-xl rounded-br-xl
                             hover:border-gray-600 hover:border-3 hover:bg-violet-950">
-                <img class=" mx-auto w-20 h-20 md:w-35 md:h-35 aspect-square overflow-hidden" src="{{el.img.url}}" alt="">
-                <div class=" text-gray-100 text-2xl/6 w-full text-2xl text-center">
+                <img class=" mx-auto w-16 h-16 md:w-35 md:h-35 aspect-square overflow-hidden" src="{{el.img.url}}" alt="">
+                <div class=" text-gray-100 text-xl md:text-2xl/6 w-full text-2xl text-center">
                     {{el.name}}
                 </div>
                 <div class="text-center text-gray-300 text-lg font-semibold leading-tight">Цена: <span class="italic text-amber-600">{{el.price}}</span></div>
-                <a href="{% url 'basket_add' el.slug %}" class="m-auto p-1 text-center text-gray-300 text-lg/5 w-[80%] block border-2 border-gray-300 rounded-full
+                <a href="{% url 'basket_add' el.slug %}" class="hidden md:block m-auto p-1 text-center text-gray-300 text-lg/5 w-[80%] border-2 border-gray-300 rounded-full
                                                                  hover:bg-purple-800 hover:border-3">Добавить товар</a>
+                <!-- For mobile style version -->
+                <a href="{% url 'basket_add' el.slug %}" class="block md:hidden mt-auto p-1 text-center text-gray-300 text-md/3 md:text-lg/5 w-[100%] border-1 border-gray-300 rounded-full
+                                                                 ">Добавить</a>
+                <!-- End mobile style version -->
             </div>
         {% endfor %}
     </div>

@@ -178,9 +178,15 @@
   {% if user_object.username == user.username %}
   <div class="user_articles_and_answers flex flex-col bg-gray-400 border-2 border-gray-300 rounded-xl">
     <div class="buttons_div m-auto bg-gray-600 rounded-b-full ">
-      <a href="{% url 'profile' user.username %}" class="inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-bl-full">Мои статьи</a>
-      <a href="{% url 'profile_view_answers' user.username %}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
-      <a href="{% url 'profile_view_comments' user.username%}" class="inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
+        <a href="{% url 'profile' user.username %}" class="hidden md:inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-bl-full">Мои статьи</a>
+        <a href="{% url 'profile_view_answers' user.username %}" class="hidden md:inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Мои ответы</a>
+        <a href="{% url 'profile_view_comments' user.username%}" class="hidden md:inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Мои комментарии</a>
+        <!-- For mobile style version -->
+            <a href="{% url 'profile' user.username %}" class="md:hidden inline-block text-center text-black bg-gray-700 py-2 px-4 rounded-bl-full">Cтатьи</a>
+            <a href="{% url 'profile_view_answers' user.username %}" class="md:hidden inline-block text-center text-black hover:bg-gray-700 py-2 px-4">Ответы</a>
+            <a href="{% url 'profile_view_comments' user.username%}" class="md:hidden inline-block text-center text-black hover:bg-gray-700 py-2 px-4 hover:rounded-br-full">Комментарии</a>
+        <!-- End mobile style version -->
+
     </div>
     <div class="articles_div flex flex-col mt-2">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
@@ -199,8 +205,13 @@
                             {% else %}
                                 <div class="hidden md:flex">{{el.user.username}}</div>
                             {% endif %}
-                            <div>{{el.subject}}</div>
-                            <div>{{el.date}}</div>
+
+                            <!-- For mobile style version -->
+                            <div class="md:hidden">{{el.subject|truncatechars:18}}</div>
+                            <!-- End mobile style version -->
+                            <div class="hidden md:block">{{el.subject}}</div>
+
+                            <div class="">{{el.date}}</div>
                         </a>
                 {% endfor %}
                 {% for el in all_closed_user_articles %}
@@ -216,7 +227,12 @@
                             {% else %}
                                 <div class="hidden md:flex">{{el.user.username}}</div>
                             {% endif %}
-                            <div>{{el.subject}}</div>
+
+                            <!-- For mobile style version -->
+                            <div class="md:hidden">{{el.subject|truncatechars:18}}</div>
+                            <!-- End mobile style version -->
+                            <div class="hidden md:block">{{el.subject}}</div>
+
                             <div>{{el.date}}</div>
                         </a>
                 {% endfor %}
