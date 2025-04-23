@@ -97,7 +97,7 @@ class ForumComplaints(models.Model):
 
 
 class ForumTechAnswer(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    user = models.ForeignKey(User_Status,
                              on_delete=models.CASCADE,
                              default=None,
                              related_name='responsible_tech_user',
@@ -119,7 +119,7 @@ class ForumTechAnswer(models.Model):
         return f'{self.user.username} | {self.question.user.username} | {self.answer}'
 
 class ForumComplaintAnswer(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    user = models.ForeignKey(User_Status,
                              on_delete=models.CASCADE,
                              default=None,
                              related_name='responsible_complaint_user',
@@ -132,5 +132,9 @@ class ForumComplaintAnswer(models.Model):
     date = models.DateTimeField(auto_now_add=True, blank=True)
     answer = models.TextField('Ответ', max_length= 600 )
     is_anonymous = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Ответ на жалобу'
+        verbose_name_plural = 'Ответы на жалобы'
 
 # Create your models here.

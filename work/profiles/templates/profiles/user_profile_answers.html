@@ -189,25 +189,45 @@
     </div>
     <div class="articles_div flex flex-col mt-2">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
-         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
+         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium overflow-hidden">
             {% if all_user_answers %}
                 {% for el in all_user_answers %}
                         {% if el.question.is_resolved %}
-                            <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
-                               class="grid grid-cols-2 md:grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
+                            {% if el.question.is_anonymous %}
+                                <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
+                                    class="grid grid-cols-2 md:grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
                                                        hover:bg-rose-900 hover:rounded-lg">
-                                <div>{{el.question.user.username}}</div>
-                                <div class="hidden md:flex">{{ el.question.subject }}</div>
-                                <div>{{ el.date }}</div>
-                            </a>
+                                    <div>*Имя скрыто*</div>
+                                    <div class="hidden md:flex">{{ el.question.subject }}</div>
+                                    <div>{{ el.date }}</div>
+                                </a>
+                            {% else %}
+                                <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
+                                    class="grid grid-cols-2 md:grid-cols-3 rounded-lg bg-rose-800 justify-items-center h-15 items-center
+                                                       hover:bg-rose-900 hover:rounded-lg">
+                                    <div>{{el.question.user.username}}</div>
+                                    <div class="hidden md:flex">{{ el.question.subject }}</div>
+                                    <div>{{ el.date }}</div>
+                                </a>
+                            {% endif %}
                         {% else %}
-                            <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
-                               class="grid grid-cols-2 md:grid-cols-3 rounded-lg justify-items-center h-15 items-center
+                            {% if el.question.is_anonymous %}
+                                <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
+                                    class="grid grid-cols-2 md:grid-cols-3 rounded-lg justify-items-center h-15 items-center
                                                       hover:bg-neutral-800 hover:rounded-lg">
-                                <div>{{el.question.user.username}}</div>
-                                <div class="hidden md:flex">{{ el.question.subject }}</div>
-                                <div>{{ el.date }}</div>
-                            </a>
+                                    <div>*Имя скрыто*</div>
+                                    <div class="hidden md:flex">{{ el.question.subject }}</div>
+                                    <div>{{ el.date }}</div>
+                                </a>
+                            {% else %}
+                                <a href="{% if el.question.is_anonymous != None %}{% url 'complaints_record' el.question.pk %}{% else %}{% url 'techsupport_record' el.question.pk %}{% endif %}"
+                                    class="grid grid-cols-2 md:grid-cols-3 rounded-lg justify-items-center h-15 items-center
+                                                      hover:bg-neutral-800 hover:rounded-lg">
+                                    <div>{{el.question.user.username}}</div>
+                                    <div class="hidden md:flex">{{ el.question.subject }}</div>
+                                    <div>{{ el.date }}</div>
+                                </a>
+                            {% endif %}
                         {% endif %}
                 {% endfor %}
             {% else %}

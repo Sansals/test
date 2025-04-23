@@ -1,6 +1,7 @@
 {% extends 'forum/techsupport/techsupport_header.html' %}
 
 {% block records %}
+{% load static %}
     <div class="m-5 bg-neutral-600 border-3 px-10 pt-5 pb-15 border-indigo-950 rounded-lg">
         <div class="p-2 divide-y-2 divide-gray-600 w-[85%] m-auto border-1
          border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
@@ -48,7 +49,7 @@
                     {% for el in answers %}
                     {% if el.is_anonymous %}
                         <div>
-                            <img class="rounded-lg" src="{{el.user.avatar.url}}" alt="">
+                            <img class="rounded-lg" src="{% static 'login/avatars/stive.jpg' %}" alt="">
                         </div>
                         <div class="flex flex-col col-span-4">
                             <div>Имя скрыто</div>
@@ -59,9 +60,9 @@
                             <img class="rounded-lg" src="{{el.user.avatar.url}}" alt="">
                         </div>
                         <div class="flex flex-col col-span-4">
-                            {% if el.user.is_superuser %}
+                            {% if el.user.is_staff %}
                                 <div class="text-red-600 font-semibold">{{el.user.username}}</div>
-                            {% elif el.user.is_staff %}
+                            {% elif el.user.is_moderator %}
                                 <div class="text-green-700 font-semibold">{{el.user.username}}</div>
                             {% else %}
                                 <div>{{el.user.username}}</div>

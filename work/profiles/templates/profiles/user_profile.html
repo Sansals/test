@@ -190,7 +190,7 @@
     </div>
     <div class="articles_div flex flex-col mt-2">
       <div class="flex flex-col divide-y-2 divide-gray-600 w-[85%] m-auto border-1
-         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium">
+         border-gray-1 bg-neutral-900 rounded-xl text-gray-300 text-xl font-medium overflow-hidden">
             {% if all_open_user_articles or all_closed_user_articles %}
                 {% for el in all_open_user_articles %}
                         <a href="{% if el.is_anonymous != None %}{% url 'complaints_record' el.pk %}{% else %}{% url 'techsupport_record' el.pk %}{% endif %}"

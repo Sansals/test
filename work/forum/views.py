@@ -61,7 +61,7 @@ def techsupport_record_view(request, pk):
     form = ForumTechSupportAnswerForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
-        response.user = User.objects.get(username=request.user)
+        response.user = User_Status.objects.get(username=request.user.id)
         response.question = ForumTechQuestions.objects.get(pk=pk)
         response.save()
         form = ForumTechSupportAnswerForm()
@@ -81,7 +81,7 @@ def complaints_record_view(request, pk):
     form = ForumComplaintsAnswerForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
-        response.user = User.objects.get(username=request.user)
+        response.user = User_Status.objects.get(username=request.user.id)
         response.question = ForumComplaints.objects.get(pk=pk)
         response.save()
         form = ForumComplaintsAnswerForm()

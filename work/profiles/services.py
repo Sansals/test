@@ -21,7 +21,8 @@ def get_all_open_user_articles(url_username):
     return all_open_user_articles
 
 def get_all_user_answers(url_username):
-    user = User.objects.get(username=url_username)
+    user_id = User.objects.get(username=url_username).id
+    user = User_Status.objects.get(username=user_id)
     user_tech_answers = ForumTechAnswer.objects.filter(user=user).order_by('-date')
     user_forum_answers = ForumComplaintAnswer.objects.filter(user=user).order_by('-date')
     all_user_answers = list(chain(user_forum_answers, user_tech_answers))
@@ -47,7 +48,8 @@ def get_value_user_articles(url_username):
     return value_of_all_user_articles
 
 def get_value_user_answer(url_username):
-    user = User.objects.get(username=url_username)
+    user_id = User.objects.get(username=url_username).id
+    user = User_Status.objects.get(username=user_id)
     user_tech_answers = ForumTechAnswer.objects.filter(user=user)
     user_forum_complaints_answers = ForumComplaintAnswer.objects.filter(user=user)
     value_of_all_user_answers = len(user_tech_answers) + len(user_forum_complaints_answers)
