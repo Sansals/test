@@ -21,7 +21,7 @@ def email_verification_form(request):
     if request.method == "POST":
         form = VrMail(request.POST)
         if form.is_valid():
-            if int(form.cleaned_data['ver_mail']) == int(_get_session_data(request, name='code')):
+            if int(form.cleaned_data['ver_mail']) == int(get_session_data(request, session_name='sessiondata', name='code')):
                 _set_user_verify_true(request)
                 return redirect('home')
             else:
@@ -37,8 +37,7 @@ def logout_user(request):
 
 def set_user_verify_true(request):
     try:
-        data = request.session.pop('user_id', {})
-        user_id = data.get('user_id')
+        user_id = get_session_data(request, session_name='user_id', name='user_id')
         logger.info(
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
@@ -68,8 +67,8 @@ def set_user_verify_true(request):
             f'Exception: User cant set his verified status is True!')
         pass
 
-def get_session_data(request, name):
-    data = request.session.pop('sessiondata', {})
+def get_session_data(request,session_name, name):
+    data = request.session.pop(session_name, {})
     try:
         return data.get(name)
     except AttributeError:
@@ -120,8 +119,7 @@ def _set_user_is_active_false(request):
 
 def _set_user_is_active_true(request):
     try:
-        data = request.session.pop('user_test_id', {})
-        user_id = data.get('user_id')
+        user_id = get_session_data(request, session_name='user_test_id', name='user_id')
         user = User.objects.get(id = user_id)
         user.is_active = True
         user.save()

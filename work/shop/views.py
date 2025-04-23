@@ -59,6 +59,7 @@ def basket_add(request, product_slug):
 def basket_change(request, product_slug):
     ...
 
+@login_required()
 def basket_remove(request, product_id):
 
     cart = Baskets.objects.get(id = product_id)

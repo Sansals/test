@@ -7,14 +7,11 @@ from .models import Public_Chat, ForumTechQuestions, ForumTechAnswer, ForumCompl
 
 from shop.services import basket_value
 from .services import *
-from work.global_services import get_username, get_user_verify_is
-from login.services import save_verify_code
-import logging
-import datetime
 
-logger = logging.getLogger(__name__)
 
+@login_required()
 def complaints_form_view(request):
+    """Метод представления формы подачи жалоб"""
     form = ForumComplaintsForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
@@ -29,6 +26,7 @@ def complaints_form_view(request):
 
 @login_required()
 def techsupport_form_view(request):
+    """Метод представления формы подачи письма в техподдержку"""
     form = ForumTechSupportQuestionsForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
@@ -41,7 +39,9 @@ def techsupport_form_view(request):
     }
     return render(request, 'forum/techsupport/form.html', data)
 
+@login_required()
 def techsupport_closed_view(request):
+    """Метод представления закрытых обращений в тех. поддержку"""
     data = {
         'title_text': 'Закрытые обращения',
         'all_tickets': get_closed_tickets(),
@@ -49,7 +49,9 @@ def techsupport_closed_view(request):
     }
     return render(request, 'forum/techsupport/records.html', data)
 
+@login_required()
 def complaints_closed_view(request):
+    """Метод представления закрытых жалоб"""
     data = {
         'title_text': 'Закрытые жалобы',
         'all_tickets': get_closed_complaints(),
@@ -57,7 +59,9 @@ def complaints_closed_view(request):
     }
     return render(request, 'forum/complaints/records.html', data)
 
+@login_required()
 def techsupport_record_view(request, pk):
+    """Метод представления письма в тех. поддержку"""
     form = ForumTechSupportAnswerForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
@@ -65,11 +69,9 @@ def techsupport_record_view(request, pk):
         response.question = ForumTechQuestions.objects.get(pk=pk)
         response.save()
         form = ForumTechSupportAnswerForm()
-        logger.warning(
-            f'response.question = {response.question}; response.user = {response.user}')
     data={
         'record': get_record_for_pk(pk),
-        'user_status_object': get_user_status_object_for_pk(pk),
+        'user_status_object': get_user_status_object_for_pk_in_TechQuestions(pk),
         'form_answer': form,
         'user_request_status_object': get_user_status_object(request),
         'answers':get_answers(pk),
@@ -77,7 +79,9 @@ def techsupport_record_view(request, pk):
     }
     return render(request, 'forum/techsupport/record_view.html', data)
 
+@login_required()
 def complaints_record_view(request, pk):
+    """Метод представления жалобы"""
     form = ForumComplaintsAnswerForm(request.POST)
     if form.is_valid():
         response = form.save(commit=False)
@@ -85,7 +89,7 @@ def complaints_record_view(request, pk):
         response.question = ForumComplaints.objects.get(pk=pk)
         response.save()
         form = ForumComplaintsAnswerForm()
-        logger.warning(
+        logger.info(
             f'response.question = {response.question}; response.user = {response.user}')
     data = {
         'record': get_complaint_for_pk(pk),
@@ -97,7 +101,9 @@ def complaints_record_view(request, pk):
     }
     return render(request, 'forum/complaints/record_view.html', data)
 
+@login_required()
 def techsupport_waiting_view(request):
+    """Метод представления ожидающих ответа вопросов в тех поддержку"""
     data= {
         'title_text':'Ожидающие обращения',
         'all_tickets': get_waiting_tickets(),
@@ -105,7 +111,9 @@ def techsupport_waiting_view(request):
     }
     return render(request, 'forum/techsupport/records.html', data)
 
+@login_required()
 def complaints_waiting_view(request):
+    """Метод представления ожидающих ответа жалоб"""
     data = {
         'title_text': 'Жалобы ожидающие рассмотрения',
         'all_tickets': get_waiting_complates(),
@@ -113,7 +121,9 @@ def complaints_waiting_view(request):
     }
     return render(request, 'forum/complaints/records.html', data)
 
+@login_required()
 def techsupport_user_tickets_view(request):
+    """Метод представления писем в тех поддержку для конкретного пользователя"""
     data = {
         'title_text': 'Мои обращения',
         'all_tickets': get_user_tickets(request),
@@ -121,7 +131,9 @@ def techsupport_user_tickets_view(request):
     }
     return render(request, 'forum/techsupport/records.html', data)
 
+@login_required()
 def complaints_user_tickets_view(request):
+    """Метод представления жалоб для конкретного пользователя"""
     data = {
         'title_text': 'Мои обращения',
         'all_tickets': get_user_complaints(request),
@@ -131,8 +143,8 @@ def complaints_user_tickets_view(request):
 
 @login_required()
 def forum_view(request):
+    """Метод представления главной страницы форума"""
     data ={
-        'username': get_username(request),
         'rich_users_top': get_rich_users(),
         'message_input': save_message(request),
         'all_messages': get_public_messages,

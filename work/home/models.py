@@ -2,12 +2,14 @@ from django.db import models
 from login.models import User_Status
 
 def news_img_directory(instance: '', filename: str) -> str:
+    """Кастомный метод сохранения пути до изображения в БД"""
     return 'news/{pk}{filename}'.format(
         pk=instance.pk,
         filename = filename,
     )
 
 class News(models.Model):
+    """Модель для хранения объектов новостей"""
     title = models.CharField(max_length=300)
     img = models.ImageField(upload_to=news_img_directory, default='news/news_img.jpg')
     user = models.ForeignKey(User_Status,
@@ -25,6 +27,7 @@ class News(models.Model):
         verbose_name_plural = 'Новости'
 
 class News_Comments(models.Model):
+    """Модель под комментарии к новостям"""
     new = models.ForeignKey(News,
                              on_delete=models.CASCADE,
                              default=None, null=True, blank=True

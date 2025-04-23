@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from .forms import CommentsForm
 import logging
 import datetime
-from django.shortcuts import redirect
 
 from work.global_services import get_username
 

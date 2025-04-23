@@ -2,8 +2,8 @@
 {% block title %}Все новости{% endblock %}
 {% block addlist %}
 <div class="m-5 md:mx-40 bg-gray-100 p-2 md:p-5 space-y-2 rounded-lg">
-  <div class="grid grid-cols-2 space-x-6">
-    <div class="left_block h-fit relative rounded-lg overflow-hidden ">
+  <div class="md:grid md:grid-cols-2">
+    <div class="left_block h-fit relative mx-auto md:mr-5 rounded-lg overflow-hidden ">
       <div class="absolute z-10 bg-gradient-to-br bg-auto to-fuchsia-900 inset-x-0 inset-y-0 opacity-50"></div>
       <img class="z-0" src="{{new.img.url}}" alt="">
     </div>
@@ -37,22 +37,31 @@
         <form method="POST" class="grid grid-cols-8 space-y-2">
           {% csrf_token %}
           {{comment_input.comment}}
-          <button type="submit" class="col-span-3 md:col-span-1 px-2 py-1 text-lg italic bg-green-600 rounded-lg border-1 border-gray-500
+          <button type="submit" class="col-span-4 md:col-span-1 px-2 py-1 text-lg italic bg-green-600 rounded-lg border-1 border-gray-500
                                         hover:border-black hover:bg-green-700">Отправить!</button>
         </form>
       </div>
     </div>
   {% endif %}
+
+
   {% if new_comments %}
   {% for el in new_comments %}
     <div class="users_comments_div grid grid-cols-9 pb-5 space-x-2">
-      <div class="avatar_img col-span-1">
+      <div class="avatar_img col-span-2 md:col-span-1">
         <img src="{{el.user.avatar.url}}" class="rounded-lg">
       </div>
-      <div class="input_button_date_div col-span-8">
+      <div class="input_button_date_div col-span-7 md:col-span-8">
         <div class="flex justify-between grid grid-cols-9">
           <div class="username_message col-span-7">
-            <span>{{el.user.username.username}}</span>
+            {% if el.user.is_staff %}
+                <a class="font-bold text-red-600" href="{% url 'profile' el.user.username.username %}">{{el.user.username.username}}</a>
+            {% elif el.user.is_moderator %}
+                <a class="font-bold text-green-700" href="{% url 'profile' el.user.username.username %}">{{el.user.username.username}}</a>
+            {% else %}
+                <a href="{% url 'profile' el.user.username.username %}">{{el.user.username.username}}</a>
+            {% endif %}
+
             <p>{{el.comment}}</p>
           </div>
           <div class="date col-span-2 place-self-center">

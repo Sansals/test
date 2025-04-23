@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from work.global_services import get_username, get_user_email, get_user, get_user_verify_is
 from shop.services import basket_value
-from .services import save_verify_code, verification_email, email_verification_form, get_session_data, set_user_verify_true, \
+from .services import save_verify_code, verification_email, get_session_data, set_user_verify_true, \
     registration_user_save
 
 from .forms import AuthForm, UserRegistrationForm, VrMail
@@ -17,16 +17,10 @@ def email_verification_view(request):
     if request.method == "POST":
         form = VrMail(request.POST)
         if form.is_valid():
-            code = get_session_data(request, name='code')
+            code = get_session_data(request, session_name='sessiondata', name='code')
             if int(form.cleaned_data['ver_mail']) == code:
                 set_user_verify_true(request)
                 return redirect('home')
-            else:
-                if code == 79797979:
-                    error = f'Для {get_username(request)} превышено кол-во запросов, авторизируйтесь позже'
-                else:
-                    request.session['sessiondata'] = code
-                    error = f'{get_username(request)}, введите коректный код!, ожидался {code}'
         else:
             error = f'{get_username(request)}, введите коректный код!'
     data={

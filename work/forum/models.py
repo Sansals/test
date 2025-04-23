@@ -4,6 +4,7 @@ from login.models import User_Status
 from datetime import date
 
 class Public_Chat(models.Model):
+    """Модель для хранения объектов сообщений общего чата"""
     username = models.ForeignKey(User_Status,
                                  on_delete=models.CASCADE,
                                  default=None, null=True, blank=True
@@ -23,6 +24,7 @@ class Public_Chat(models.Model):
 
 
 class ForumTechQuestions(models.Model):
+    """Модель для хранения объектов технических вопросов"""
     PROBLEMS_WITH_GAME_CLIENT = 'Проблемы с клиентом игры'
     PROBLEMS_WITH_SITE = 'Проблемы с сайтом'
     PROBLEMS_WITH_PAYMENT = 'Проблемы с оплатой'
@@ -56,6 +58,7 @@ class ForumTechQuestions(models.Model):
 
 
 class ForumComplaints(models.Model):
+    """Модель для хранения объектов жалоб на форуме"""
     COMPLAINT_ABOUT_THE_USER = 'Сообщить о нарушении правил игроком'
     APPEAL_THE_PUNISHMENT = 'Обжаловать наказание'
     COMPLAINT_ABOUT_THE_ADMIN = 'Сообщить о нарушении правил со стороны Администрации'
@@ -97,6 +100,7 @@ class ForumComplaints(models.Model):
 
 
 class ForumTechAnswer(models.Model):
+    """Модель для хранения объектов ответов на технические вопросы"""
     user = models.ForeignKey(User_Status,
                              on_delete=models.CASCADE,
                              default=None,
@@ -119,6 +123,7 @@ class ForumTechAnswer(models.Model):
         return f'{self.user.username} | {self.question.user.username} | {self.answer}'
 
 class ForumComplaintAnswer(models.Model):
+    """Модель для хранения объектов ответов на жалобы"""
     user = models.ForeignKey(User_Status,
                              on_delete=models.CASCADE,
                              default=None,

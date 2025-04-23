@@ -12,6 +12,7 @@ def all_profiles_view(request):
 
 @login_required()
 def user_profile_answers_view(request, url_username):
+    """Метод представление страницы профиля пользователя (для АВТОРИЗИРОВАННОГО так же и отображение его ответов на форуме)"""
     if get_username(request) == url_username:
         data = {
             'user_status_object': get_object_from_user_status(request),
@@ -41,6 +42,7 @@ def user_profile_answers_view(request, url_username):
 
 @login_required()
 def user_profile_comments_view(request, url_username):
+    """Метод представление страницы профиля пользователя (для АВТОРИЗИРОВАННОГО так же и отображение его комментариев)"""
     if get_username(request) == url_username:
         data = {
             'user_status_object': get_object_from_user_status(request),
@@ -70,6 +72,7 @@ def user_profile_comments_view(request, url_username):
 
 @login_required()
 def user_profile_view(request, url_username):
+    """Метод представление страницы профиля пользователя (для АВТОРИЗИРОВАННОГО так же и отображение его записей)"""
     if get_username(request) == url_username:
         data = {
             'user_status_object': get_object_from_user_status(request),
