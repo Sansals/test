@@ -80,7 +80,7 @@ def registration_view(request):
             if form.is_valid():
                 registration_user_save(request, form)
                 save_verify_code(request)
-                return redirect('vrmail')
+                return redirect('users:vrmail')
     else:
         return redirect('home')
 

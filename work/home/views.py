@@ -48,6 +48,9 @@ def rules_view(request):
     }
     return render(request, 'home/rules.html', data)
 
+def installers_view(request):
+    return render(request, 'home/installers.html')
+
 def home_view(request):
     data = {
         'user_id': get_user_id(request),
@@ -55,7 +58,9 @@ def home_view(request):
         'status': get_user_verify_is(request),
         'basket_value': basket_value(request),
         'news': get_all_news()[:3],
-        'news_len': get_news_len,
+        'news_len': get_news_len(),
+        'users_avatars': get_users_avatars(),
+        'users_len': get_len_of_users(),
     }
     return render(request,'home/index.html', data)
 

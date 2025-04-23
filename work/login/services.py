@@ -1,4 +1,6 @@
+from django.contrib.auth.models import User
 from random import randint
+from django.conf import settings
 
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.models import User
@@ -41,18 +43,26 @@ def set_user_verify_true(request):
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
             f' |login.services| '
-            f'get_session_data_username = {user_id}!')
+            f'get_session_data_username = {user_id}!'
+            f'settings.BETA_TEST_REGISTRATION_MOD = {settings.BETA_TEST_REGISTRATION_MOD}')
         u = User_Status.objects.get(username=user_id)
         u.Isverified = True
         u.save()
+        if settings.BETA_TEST_REGISTRATION_MOD == False:
+            data = {
+                'user_id': User.objects.get(id=user_id).id
+            }
+            request.session['user_test_id'] = data
+            _set_user_is_active_true(request)
         logger.info(
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
             f' |login.services| '
-            f'User set his verified status is True!')
+            f'User set his verified status is True!'
+            f'Set session data user_id = {data['user_id']}')
     except Exception:
         logger.warning(
-            f'{datetime.datetime.now()} |Warning| '
+            f'{datetime.datetime.now()} |WARNING| '
             f'Username: {get_username(request)} |'
             f' |login.services| '
             f'Exception: User cant set his verified status is True!')
@@ -107,6 +117,25 @@ def _set_user_is_active_false(request):
     request.session['user_id'] = data
     user.is_active = False
     user.save()
+
+def _set_user_is_active_true(request):
+    try:
+        data = request.session.pop('user_test_id', {})
+        user_id = data.get('user_id')
+        user = User.objects.get(id = user_id)
+        user.is_active = True
+        user.save()
+        logger.info(
+            f'{datetime.datetime.now()} |info| '
+            f'Username: {get_username(request)} |'
+            f' |login.services._set_user_is_active_true| '
+            f'set_user_is_active_true complete for user with id = {user_id}')
+    except Exception:
+        logger.warning(
+            f'{datetime.datetime.now()} |WARNING| '
+            f'Username: {get_username(request)} |'
+            f' |login.services._set_user_is_active_true| '
+            f'Can not set_user_is_active_true')
 
 def verification_email(request):
     save_verify_code(request)

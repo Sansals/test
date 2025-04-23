@@ -8,4 +8,5 @@ urlpatterns = [
     path('news/', views.news_view, name="news"),
     path('new/<int:id>', views.new_article_view, name="new_view"),
     path('new/error_404', views.new_article_not_founded, name="new_not_founded"),
+    path('loading/installers', views.installers_view, name="installers"),
 ]

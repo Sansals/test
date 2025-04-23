@@ -11,6 +11,12 @@ from django.contrib.auth.models import User
 
 from work.global_services import get_user
 
+def get_complaints_len():
+    return len(ForumComplaints.objects.all())
+
+def get_questions_len():
+    return len(ForumTechQuestions.objects.all())
+
 def get_answers(pk):
     question = ForumTechQuestions.objects.get(pk=pk)
     return ForumTechAnswer.objects.filter(question=question).order_by('-date')

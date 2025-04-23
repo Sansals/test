@@ -11,6 +11,7 @@ from login.models import User_Status
 from work.global_services import *
 from login.services import save_verify_code
 from forum.models import ForumTechQuestions, ForumComplaints, ForumTechAnswer, ForumComplaintAnswer
+from django.urls import reverse_lazy
 
 def get_all_open_user_articles(url_username):
     user = User.objects.get(username=url_username)
@@ -83,3 +84,4 @@ class AvatarUpdateView(UserPassesTestMixin, UpdateView):
     model = User_Status
     template_name = 'profiles/avatar_update.html'
     form_class = AvatarUpdateForm
+    success_url = reverse_lazy('forum')

@@ -1,29 +1,38 @@
 {% extends 'patterns/header.html' %}
 {% block title %}Grin-craft{% endblock %}
 {% block addlist %}
-
-    <div class="relative mx-5 h-100 overflow-hidden rounded-t-lg">
-        <div class="absolute z-10 w-full h-full bg-gradient-to-b to-black" ></div>
-        <div class="relative z-30 bg-gray-300 text-center text-gray-700 p-2 text-2xl font-bold"> Добро пожаловать! </div>
-        <div class="hidden md:flex absolute z-30 top-15 inset-x-15 p-2 text-center text-gray-700 bg-gray-300 opacity-70 hover:opacity-100" > Хочешь увлекательной игры с друзьями?
-                                                         Ищешь сервер "как в старые-добрые"? Тогда тебе с нами по пути! Заходи, регистрируйся, играй с такими же игроками!</div>
-        <a href="#" class="absolute bottom-30 inset-x-30 md:bottom-5 md:inset-x-60 z-30 leading-relaxed  rounded-full text-gray-200
-                                text-center items-center text-2xl font-bold bg-lime-700 border-2 border-transparent
-                                hover:border-2 hover:border-gray-300 hover:text-gray-300 hover:bg-lime-900">Установить лаунчер!</a>
-        <img class="-translate-y-20 z-0" src="../static/img/index_img.png" alt="">
+    <div class="relative">
+        <div class="users_block absolute bottom-1 inset-x-[13%]  md:bottom-2 md:inset-x-[20%] text-white flex flex-col">
+            <div class="hidden md:flex md:text-lg">С нами уже {{users_len}} игроков!</div>
+            <div class="users_avatar flex flex-row">
+                {%for el in users_avatars %}
+                <a href="{% url 'profile' el.username.username %}"><img class="h-2 w-2 md:h-8 md:w-8 rounded-full md:border-1 md:border-gray-600 z-0" src={{el.avatar.url}} alt=""></a>
+                {% endfor %}
+            </div>
+        </div>
+        <img class="mx-auto shadow-md" src="../static/img/index_page_4.png" alt="">
     </div>
 
-    <div class="flex flex-col pb-10 md:p-10 mx-5 bg-gradient-to-b bg-auto from-black via-gray-950 to-gray-800 rounded-b-xl">
+    <div class="w-[30%] mx-auto mt-5 h-fit bg-gray-400 rounded-xl hidden md:flex flex-col p-5 items-center">
+        <a class="block rounded-full text-white bg-lime-700 border-white w-full p-2 text-center text-2xl items-center
+                    hover:bg-lime-800" href="">Установить лаунчер for WinX64</a>
+        <span class="text-center text-lg italic text-white">Установить <a class="text-sky-600" href="{% url 'installers' %}">другие версии</a> и ознакомиться с <a class="text-sky-600" href="{% url 'installers' %}">системными требованиями.</a></span>
+    </div>
+
+    <div class="flex flex-col pb-10 md:p-10 mx-5">
         <div class="text-center text-3xl font-semibold text-gray-300 mb-10">Последние новости:</div>
-        <div class="grid grid-cols-1 md:grid-cols-3 {% if news_len == 2 %}grid-cols-4 md:grid-cols-4{% endif %} mx-auto {% if news_len != 1 %}gap-5{% else %}p-2{%endif%}">
+        <div class="grid grid-cols-4 gap-5">
             {% for el in news %}
-                    <a href="{% url 'new_view' el.id %}" class="relative {% if news_len == 1%}col-start-2{% elif news_len == 2%}col-span-2{% endif %} border-3 border-gray-600 rounded-xl overflow-hidden max-h-100">
-                        <div class="absolute z-10 w-full h-full bg-gradient-to-b to-gray-800 hover:to-gray-700"></div>
+                    <a href="{% url 'new_view' el.id %}" class="relative col-span-2
+                    {% if forloop.counter == 1 %}
+                        col-start-2
+                    {% endif %}
+                    border-3 border-gray-600 rounded-xl overflow-hidden max-h-100">
+                        <div class="absolute top-0 z-10 w-full h-full bg-gradient-to-b to-gray-800 hover:to-gray-700"></div>
                         <img class="z-0 aspect-square" src="{{ el.img.url }}" alt="">
-                        <div class="info_div max-h-40 absolute {% if news_len == 3 %}grid grid-cols-2{% endif %} md:grid md:grid-cols-2 z-20 items-center bottom-1 inset-x-0 px-2 py-1 ">
+                        <div class="info_div h-fit absolute md:grid md:grid-cols-2 z-20 items-center bottom-1 inset-x-0 px-2 py-1 ">
                             <div class="title_div text-gray-100 font-semibold text-xl">{{el.title}}</div>
-                            <div class="user_div {% if news_len != 3 %}hidden{% else %}flex justify-center{% endif %}
-                            md:flex flex-row items-center justify-center">
+                            <div class="user_div hidden md:flex flex-row items-center justify-center">
                                 <img class="justify-self-end rounded-full h-15 w-15" src="{{el.user.avatar.url}}" alt="">
                                 <div class="text-gray-100 italic font-medium ml-2">{{el.user.username.username}}</div>
                             </div>

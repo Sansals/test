@@ -137,6 +137,8 @@ def forum_view(request):
         'message_input': save_message(request),
         'all_messages': get_public_messages,
         'stuff_users': get_stuff_users,
-        'basket_value': basket_value(request)
+        'basket_value': basket_value(request),
+        'complaints_len': get_complaints_len(),
+        'questions_len': get_questions_len(),
     }
     return render(request, 'forum/forum_index.html', data)

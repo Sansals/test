@@ -1,5 +1,6 @@
 from .models import Rules, News, News_Comments
 from login.models import User_Status
+from django.contrib.auth.models import User
 from .forms import CommentsForm
 import logging
 import datetime
@@ -8,6 +9,12 @@ from django.shortcuts import redirect
 from work.global_services import get_username
 
 logger = logging.getLogger(__name__)
+
+def get_len_of_users():
+    return len(User.objects.all())
+
+def get_users_avatars():
+    return User_Status.objects.all().order_by('user_id')[:5]
 
 def get_news_len():
     return len(get_all_news())

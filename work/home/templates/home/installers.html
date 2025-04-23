@@ -1,0 +1,31 @@
+{% extends 'patterns/header.html' %}
+{% block title %}Все новости{% endblock %}
+{% block addlist %}
+<div class="m-5 md:mx-40 bg-gray-100 p-5 space-y-2 rounded-lg">
+    <div class="flex justify-between">
+        <div class="flex flex-col">
+            <div class="text-black font-bold text-2xl">Все версии клиента игры:</div>
+            <span class="text-lg"><a class="text-sky-600" href="">Скачать</a> версию для Windows x64 (Yandex.Disk)</span>
+            <span class="text-lg"><a class="text-sky-600" href="">Скачать</a> версию для Windows x32 (Yandex.Disk)</span>
+            <span class="text-lg"><a class="text-sky-600" href="">Скачать</a> версию для МАС ОС (Скоро)</span>
+        </div>
+        <div class="flex flex-col border-3 border-gray-600 bg-gray-300 rounded-xl p-2">
+            <div class="text-2xl text-black font-medium mb-5">Минимальные системные требования:</div>
+            <span class="text-lg text-black">Операционная система: <span class="italic">Windows 7 и новее</span></span>
+            <span class="text-lg text-black">Место на диске: <span class="italic">Не менее 1 ГБ</span></span>
+            <span class="text-lg text-black">Видеокарта: <span class="italic">Любая, с поддержкой OpenGL 2,1+</span></span>
+            <span class="text-lg text-black">Оперативная память: <span class="italic">От 2ГБ</span></span>
+            <span class="text-lg text-black">Процессор: <span class="italic">двухъядерный, с частотой от 1,7Ггц</span></span>
+
+            <div class="text-2xl text-black font-medium mb-5">Рекомендуемые системные требования:</div>
+            <span class="text-lg text-black">Операционная система: <span class="italic">Windows 10 или 11</span></span>
+            <span class="text-lg text-black">Место на диске: <span class="italic">От 5 ГБ</span></span>
+            <span class="text-lg text-black">Видеокарта: <span class="italic">GeForce 700 Series (740+) либо Radeon R7</span></span>
+            <span class="text-lg text-black">Оперативная память: <span class="italic">8 ГБ</span></span>
+            <span class="text-lg text-black">Процессор: <span class="italic">Intel Core i5-4690 / AMD A10-7800 либо эквивалент.</span></span>
+        </div>
+    </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -21,6 +21,8 @@ from django.conf.global_settings import STATICFILES_DIRS, EMAIL_BACKEND, EMAIL_H
 DEFAULT_CHARSET = 'UTF-8'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+BETA_TEST_REGISTRATION_MOD = True
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
