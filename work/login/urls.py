@@ -1,6 +1,6 @@
 import django.contrib.auth.views
 from django.urls import path, reverse_lazy
-from .views import *
+from .views import views
 from . import services
 from django.contrib.auth.views import *
 from .forms import MyPasswordResetForm,MySetPasswordForm
@@ -8,10 +8,10 @@ from .forms import MyPasswordResetForm,MySetPasswordForm
 app_name = 'users'
 
 urlpatterns = [
-    path('login/', auth_view, name="login"),
-    path('registration/', registration_view, name='reg'),
+    path('login/', views.auth_view, name="login"),
+    path('registration/', views.registration_view, name='reg'),
     path('logout/', services.logout_user ,name='logout' ),
-    path('registration/vrmail/', email_verification_view, name='vrmail'),
+    path('registration/vrmail/', views.email_verification_view, name='vrmail'),
     path('registration/vrmail1/', services.verification_email, name='verification_email'),
 
     path('password-reset/',

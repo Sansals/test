@@ -57,8 +57,7 @@ def set_user_verify_true(request):
             f'{datetime.datetime.now()} |INFO| '
             f'Username: {get_username(request)} |'
             f' |login.services| '
-            f'User set his verified status is True!'
-            f'Set session data user_id = {data['user_id']}')
+            f'User set his verified status is True!')
     except Exception:
         logger.warning(
             f'{datetime.datetime.now()} |WARNING| '

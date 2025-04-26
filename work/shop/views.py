@@ -24,7 +24,7 @@ def basket_view(request):
         'user':get_user(request),
         'balance': get_user_balance(request),
         'purchased_baskets': get_purchased_baskets(request),
-        'error': get_session_data(request, name='error'),
+        'error': get_session_data(request, session_name='sessiondata', name='error'),
         'basket_value': basket_value(request),
     }
     return render(request, 'shop/Basket.html', data)
