@@ -11,7 +11,7 @@
       <div class="user_date_div flex flex-row justify-between">
         <div class="user_info_div flex flex-row items-center justify-center space-x-2">
           <img class="w-16 h-16 rounded-full" src="{{new.user.avatar.url}}" alt="">
-          <a class="text-black text-xl italic font-medium" href="{% url 'profile' new.user.username.id %}">{{new.user.username.username}}</a>
+          <a class="text-black text-xl italic font-medium" href="{% url 'profile' new.user.username.username %}">{{new.user.username.username}}</a>
         </div>
         <div class="date_div pl-5 flex items-center">
           <div class="text-center text-black text-base italic">{{new.date}}</div>

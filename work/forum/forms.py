@@ -30,7 +30,7 @@ class ForumTechSupportAnswerForm(ModelForm):
 
         widgets = {
         'answer': TextInput(attrs={
-            'class': 'h-15 bg-neutral-600 rounded-lg italic px-5 hover:border-green-600 hover:border-2',
+            'class': 'h-10 md:h-15 bg-neutral-600 rounded-lg italic px-2 md:px-5 hover:border-green-600 hover:border-2',
             'placeholder': 'Введите сообщение'
         })
     }
@@ -41,11 +41,11 @@ class ForumComplaintsAnswerForm(ModelForm):
         fields = ['is_anonymous', 'answer']
 
         widgets = {
-        'answer': TextInput(attrs={
-            'class': 'h-15 bg-neutral-600 rounded-lg italic px-5 hover:border-green-600 hover:border-2',
-            'placeholder': 'Введите сообщение'
-        })
-    }
+            'answer': TextInput(attrs={
+                'class': 'h-10 md:h-15 bg-neutral-600 rounded-lg italic px-2 md:px-5 hover:border-green-600 hover:border-2',
+                'placeholder': 'Введите сообщение'
+            })
+        }
 
 class ForumComplaintsForm(ModelForm):
     class Meta:

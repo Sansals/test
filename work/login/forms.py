@@ -12,7 +12,7 @@ class MySetPasswordForm(SetPasswordForm):
             visible.field.widget.attrs['class'] = 'border-2 rounded-xl text-black text-lg px-2 py-1'
 
     error_messages = {
-        'new_password1_uncorrected': 'Имя пользователя может содержать только символы A-Z, a-z, 0-9 !',
+        'new_password1_uncorrected': 'Пароль может содержать только символы A-Z, a-z, 0-9 !',
         'passwords_not_identical': 'Пароли не совпадают!',
     }
     def clean_new_password1(self):

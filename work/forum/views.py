@@ -89,8 +89,6 @@ def complaints_record_view(request, pk):
         response.question = ForumComplaints.objects.get(pk=pk)
         response.save()
         form = ForumComplaintsAnswerForm()
-        logger.info(
-            f'response.question = {response.question}; response.user = {response.user}')
     data = {
         'record': get_complaint_for_pk(pk),
         'user_status_object': get_user_status_object_for_pk_in_complaints(pk),
