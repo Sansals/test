@@ -11,6 +11,32 @@ class MySetPasswordForm(SetPasswordForm):
         for visible in self.visible_fields():
             visible.field.widget.attrs['class'] = 'border-2 rounded-xl text-black text-lg px-2 py-1'
 
+    error_messages = {
+        'new_password1_uncorrected': 'Имя пользователя может содержать только символы A-Z, a-z, 0-9 !',
+        'passwords_not_identical': 'Пароли не совпадают!',
+    }
+    def clean_new_password1(self):
+        """Проверка на кириллицу и спец-симоволы"""
+        new_password1 = self.cleaned_data.get('new_password1')
+        if new_password1:
+            regex = "^[a-zA-Z0-9.]+$"
+            pattern = re.compile(regex)
+            if pattern.search(new_password1):
+                pass
+            else:
+                raise forms.ValidationError(self.error_messages['new_password1_uncorrected'], code='new_password1_uncorrected')
+        return new_password1
+
+    def clean_new_password2(self):
+        new_password1 = self.cleaned_data.get('new_password1')
+        new_password2 = self.cleaned_data.get('new_password2')
+        if new_password1 and new_password2:
+            if new_password1 != new_password2:
+                raise forms.ValidationError(self.error_messages['passwords_not_identical'], code='passwords_not_identical')
+        return new_password2
+
+
+
 class MyPasswordResetForm(PasswordResetForm):
     email = forms.EmailField(
         max_length=254,
