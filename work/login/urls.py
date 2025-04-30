@@ -1,6 +1,6 @@
 import django.contrib.auth.views
 from django.urls import path, reverse_lazy
-from .views import views
+from . import views
 from . import services
 from django.contrib.auth.views import *
 from .forms import MyPasswordResetForm,MySetPasswordForm

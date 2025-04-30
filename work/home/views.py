@@ -52,6 +52,14 @@ def rules_view(request):
     }
     return render(request, 'home/rules.html', data)
 
+def rules_beta_test_view(request):
+    """Метод представления правил проведения бета-теста"""
+    data = {
+        'rules': get_rules_all(request),
+        'basket_value': basket_value(request),
+    }
+    return render(request, 'home/rules_beta_test.html', data)
+
 @login_required()
 def installers_view(request):
     """Метод представления страницы с тех. требованиями и версиями клиента"""

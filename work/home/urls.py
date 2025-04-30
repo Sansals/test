@@ -9,4 +9,5 @@ urlpatterns = [
     path('new/<int:id>', views.new_article_view, name="new_view"),
     path('new/error_404', views.new_article_not_founded, name="new_not_founded"),
     path('loading/installers', views.installers_view, name="installers"),
+    path('rules/beta-test', views.rules_beta_test_view, name='rules_beta_test')
 ]
