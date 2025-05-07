@@ -5,10 +5,14 @@ from . import services
 from django.contrib.auth.views import *
 from .forms import MyPasswordResetForm,MySetPasswordForm
 
+#Для сериалайзера API
+from .views import LoginAPIView
+
 app_name = 'users'
 
 urlpatterns = [
     path('login/', views.auth_view, name="login"),
+    path('api/login/', LoginAPIView.as_view()),
     path('registration/', views.registration_view, name='reg'),
     path('logout/', services.logout_user ,name='logout' ),
     path('registration/vrmail/', views.email_verification_view, name='vrmail'),
