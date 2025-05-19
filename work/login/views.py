@@ -22,7 +22,7 @@ class LoginAPIView(APIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
-        user = request.data.get('user', {})
+        user = request.data
 
         # Обратите внимание, что мы не вызываем метод save() сериализатора, как
         # делали это для регистрации. Дело в том, что в данном случае нам
