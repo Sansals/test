@@ -194,6 +194,7 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "Ares yilativ <stereotip.228@gmail.com>"
 
 # Default primary key field type
+#коммент для проверки гит
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
